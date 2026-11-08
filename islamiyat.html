@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul AI - Class 9 Islamiat</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f0f5f2;
+ color:#18352b;
+}
+header{
+ background:linear-gradient(120deg,#064e3b,#059669);
+ color:white;
+ text-align:center;
+ padding:25px 12px;
+}
+header h1{margin:0;font-size:27px}
+header p{margin:9px}
+.container{padding:15px;max-width:850px;margin:auto}
+.card{
+ background:white;
+ padding:17px;
+ border-radius:13px;
+ margin:13px 0;
+ box-shadow:0 3px 12px #00000012;
+}
+button{
+ background:#087f5b;
+ color:white;
+ border:0;
+ padding:12px;
+ border-radius:9px;
+ margin:4px;
+ font-size:15px;
+ cursor:pointer;
+}
+button:hover{background:#065f46}
+select,input{
+ padding:12px;
+ border:1px solid #ccc;
+ border-radius:8px;
+ width:100%;
+ margin:8px 0;
+}
+.note{
+ line-height:2;
+ font-size:17px;
+ white-space:pre-line;
+}
+.english{direction:ltr;text-align:left}
+h2{color:#087f5b}
+footer{
+ text-align:center;
+ background:#064e3b;
+ color:white;
+ padding:20px;
+ margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Abdul AI Education</h1>
+<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+<h2 style="color:white">Class 9 – Islamiat</h2>
+<p>Punjab Board | Urdu & English Notes</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>📚 اسلامیات نہم جماعت</h2>
+<p>تمام سات ابواب کے نوٹس، سوالات اور امتحانی تیاری۔</p>
+<select id="lang" onchange="showChapter()">
+<option value="ur">اردو نوٹس</option>
+<option value="en">English Notes</option>
+</select>
+<input id="search" placeholder="باب تلاش کریں..." oninput="showChapter()">
+</div>
+
+<div class="card">
+<h2>ابواب منتخب کریں</h2>
+<div id="chapters"></div>
+</div>
+
+<div class="card">
+<h2 id="heading">باب اول</h2>
+<div id="content" class="note"></div>
+</div>
+
+</div>
+
+<footer>
+<h3>Abdul AI Education</h3>
+<p>Founder & Admin: عبدالستار</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+const data = [
+{
+ur:"قرآن مجید و حدیث نبوی ﷺ",
+en:"The Holy Quran and Hadith",
+notes:{
+ur:`قرآن مجید کا تعارف:
+
+قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے جو حضرت محمد ﷺ پر حضرت جبرائیل علیہ السلام کے ذریعے نازل ہوئی۔
+
+قرآن مجید پوری انسانیت کے لیے ہدایت کا سرچشمہ ہے۔ یہ انسان کو نیکی، سچائی، انصاف اور اچھے اخلاق کی تعلیم دیتا ہے۔
+
+قرآن مجید کی حفاظت:
+اللہ تعالیٰ نے قرآن مجید کی حفاظت کا ذمہ لیا ہے۔
+
+حدیث نبوی ﷺ:
+رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہا جاتا ہے۔
+
+حدیث کی اہمیت:
+حدیث قرآن مجید کی تشریح کرتی ہے اور مسلمانوں کو عملی زندگی گزارنے کا طریقہ بتاتی ہے۔`,
+en:`Introduction to the Holy Quran:
+
+The Holy Quran is the final revealed book of Allah. It was revealed to Prophet Muhammad (PBUH) through Angel Jibreel (AS).
+
+The Quran is a source of guidance for all humanity. It teaches goodness, truth, justice and good manners.
+
+Protection of the Quran:
+Allah has promised to protect the Holy Quran.
+
+Hadith:
+The sayings, actions and approvals of Prophet Muhammad (PBUH) are called Hadith.
+
+Importance of Hadith:
+Hadith explains the Quran and guides Muslims in their daily lives.`
+},
+qur:[
+"قرآن مجید کس پر نازل ہوا؟",
+"قرآن مجید کی حفاظت کس نے اپنے ذمہ لی؟",
+"حدیث کسے کہتے ہیں؟",
+"حدیث کی اہمیت بیان کریں۔"
+],
+qen:[
+"Upon whom was the Holy Quran revealed?",
+"Who promised to protect the Quran?",
+"What is Hadith?",
+"Explain the importance of Hadith."
+]
+},
+{
+ur:"ایمانیات و عبادات",
+en:"Faith and Worship",
+notes:{
+ur:`ایمان کا مفہوم:
+
+ایمان کا مطلب اللہ تعالیٰ اور اس کے رسول ﷺ کی بتائی ہوئی تمام سچی باتوں کو دل سے ماننا ہے۔
+
+ایمان کے بنیادی ارکان:
+
+1۔ اللہ تعالیٰ پر ایمان
+2۔ فرشتوں پر ایمان
+3۔ آسمانی کتابوں پر ایمان
+4۔ رسولوں پر ایمان
+5۔ آخرت کے دن پر ایمان
+6۔ تقدیر پر ایمان
+
+عبادات:
+
+نماز: نماز اسلام کا اہم رکن ہے۔
+روزہ: رمضان المبارک کے روزے فرض ہیں۔
+زکوٰۃ: مال دار مسلمان مخصوص شرائط کے مطابق زکوٰۃ ادا کرتے ہیں۔
+حج: صاحب استطاعت مسلمان پر زندگی میں ایک مرتبہ حج فرض ہے۔`,
+en:`Meaning of Faith:
+
+Faith means believing sincerely in Allah and all the teachings brought by His Messenger (PBUH).
+
+Six Articles of Faith:
+
+1. Belief in Allah.
+2. Belief in Angels.
+3. Belief in Divine Books.
+4. Belief in Prophets.
+5. Belief in the Day of Judgment.
+6. Belief in Divine Decree.
+
+Worship:
+
+Salah is an important pillar of Islam.
+Fasting in Ramadan is obligatory.
+Zakat is obligatory on eligible Muslims.
+Hajj is obligatory once in a lifetime for Muslims who can afford it.`
+},
+qur:[
+"ایمان کا کیا مطلب ہے؟",
+"ایمان کے چھ ارکان لکھیں۔",
+"نماز کی اہمیت بیان کریں۔",
+"زکوٰۃ کسے کہتے ہیں؟"
+],
+qen:[
+"What is the meaning of faith?",
+"Write the six articles of faith.",
+"Explain the importance of Salah.",
+"What is Zakat?"
+]
+},
+{
+ur:"سیرت نبوی ﷺ",
+en:"Seerat-un-Nabi (PBUH)",
+notes:{
+ur:`سیرت نبوی ﷺ:
+
+حضرت محمد ﷺ اللہ تعالیٰ کے آخری نبی اور رسول ہیں۔ آپ ﷺ کی زندگی تمام انسانوں کے لیے بہترین نمونہ ہے۔
+
+آپ ﷺ کی اہم صفات:
+
+1۔ سچائی
+2۔ امانت داری
+3۔ صبر و برداشت
+4۔ رحم دلی
+5۔ سخاوت
+6۔ عدل و انصاف
+
+فتح مکہ:
+فتح مکہ اسلامی تاریخ کا ایک اہم واقعہ ہے۔ اس موقع پر رسول اللہ ﷺ نے اپنے مخالفین کے ساتھ عام معافی اور حسن سلوک کا مظاہرہ فرمایا۔
+
+حجۃ الوداع:
+حجۃ الوداع کے موقع پر آپ ﷺ نے مسلمانوں کو انسانی حقوق، مساوات اور تقویٰ کی تعلیم دی۔`,
+en:`Life of Prophet Muhammad (PBUH):
+
+Prophet Muhammad (PBUH) is the final Messenger of Allah. His life is the best example for all humanity.
+
+His important qualities:
+
+1. Truthfulness.
+2. Honesty.
+3. Patience.
+4. Kindness.
+5. Generosity.
+6. Justice.
+
+Conquest of Makkah:
+The conquest of Makkah was an important event in Islamic history. The Prophet (PBUH) showed forgiveness and kindness towards his opponents.
+
+Farewell Pilgrimage:
+During the Farewell Pilgrimage, he taught Muslims about human rights, equality and piety.`
+},
+qur:[
+"رسول اللہ ﷺ کی چار صفات لکھیں۔",
+"فتح مکہ کی اہمیت کیا ہے؟",
+"حجۃ الوداع میں کون سی تعلیمات دی گئیں؟"
+],
+qen:[
+"Write four qualities of Prophet Muhammad (PBUH).",
+"What was the importance of the Conquest of Makkah?",
+"What teachings were given during the Farewell Pilgrimage?"
+]
+},
+{
+ur:"اخلاق و آداب",
+en:"Ethics and Manners",
+notes:{
+ur:`اخلاق کا مفہوم:
+
+اخلاق سے مراد انسان کے اچھے اور برے کردار اور عادات ہیں۔
+
+اچھے اخلاق:
+
+سچ بولنا، امانت داری، صبر، شکر، معافی اور دوسروں کے ساتھ نرمی سے پیش آنا اچھے اخلاق ہیں۔
+
+برے اخلاق:
+
+جھوٹ، حسد، تکبر، غیبت اور بہتان بری عادات ہیں۔
+
+اسلام ہمیں اچھے اخلاق اپنانے اور برائیوں سے بچنے کی تعلیم دیتا ہے۔`,
+en:`Meaning of Ethics:
+
+Ethics refers to the good and bad character and habits of a person.
+
+Good Manners:
+
+Truthfulness, honesty, patience, gratitude, forgiveness and kindness are good manners.
+
+Bad Manners:
+
+Lying, jealousy, arrogance, backbiting and slander are bad habits.
+
+Islam teaches us to adopt good manners and avoid evil actions.`
+},
+qur:[
+"اخلاق سے کیا مراد ہے؟",
+"اچھے اخلاق کی چار مثالیں دیں۔",
+"برے اخلاق کے نقصانات لکھیں۔"
+],
+qen:[
+"What is meant by ethics?",
+"Give four examples of good manners.",
+"Write the harms of bad manners."
+]
+},
+{
+ur:"حسن معاملات و معاشرت",
+en:"Social Conduct",
+notes:{
+ur:`اسلامی معاشرت:
+
+اسلام ایک ایسا مکمل دین ہے جو انسان کو دوسروں کے حقوق ادا کرنے کی تعلیم دیتا ہے۔
+
+حقوق العباد:
+دوسروں کے حقوق ادا کرنا، والدین کا احترام، ہمسایوں کے ساتھ حسن سلوک اور ضرورت مندوں کی مدد کرنا حقوق العباد میں شامل ہے۔
+
+سود کی حرمت:
+اسلام نے سود کو حرام قرار دیا ہے کیونکہ یہ معاشرے میں ناانصافی اور استحصال کا سبب بنتا ہے۔
+
+گواہی:
+مسلمان کو ہمیشہ سچی گواہی دینی چاہیے۔`,
+en:`Islamic Social Conduct:
+
+Islam is a complete religion that teaches people to fulfil the rights of others.
+
+Rights of People:
+Respecting parents, treating neighbours kindly and helping the needy are important social responsibilities.
+
+Prohibition of Interest:
+Islam prohibits interest because it can lead to injustice and exploitation.
+
+Testimony:
+A Muslim should always give truthful testimony.`
+},
+qur:[
+"حقوق العباد سے کیا مراد ہے؟",
+"اسلام میں ہمسایوں کے حقوق لکھیں۔",
+"سود کی حرمت بیان کریں۔"
+],
+qen:[
+"What are the rights of people?",
+"Write the rights of neighbours in Islam.",
+"Explain the prohibition of interest."
+]
+},
+{
+ur:"ہدایت کے سرچشمے اور مشاہیر اسلام",
+en:"Sources of Guidance and Muslim Personalities",
+notes:{
+ur:`ہدایت کے سرچشمے:
+
+اسلامی زندگی کی رہنمائی کے بنیادی ذرائع قرآن مجید اور سنت نبوی ﷺ ہیں۔
+
+مشاہیر اسلام:
+اسلامی تاریخ میں صحابہ کرامؓ، صحابیاتؓ، علمائے کرام اور اولیائے کرام نے دین کی خدمت کی۔
+
+ان کی زندگیاں ہمیں علم، تقویٰ، صبر، اخلاص اور خدمت خلق کا سبق دیتی ہیں۔
+
+ہمیں ان کی تعلیمات سے رہنمائی حاصل کرنی چاہیے۔`,
+en:`Sources of Guidance:
+
+The Holy Quran and Sunnah are the fundamental sources of guidance in Islam.
+
+Muslim Personalities:
+Companions, female companions, scholars and saints have served Islam throughout history.
+
+Their lives teach us knowledge, piety, patience, sincerity and service to humanity.
+
+We should learn from their teachings.`
+},
+qur:[
+"اسلام میں ہدایت کے بنیادی سرچشمے کون سے ہیں؟",
+"صحابہ کرامؓ کی خدمات بیان کریں۔",
+"مشاہیر اسلام کی زندگیوں سے کیا سبق ملتا ہے؟"
+],
+qen:[
+"What are the main sources of guidance in Islam?",
+"Describe the services of the Companions.",
+"What lessons do we learn from great Muslim personalities?"
+]
+},
+{
+ur:"اسلامی تعلیمات اور عصر حاضر کے تقاضے",
+en:"Islamic Teachings and Modern Needs",
+notes:{
+ur:`اسلامی تعلیمات:
+
+اسلام ہر دور کے لیے مکمل ضابطہ حیات ہے۔
+
+خود اعتمادی:
+اپنی صلاحیتوں پر بھروسا کرنا اور محنت کے ذریعے کامیابی حاصل کرنا خود اعتمادی ہے۔
+
+خود انحصاری:
+اپنے کام خود کرنے اور دوسروں پر غیر ضروری انحصار نہ کرنے کو خود انحصاری کہتے ہیں۔
+
+صحت:
+اسلام جسمانی اور ذہنی صحت کا خیال رکھنے کی تعلیم دیتا ہے۔
+
+ورزش:
+جسمانی ورزش صحت مند زندگی کے لیے مفید ہے۔`,
+en:`Islamic Teachings:
+
+Islam provides guidance for every age.
+
+Self-confidence:
+Believing in one's abilities and working hard to achieve success is self-confidence.
+
+Self-reliance:
+Doing one's work independently and avoiding unnecessary dependence on others is self-reliance.
+
+Health:
+Islam teaches us to care for physical and mental health.
+
+Exercise:
+Physical exercise is beneficial for a healthy life.`
+},
+qur:[
+"خود اعتمادی سے کیا مراد ہے؟",
+"خود انحصاری کی اہمیت لکھیں۔",
+"اسلام میں صحت کی کیا اہمیت ہے؟",
+"ورزش کے فوائد لکھیں۔"
+],
+qen:[
+"What is self-confidence?",
+"Explain the importance of self-reliance.",
+"What is the importance of health in Islam?",
+"Write the benefits of exercise."
+]
+}
+];
+
+let selected=0;
+
+function showChapters(){
+ let lang=document.getElementById("lang").value;
+ let search=document.getElementById("search").value.toLowerCase();
+ let box=document.getElementById("chapters");
+ box.innerHTML="";
+ data.forEach((d,i)=>{
+ let name=lang==="ur"?d.ur:d.en;
+ if(name.toLowerCase().includes(search)){
+ let b=document.createElement("button");
+ b.textContent=(i+1)+". "+name;
+ b.onclick=()=>{selected=i;showChapter()};
+ box.appendChild(b);
+ }
+ });
+}
+
+function showChapter(){
+ showChapters();
+ let d=data[selected];
+ let lang=document.getElementById("lang").value;
+ let name=lang==="ur"?d.ur:d.en;
+ let notes=d.notes[lang];
+ let questions=lang==="ur"?d.qur:d.qen;
+ document.getElementById("heading").textContent=
+ "باب "+(selected+1)+": "+name;
+ let c=document.getElementById("content");
+ c.className="note "+(lang==="en"?"english":"");
+ c.textContent=notes+
+ "\n\n"+(lang==="ur"?"اہم مختصر سوالات":"Important Short Questions")+
+ "\n\n"+questions.map((q,i)=>(i+1)+". "+q).join("\n");
+}
+showChapter();
+</script>
+</body>
+  </html>
+  
