@@ -4,302 +4,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071a3b">
+<meta name="theme-color" content="#091426">
 <title>Abdul AI Education</title>
-
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;background:#eef4ff;color:#10213b;
- font-family:Arial,sans-serif;line-height:1.7
-}
-header{
- background:linear-gradient(120deg,#06132e,#103e78);
- color:white;padding:18px 12px;text-align:center;
- border-bottom:4px solid #f6c844
-}
-.logo{
- width:75px;height:75px;border-radius:22px;
- margin:auto;background:linear-gradient(135deg,#ffe68a,#c28b16);
- display:grid;place-items:center;font-size:42px;
- box-shadow:0 5px 20px #0005
-}
-header h1{color:#ffdc69;margin:5px;font-size:27px}
-header p{margin:3px}
-.admin{color:#ffe18a;font-size:14px}
-nav{
- background:#091d40;padding:12px;
- display:flex;justify-content:center;flex-wrap:wrap;gap:9px;
- position:sticky;top:0;z-index:10
-}
-button{
- border:0;border-radius:12px;padding:11px 17px;
- background:#f4c53d;color:#14213a;
- font-weight:bold;cursor:pointer;font-size:14px
-}
-nav button{background:#173b68;color:white;border:1px solid #d7b64f}
-button:hover{filter:brightness(1.1)}
-.container{max-width:1150px;margin:auto;padding:14px}
-.hero{
- background:linear-gradient(120deg,#061638,#1262a0);
- color:white;border-radius:22px;padding:30px 17px;
- text-align:center;border:2px solid #f4c53d;
- box-shadow:0 8px 25px #1235
-}
-.hero h2{font-size:30px;color:#ffdc69;margin:5px}
-.hero h3{font-size:21px}
-.hero .tag{
- display:inline-block;background:#f6c943;color:#10213b;
- padding:8px 20px;border-radius:30px;font-weight:bold
-}
-.features{
- display:flex;flex-wrap:wrap;justify-content:center;gap:17px;
- margin-top:17px;color:white
-}
-.section-title{
- text-align:center;color:#102b55;margin:27px 0 14px
-}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
- gap:13px
-}
-.card{
- background:white;border-radius:17px;padding:17px 10px;
- text-align:center;border:1px solid #d5e1f5;
- box-shadow:0 4px 13px #142c4814;
- transition:.2s
-}
-.card:hover{transform:translateY(-4px);box-shadow:0 7px 20px #1233}
-.card .emoji{font-size:35px}
-.card h3{margin:5px;color:#12396c;font-size:17px}
-.card p{margin:3px;font-size:13px;color:#66758b}
-.green{background:linear-gradient(140deg,#087c4c,#20b66e);color:white}
-.blue{background:linear-gradient(140deg,#0752a2,#1595dc);color:white}
-.green h3,.blue h3{color:white}
-.panel{
- background:white;padding:20px;border-radius:18px;
- margin-top:20px;box-shadow:0 4px 15px #1232
-}
-.panel h2{color:#103d70}
-input,textarea,select{
- width:100%;padding:13px;margin:7px 0;
- border:1px solid #cbd8e9;border-radius:10px;
- font-size:16px;background:#f8fbff
-}
-textarea{min-height:100px}
-.result{
- background:#edf4ff;padding:15px;border-radius:12px;
- margin-top:12px;white-space:pre-wrap
-}
-.hidden{display:none}
-.subject-btn{width:100%;margin-top:8px}
-footer{
- margin-top:30px;padding:22px;text-align:center;
- background:#061633;color:white;border-top:4px solid #f4c53d
-}
-footer strong{color:#ffdc69}
-@media(max-width:500px){
- .hero h2{font-size:24px}
- nav button{padding:9px 11px;font-size:12px}
-}
+body{margin:0;background:#f2f5fa;color:#172338;font-family:Arial,sans-serif;line-height:1.9}
+header{background:linear-gradient(135deg,#091426,#17466b);color:white;text-align:center;padding:28px 12px;border-bottom:4px solid #e9b94f}
+header h1{margin:0;font-size:30px}
+header p{margin:5px}
+.admin{display:inline-block;border:1px solid #ffffff66;border-radius:20px;padding:3px 13px;font-size:13px}
+nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;background:white;padding:10px;position:sticky;top:0;z-index:5}
+button{border:0;border-radius:9px;padding:10px 14px;background:#142d4b;color:white;font-size:15px;cursor:pointer}
+nav button{background:#edf1f7;color:#142d4b}
+nav button.active{background:#142d4b;color:white}
+main{max-width:1050px;margin:auto;padding:15px}
+.page{display:none}
+.page.active{display:block}
+.hero,.card,.panel{background:white;border:1px solid #e0e6ef;border-radius:15px;padding:18px;margin-bottom:14px}
+.hero{background:linear-gradient(120deg,#fff,#eaf1f9)}
+h2{color:#142d4b;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.card h3{color:#17466b;margin-top:0}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:9px;font-size:15px;margin:6px 0}
+.tag{display:inline-block;background:#eaf1f9;color:#17466b;border-radius:20px;padding:3px 12px;font-size:13px}
+.option{display:block;width:100%;text-align:right;background:#f2f5fa;color:#172338;margin:7px 0}
+.answer{color:#13744e;font-weight:bold}
+footer{text-align:center;padding:25px;color:#68778b}
+.small{font-size:13px;color:#68778b}
 </style>
 </head>
-
 <body>
 
 <header>
- <div class="logo">📚</div>
- <h1>Abdul AI Education</h1>
- <p>Your Smart Education Platform</p>
- <p>علم حاصل کریں، مستقبل روشن بنائیں</p>
- <div class="admin">عبدالستار | Founder & Admin</div>
+<h1>Abdul AI Education</h1>
+<p>Your Smart Education Platform</p>
+<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+<div class="admin">ADMIN | عبدالستار</div>
+<p>بانی و ایڈمن | Founder & Admin</p>
 </header>
 
 <nav>
- <button onclick="showPage('home')">🏠 ہوم</button>
- <button onclick="showPage('subjects')">📚 مضامین</button>
- <button onclick="showPage('notes')">📖 نوٹس</button>
- <button onclick="showPage('test')">📝 ٹیسٹ</button>
- <button onclick="showPage('ai')">🤖 AI چیٹ</button>
+<button class="active" onclick="show('home',this)">ہوم</button>
+<button onclick="show('subjects',this)">مضامین</button>
+<button onclick="show('notes',this)">باب وار نوٹس</button>
+<button onclick="show('essay',this)">مضامین Essays</button>
+<button onclick="show('mcq',this)">MCQs</button>
+<button onclick="show('test',this)">آن لائن ٹیسٹ</button>
+<button onclick="show('about',this)">ہمارے بارے میں</button>
 </nav>
 
-<div class="container">
+<main>
 
-<section id="home">
- <div class="hero">
-  <h2>Abdul AI Education</h2>
-  <h3>علم حاصل کریں، مستقبل روشن بنائیں</h3>
-  <div class="tag">🏆 Punjab Board | 9th & 10th Class</div>
-  <div class="features">
-   <span>✅ Notes</span>
-   <span>✅ MCQs</span>
-   <span>✅ Online Tests</span>
-   <span>✅ AI Support</span>
-  </div>
- </div>
-
- <h2 class="section-title">⭐ تعلیمی کلاسز ⭐</h2>
- <div class="grid">
-  <div class="card blue">
-   <div class="emoji">🎓</div>
-   <h3>9th Class</h3>
-   <p>جماعت نہم</p>
-   <button onclick="showPage('subjects')">مطالعہ کریں ←</button>
-  </div>
-  <div class="card green">
-   <div class="emoji">🎓</div>
-   <h3>10th Class</h3>
-   <p>جماعت دہم</p>
-   <button onclick="showPage('subjects')">مطالعہ کریں ←</button>
-  </div>
- </div>
-
- <h2 class="section-title">📚 مضامین کی فہرست</h2>
- <div class="grid" id="homeSubjects"></div>
-
- <div class="grid" style="margin-top:20px">
-  <div class="card green">
-   <div class="emoji">📝</div>
-   <h3>آن لائن ٹیسٹ</h3>
-   <p>MCQs اور مشق</p>
-   <button onclick="showPage('test')">ٹیسٹ شروع کریں</button>
-  </div>
-  <div class="card" style="background:#5925a7;color:white">
-   <div class="emoji">🤖</div>
-   <h3 style="color:white">Abdul AI</h3>
-   <p style="color:white">تعلیمی سوال پوچھیں</p>
-   <button onclick="showPage('ai')">سوال پوچھیں</button>
-  </div>
-  <div class="card green">
-   <div class="emoji">📘</div>
-   <h3>تعلیمی نوٹس</h3>
-   <p>اپنے نوٹس بنائیں</p>
-   <button onclick="showPage('notes')">نوٹس دیکھیں</button>
-  </div>
- </div>
-</section>
-
-<section id="subjects" class="hidden">
- <h2 class="section-title">📚 تمام مضامین</h2>
- <div class="grid" id="allSubjects"></div>
-</section>
-
-<section id="notes" class="panel hidden">
- <h2>📖 تعلیمی نوٹس</h2>
- <input id="noteSubject" placeholder="مضمون کا نام">
- <textarea id="noteText" placeholder="اپنے نوٹس یہاں لکھیں"></textarea>
- <button onclick="saveNote()">محفوظ کریں</button>
- <button onclick="downloadNote()">نوٹس ڈاؤن لوڈ کریں</button>
- <div id="noteResult" class="result"></div>
-</section>
-
-<section id="test" class="panel hidden">
- <h2>📝 اسلامیات MCQs ٹیسٹ</h2>
- <p>1۔ قرآن مجید کس نبی پر نازل ہوا؟</p>
- <label><input type="radio" name="q1" value="a"> حضرت موسیٰؑ</label><br>
- <label><input type="radio" name="q1" value="b"> حضرت محمد ﷺ</label><br>
- <label><input type="radio" name="q1" value="c"> حضرت عیسیٰؑ</label>
-
- <p>2۔ اسلام کے بنیادی ارکان کتنے ہیں؟</p>
- <label><input type="radio" name="q2" value="a"> تین</label><br>
- <label><input type="radio" name="q2" value="b"> چار</label><br>
- <label><input type="radio" name="q2" value="c"> پانچ</label><br><br>
-
- <button onclick="checkTest()">نتیجہ معلوم کریں</button>
- <div id="testResult" class="result"></div>
-</section>
-
-<section id="ai" class="panel hidden">
- <h2>🤖 Abdul AI Assistant</h2>
- <p>السلام علیکم! اپنا تعلیمی سوال لکھیں۔</p>
- <textarea id="question" placeholder="مثلاً: پاکستان کب بنا؟"></textarea>
- <button onclick="askAI()">سوال بھیجیں</button>
- <div id="answer" class="result">آپ کا معاون Abdul AI حاضر ہے!</div>
- <p style="font-size:12px;color:#777">
- حقیقی AI جوابات کے لیے محفوظ AI API کنکشن ضروری ہے۔
- </p>
-</section>
-
+<section id="home" class="page active">
+<div class="hero">
+<span class="tag">Punjab Board | Class 9–12</span>
+<h2>خوش آمدید! میں Abdul AI ہوں۔</h2>
+<p>طلبہ کے لیے مفت تعلیمی مواد، نوٹس، مضامین، MCQs اور آن لائن ٹیسٹ۔</p>
+<button onclick="show('subjects')">تعلیم شروع کریں</button>
 </div>
+<h2>اپنی جماعت منتخب کریں</h2>
+<div class="grid">
+<div class="card"><h3>جماعت نہم</h3><button onclick="selectClass(9)">کھولیں</button></div>
+<div class="card"><h3>جماعت دہم</h3><button onclick="selectClass(10)">کھولیں</button></div>
+<div class="card"><h3>جماعت گیارہویں</h3><button onclick="selectClass(11)">کھولیں</button></div>
+<div class="card"><h3>جماعت بارہویں</h3><button onclick="selectClass(12)">کھولیں</button></div>
+</div>
+<h2>تعلیمی سہولیات</h2>
+<div class="grid">
+<div class="card">📚 مکمل باب وار نوٹس</div>
+<div class="card">📝 اردو اور انگلش مضامین</div>
+<div class="card">✅ MCQs مع جوابات</div>
+<div class="card">🧪 آن لائن ٹیسٹ اور نتیجہ</div>
+</div>
+</section>
+
+<section id="subjects" class="page">
+<h2>📚 تمام مضامین</h2>
+<select id="class" onchange="renderSubjects()">
+<option value="9">جماعت نہم</option>
+<option value="10">جماعت دہم</option>
+<option value="11">جماعت گیارہویں</option>
+<option value="12">جماعت بارہویں</option>
+</select>
+<div id="subjectList" class="grid"></div>
+</section>
+
+<section id="notes" class="page">
+<h2>📖 باب وار نوٹس</h2>
+<select id="noteClass" onchange="renderNotes()">
+<option value="9">جماعت نہم</option>
+<option value="10">جماعت دہم</option>
+<option value="11">جماعت گیارہویں</option>
+<option value="12">جماعت بارہویں</option>
+</select>
+<select id="noteSubject" onchange="renderNotes()">
+<option>اسلامیات لازمی</option>
+<option>اردو</option>
+<option>English</option>
+<option>Physics</option>
+<option>Biology</option>
+<option>Chemistry</option>
+<option>ریاضی</option>
+<option>ترجمۃ القرآن</option>
+</select>
+<div id="notesContent" class="panel"></div>
+</section>
+
+<section id="essay" class="page">
+<h2>📝 مضامین Essays</h2>
+<div class="grid" id="essayList"></div>
+<div id="essayText" class="panel"></div>
+</section>
+
+<section id="mcq" class="page">
+<h2>✅ MCQs پریکٹس</h2>
+<p>جماعت نہم اسلامیات کے نمونہ سوالات</p>
+<div id="mcqList"></div>
+</section>
+
+<section id="test" class="page">
+<h2>🧪 آن لائن ٹیسٹ</h2>
+<p>اپنا جواب منتخب کریں اور آخر میں نتیجہ دیکھیں۔</p>
+<div id="testList"></div>
+<button onclick="result()">نتیجہ دیکھیں</button>
+<h3 id="score"></h3>
+</section>
+
+<section id="about" class="page">
+<div class="panel">
+<h2>Abdul AI Education</h2>
+<h3>عبدالستار</h3>
+<p>بانی و ایڈمن | Founder & Admin</p>
+<p>ہمارا مقصد طلبہ کو آسان اور معیاری تعلیمی مواد فراہم کرنا ہے۔</p>
+<p>Punjab Board | Class 9, 10, 11, 12</p>
+</div>
+</section>
+
+<div class="small">نوٹ: تمام جماعتوں کے مکمل سرکاری باب وار مواد کو الگ الگ تصدیق کرکے شامل کرنا ہوگا۔ یہ نمونہ مواد مکمل بورڈ نصاب نہیں ہے۔</div>
+</main>
 
 <footer>
- <h2><strong>Abdul AI Education</strong></h2>
- <p>Founder & Admin: عبدالستار</p>
- <p>علم حاصل کریں، مستقبل روشن بنائیں ❤️</p>
- <p>© 2026 Abdul AI Education</p>
+© 2026 Abdul AI Education<br>
+بانی و ایڈمن: عبدالستار
 </footer>
 
 <script>
-const subjects=[
-["اسلامیات لازمی","🕌"],["ترجمۃ القرآن","📖"],
-["اردو","✒️"],["انگلش","🔤"],
-["ریاضی","🔢"],["فزکس","⚛️"],
-["کیمسٹری","🧪"],["بیالوجی","🌿"],
-["کمپیوٹر سائنس","💻"],["مطالعہ پاکستان","🇵🇰"]
+const subjects={
+9:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات لازمی","ترجمۃ القرآن"],
+10:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات لازمی","ترجمۃ القرآن"],
+11:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات","ترجمۃ القرآن"],
+12:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات","ترجمۃ القرآن"]
+};
+
+function show(id,btn){
+document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+if(btn)btn.classList.add('active');
+if(id==='subjects')renderSubjects();
+if(id==='notes')renderNotes();
+window.scrollTo(0,0);
+}
+
+function selectClass(n){
+document.getElementById('class').value=n;
+show('subjects');
+}
+
+function renderSubjects(){
+let n=document.getElementById('class').value;
+document.getElementById('subjectList').innerHTML=subjects[n].map(s=>
+`<div class="card"><h3>${s}</h3><button onclick="openNotes('${s}',${n})">نوٹس کھولیں</button></div>`
+).join('');
+}
+
+function openNotes(s,n){
+document.getElementById('noteSubject').value=s;
+document.getElementById('noteClass').value=n;
+show('notes');
+}
+
+const notes={
+"اسلامیات لازمی":[
+["توحید","اللہ تعالیٰ ایک ہے۔ وہی تمام کائنات کا خالق، مالک اور حاکم ہے۔"],
+["رسالت","رسالت سے مراد اللہ تعالیٰ کا اپنے منتخب بندوں کو لوگوں کی رہنمائی کے لیے رسول بنا کر بھیجنا ہے۔"],
+["نماز","نماز اسلام کا اہم رکن ہے۔ یہ مسلمان کو اللہ تعالیٰ کی یاد اور اطاعت کا پابند بناتی ہے۔"],
+["روزہ","روزہ رمضان المبارک میں فرض ہے۔ یہ صبر، تقویٰ اور نظم و ضبط پیدا کرتا ہے۔"]
+],
+"اردو":[
+["سبق کا مرکزی خیال","سبق کو غور سے پڑھیں، اہم نکات لکھیں اور مشکل الفاظ کے معنی یاد کریں۔"]
+],
+"English":[
+["Reading Skills","Read the lesson carefully. Learn difficult words, meanings and the main idea."]
+],
+"Physics":[
+["Measurement","Measurement is the comparison of an unknown quantity with a standard unit."]
+],
+"Biology":[
+["Introduction to Biology","Biology is the scientific study of living organisms."]
+],
+"Chemistry":[
+["Introduction to Chemistry","Chemistry is the study of matter, its properties and changes."]
+],
+"ریاضی":[
+["الجبرہ","الجبرہ ریاضی کی وہ شاخ ہے جس میں اعداد، علامات اور حروف استعمال ہوتے ہیں۔"]
+],
+"ترجمۃ القرآن":[
+["قرآنی مطالعہ","قرآنی آیات کا ترجمہ مستند درسی کتاب سے پڑھیں اور اہم الفاظ کے معانی یاد کریں۔"]
+]
+};
+
+function renderNotes(){
+let s=document.getElementById('noteSubject').value;
+let n=document.getElementById('noteClass').value;
+let data=notes[s]||[];
+document.getElementById('notesContent').innerHTML=
+`<h3>${s} — جماعت ${n}</h3>`+
+(data.length?data.map(x=>`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join(''):'<p>اس مضمون کے نوٹس ابھی شامل نہیں کیے گئے۔</p>');
+}
+
+const essays=[
+["میرا وطن پاکستان","پاکستان ہمارا پیارا وطن ہے۔ یہ 14 اگست 1947ء کو آزاد ہوا۔ ہمیں اپنے وطن سے محبت کرنی چاہیے اور اس کی ترقی کے لیے محنت کرنی چاہیے۔"],
+["علم کی اہمیت","علم انسان کو شعور اور اچھے برے کی پہچان دیتا ہے۔ تعلیم کے ذریعے قومیں ترقی کرتی ہیں۔"],
+["My School","My school is a place where I learn new things. I respect my teachers and work hard to achieve my goals."],
+["Importance of Education","Education gives us knowledge, confidence and good manners. It helps us become useful members of society."]
 ];
 
-function makeSubjects(){
- return subjects.map(s=>`
- <div class="card">
- <div class="emoji">${s[1]}</div>
- <h3>${s[0]}</h3>
- <p>پنجاب بورڈ</p>
- <button class="subject-btn" onclick="openSubject('${s[0]}')">کھولیں</button>
- </div>`).join('');
+function renderEssays(){
+document.getElementById('essayList').innerHTML=essays.map((e,i)=>
+`<div class="card"><h3>${e[0]}</h3><button onclick="showEssay(${i})">پڑھیں</button></div>`
+).join('');
 }
-document.getElementById('homeSubjects').innerHTML=makeSubjects();
-document.getElementById('allSubjects').innerHTML=makeSubjects();
-
-function showPage(id){
- document.querySelectorAll('.container > section').forEach(s=>s.classList.add('hidden'));
- document.getElementById(id).classList.remove('hidden');
- window.scrollTo(0,0);
+function showEssay(i){
+document.getElementById('essayText').innerHTML=
+`<h3>${essays[i][0]}</h3><p>${essays[i][1]}</p>`;
 }
 
-function openSubject(name){
- showPage('notes');
- document.getElementById('noteSubject').value=name;
- document.getElementById('noteResult').innerText=
- name+' کے نوٹس یہاں شامل کیے جا سکتے ہیں۔';
-}
+const questions=[
+["قرآن مجید کس پر نازل ہوا؟",["حضرت موسیٰؑ","حضرت عیسیٰؑ","حضرت محمد ﷺ","حضرت ابراہیمؑ"],2],
+["اسلام کے ارکان کتنے ہیں؟",["تین","چار","پانچ","چھ"],2],
+["نماز دن میں کتنی بار فرض ہے؟",["تین","چار","پانچ","چھ"],2],
+["روزہ کس مہینے میں فرض ہے؟",["محرم","رجب","رمضان","شوال"],2],
+["زکوٰۃ کا مقصد کیا ہے؟",["مال کی پاکیزگی","سفر","کھیل","تجارت"],0]
+];
+let selected={};
 
-function saveNote(){
- let s=document.getElementById('noteSubject').value.trim();
- let t=document.getElementById('noteText').value.trim();
- if(!s||!t){alert('مضمون اور نوٹس لکھیں');return;}
- localStorage.setItem('abdul_note_'+s,t);
- document.getElementById('noteResult').innerText='نوٹس محفوظ ہوگئے!';
+function renderQuiz(){
+selected={};
+let html='';
+questions.forEach((q,i)=>{
+html+=`<div class="card"><b>${i+1}. ${q[0]}</b>`;
+q[1].forEach((a,j)=>{
+html+=`<button class="option" style="width:100%;margin:5px 0" onclick="answer(${i},${j})">${a}</button>`;
+});
+html+='</div>';
+});
+document.getElementById('mcqList').innerHTML=html;
+document.getElementById('testList').innerHTML=html;
 }
-
-function downloadNote(){
- let s=document.getElementById('noteSubject').value.trim();
- let t=document.getElementById('noteText').value.trim();
- if(!s||!t){alert('پہلے نوٹس لکھیں');return;}
- let blob=new Blob(['\uFEFF'+s+'\n\n'+t],{type:'text/plain;charset=utf-8'});
- let url=URL.createObjectURL(blob);
- let a=document.createElement('a');
- a.href=url;a.download=s+'.txt';a.click();
- URL.revokeObjectURL(url);
+function answer(i,j){selected[i]=j;}
+function result(){
+let correct=questions.filter((q,i)=>selected[i]===q[2]).length;
+document.getElementById('score').innerText=
+'آپ کا نتیجہ: '+correct+' / '+questions.length+' درست';
 }
-
-function checkTest(){
- let a=document.querySelector('input[name="q1"]:checked');
- let b=document.querySelector('input[name="q2"]:checked');
- if(!a||!b){alert('دونوں سوالات حل کریں');return;}
- let score=(a.value==='b'?1:0)+(b.value==='c'?1:0);
- document.getElementById('testResult').innerText=
- 'آپ کے نمبر: '+score+'/2';
-}
-
-function askAI(){
- let q=document.getElementById('question').value.trim();
- if(!q){alert('سوال لکھیں');return;}
- document.getElementById('answer').innerText=
- 'آپ کا سوال موصول ہوگیا:\n'+q+
- '\n\nحقیقی AI جواب کے لیے محفوظ AI API منسلک کرنا ضروری ہے۔';
-}
+renderSubjects();
+renderNotes();
+renderEssays();
+renderQuiz();
 </script>
-
 </body>
- </html>
-
+                                      </html>
+                                      
