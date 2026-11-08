@@ -4,212 +4,543 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdul AI - اسلامیات جماعت نہم</title>
+<meta name="theme-color" content="#071d2b">
+
+<title>Abdul AI | اسلامیات جماعت نہم</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.9}
-header{background:linear-gradient(120deg,#063b35,#087f65);color:white;text-align:center;padding:25px 12px}
-header h1{margin:0;font-size:27px}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f1f5f9;
+ color:#172033;
+ line-height:1.9;
+}
+header{
+ background:linear-gradient(130deg,#071d2b,#087f65);
+ color:white;
+ text-align:center;
+ padding:30px 15px;
+}
+header h1{font-size:29px;margin:0}
 header p{margin:5px}
-.container{max-width:900px;margin:auto;padding:15px}
-.card{background:white;padding:17px;margin:14px 0;border-radius:13px;box-shadow:0 3px 12px #0001}
+.container{
+ max-width:950px;
+ margin:auto;
+ padding:15px;
+}
+.card{
+ background:white;
+ padding:18px;
+ margin:15px 0;
+ border-radius:15px;
+ box-shadow:0 3px 14px #0001;
+}
 h2{color:#087f65}
-h3{color:#164e43}
-input{width:100%;padding:13px;border:1px solid #bbb;border-radius:9px;font-size:16px}
-button{background:#087f65;color:white;border:0;padding:11px 17px;border-radius:8px;margin:5px;cursor:pointer;font-size:15px}
+h3{color:#075b49}
+input[type=text]{
+ width:100%;
+ padding:14px;
+ border:1px solid #bbb;
+ border-radius:10px;
+ font-size:16px;
+}
+button{
+ background:#087f65;
+ color:white;
+ border:0;
+ border-radius:9px;
+ padding:11px 17px;
+ margin:5px;
+ font-size:15px;
+ cursor:pointer;
+}
 button:hover{background:#055344}
-.answer{background:#e9f8f1;padding:10px;border-radius:8px;margin:8px 0}
-footer{text-align:center;background:#063b35;color:white;padding:15px;margin-top:25px}
+.answer{
+ background:#e9f8f1;
+ padding:12px;
+ border-radius:9px;
+ margin:8px 0;
+}
+.chapter{
+ border-right:5px solid #087f65;
+}
+.chapter button{margin-top:10px}
+.content{display:none}
+.content.show{display:block}
+.badge{
+ background:#e5f5ee;
+ color:#087f65;
+ padding:5px 12px;
+ border-radius:20px;
+ display:inline-block;
+}
+.question{font-weight:bold}
+footer{
+ background:#071d2b;
+ color:white;
+ text-align:center;
+ padding:20px;
+ margin-top:30px;
+}
 a{color:#087f65}
+label{display:inline-block;margin:4px}
+#result{
+ font-size:21px;
+ color:#087f65;
+ font-weight:bold;
+}
+@media(max-width:600px){
+ header h1{font-size:24px}
+ .card{padding:13px}
+}
+@media print{
+ button,#searchBox,footer{display:none}
+ .content{display:block}
+ body{background:white}
+}
 </style>
 </head>
+
 <body>
 
 <header>
 <h1>📚 Abdul AI Education</h1>
-<p>اسلامیات جماعت نہم | Class 9 Islamic Studies</p>
+<p>اسلامیات لازمی | جماعت نہم</p>
+<p>Punjab Board - Class 9</p>
 <p>علم حاصل کریں، مستقبل روشن بنائیں</p>
 </header>
 
 <div class="container">
 
 <div class="card">
-<h2>خوش آمدید!</h2>
-<p>اس صفحے پر جماعت نہم کے طلبہ کے لیے اسلامیات کے آسان نوٹس، مختصر سوالات، تفصیلی سوالات اور MCQs فراہم کیے گئے ہیں۔</p>
-<input id="search" placeholder="سبق یا سوال تلاش کریں..." oninput="searchNotes()">
+<h2>السلام علیکم! خوش آمدید</h2>
+<p>
+یہ صفحہ پنجاب بورڈ جماعت نہم کے طلبہ کے لیے اسلامیات
+کی تعلیم، باب وار مطالعے، سوالات اور ٹیسٹ کی سہولت فراہم
+کرنے کے لیے تیار کیا گیا ہے۔
+</p>
+<span class="badge">Founder & Admin: عبدالستار</span>
 </div>
 
-<div id="notes">
-
-<div class="card">
-<h2>باب 1: قرآن مجید اور حدیث</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: قرآن مجید کیا ہے؟</b></p>
-<div class="answer">جواب: قرآن مجید اللہ تعالیٰ کی آخری کتاب ہے جو حضرت محمد ﷺ پر نازل ہوئی۔</div>
-<p><b>سوال 2: قرآن مجید کس زبان میں نازل ہوا؟</b></p>
-<div class="answer">جواب: قرآن مجید عربی زبان میں نازل ہوا۔</div>
-<p><b>سوال 3: حدیث کسے کہتے ہیں؟</b></p>
-<div class="answer">جواب: رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>قرآن مجید کی اہمیت بیان کریں۔</b></p>
-<div class="answer">قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے۔ یہ انسانوں کے لیے مکمل ہدایت ہے۔ اس میں عقائد، عبادات، اخلاق اور زندگی گزارنے کے اصول بیان کیے گئے ہیں۔ ہمیں قرآن مجید پڑھنا، سمجھنا اور اس پر عمل کرنا چاہیے۔</div>
+<div class="card" id="searchBox">
+<h2>🔎 سبق تلاش کریں</h2>
+<input type="text" id="search"
+placeholder="باب یا سوال لکھیں..."
+oninput="searchNotes()">
 </div>
 
 <div class="card">
-<h2>باب 2: ایمانیات اور عبادات</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: ایمان کسے کہتے ہیں؟</b></p>
-<div class="answer">جواب: اللہ تعالیٰ اور اس کے بتائے ہوئے تمام بنیادی عقائد کو دل سے ماننا ایمان ہے۔</div>
-<p><b>سوال 2: اسلام کے کتنے ارکان ہیں؟</b></p>
-<div class="answer">جواب: اسلام کے پانچ ارکان ہیں۔</div>
-<p><b>سوال 3: نماز دن میں کتنی مرتبہ فرض ہے؟</b></p>
-<div class="answer">جواب: دن اور رات میں پانچ وقت کی نماز فرض ہے۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>اسلام کے پانچ ارکان لکھیں۔</b></p>
-<div class="answer">1۔ کلمہ شہادت<br>2۔ نماز قائم کرنا<br>3۔ زکوٰۃ ادا کرنا<br>4۔ رمضان کے روزے رکھنا<br>5۔ استطاعت رکھنے والے کے لیے حج کرنا۔</div>
+<h2>📖 اسلامیات کے سات ابواب</h2>
+<p>اپنی پسند کا باب منتخب کریں۔</p>
+
+<div id="chapters">
+
+<div class="chapter card">
+<h3>باب 1: قرآن مجید و حدیث نبوی ﷺ</h3>
+<p>قرآن مجید کی تدوین، حفاظت اور حدیث نبوی کی اہمیت۔</p>
+<button onclick="openChapter(1)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 2: ایمانیات و عبادات</h3>
+<p>توحید، رسالت، فرشتے، آسمانی کتابیں، آخرت اور عبادات۔</p>
+<button onclick="openChapter(2)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 3: سیرت النبی ﷺ</h3>
+<p>فتح مکہ، غزوہ حنین، عام الوفود اور سیرت نبوی ﷺ۔</p>
+<button onclick="openChapter(3)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 4: اخلاق و آداب</h3>
+<p>شکر، قناعت، امانت، دیانت اور حسن اخلاق۔</p>
+<button onclick="openChapter(4)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 5: حسن معاملات و معاشرت</h3>
+<p>معاشرتی تعلقات، حقوق العباد اور اسلامی معاملات۔</p>
+<button onclick="openChapter(5)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 6: ہدایت کے سرچشمے اور مشاہیر اسلام</h3>
+<p>اسلامی شخصیات، صحابہ کرام اور اہل علم کی خدمات۔</p>
+<button onclick="openChapter(6)">باب پڑھیں</button>
+</div>
+
+<div class="chapter card">
+<h3>باب 7: اسلامی تعلیمات اور عصر حاضر کے تقاضے</h3>
+<p>اسلامی تعلیمات اور موجودہ دور کے تقاضے۔</p>
+<button onclick="openChapter(7)">باب پڑھیں</button>
+</div>
+
+</div>
+</div>
+
+<div id="chapterContent" class="card" style="display:none">
+<button onclick="closeChapter()">⬅ واپس ابواب</button>
+<div id="chapterDetails"></div>
 </div>
 
 <div class="card">
-<h2>باب 3: سیرت النبی ﷺ</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: ہمارے آخری نبی کون ہیں؟</b></p>
-<div class="answer">جواب: حضرت محمد ﷺ اللہ تعالیٰ کے آخری نبی ہیں۔</div>
-<p><b>سوال 2: ہجرت کے وقت آپ ﷺ کہاں تشریف لے گئے؟</b></p>
-<div class="answer">جواب: آپ ﷺ مکہ مکرمہ سے مدینہ منورہ تشریف لے گئے۔</div>
-<p><b>سوال 3: آپ ﷺ کا اخلاق کیسا تھا؟</b></p>
-<div class="answer">جواب: آپ ﷺ نہایت سچے، امانت دار، مہربان اور بہترین اخلاق کے مالک تھے۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>رسول اللہ ﷺ کے اخلاق پر نوٹ لکھیں۔</b></p>
-<div class="answer">رسول اللہ ﷺ پوری انسانیت کے لیے بہترین نمونہ ہیں۔ آپ ﷺ ہمیشہ سچ بولتے، وعدہ پورا کرتے، غریبوں کی مدد کرتے اور سب کے ساتھ نرمی سے پیش آتے تھے۔ ہمیں بھی آپ ﷺ کی تعلیمات پر عمل کرنا چاہیے۔</div>
+<h2>📝 اسلامیات آن لائن ٹیسٹ</h2>
+<p>درست جواب منتخب کریں۔</p>
+
+<form id="quiz">
+
+<div class="question">
+1۔ قرآن مجید کس نبی پر نازل ہوا؟
 </div>
-
-<div class="card">
-<h2>باب 4: اخلاق و آداب</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: سچ بولنے کا کیا فائدہ ہے؟</b></p>
-<div class="answer">جواب: سچ بولنے سے اعتماد پیدا ہوتا ہے اور اللہ تعالیٰ کی رضا حاصل ہوتی ہے۔</div>
-<p><b>سوال 2: والدین کے ساتھ کیسا سلوک کرنا چاہیے؟</b></p>
-<div class="answer">جواب: والدین کے ساتھ عزت، محبت اور نرمی سے پیش آنا چاہیے۔</div>
-<p><b>سوال 3: غیبت کیا ہے؟</b></p>
-<div class="answer">جواب: کسی شخص کی غیر موجودگی میں اس کی ایسی برائی بیان کرنا جسے وہ ناپسند کرے، غیبت ہے۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>حسن اخلاق کی اہمیت بیان کریں۔</b></p>
-<div class="answer">حسن اخلاق ایک مسلمان کی اہم صفت ہے۔ اچھے اخلاق سے معاشرے میں محبت، امن اور بھائی چارہ پیدا ہوتا ہے۔ ہمیں سچ بولنا، وعدہ پورا کرنا اور دوسروں کی عزت کرنی چاہیے۔</div>
-</div>
-
-<div class="card">
-<h2>باب 5: معاشرتی اور مالی معاملات</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: امانت داری کیا ہے؟</b></p>
-<div class="answer">جواب: کسی کی دی ہوئی چیز یا ذمہ داری کو حفاظت سے پورا کرنا امانت داری ہے۔</div>
-<p><b>سوال 2: زکوٰۃ کا مقصد کیا ہے؟</b></p>
-<div class="answer">جواب: زکوٰۃ سے مال پاک ہوتا ہے اور ضرورت مندوں کی مدد ہوتی ہے۔</div>
-<p><b>سوال 3: سود کیا ہے؟</b></p>
-<div class="answer">جواب: قرض یا لین دین میں شرعی اصولوں کے خلاف طے شدہ اضافی رقم سود کہلاتی ہے۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>اسلام میں حقوق العباد کی اہمیت لکھیں۔</b></p>
-<div class="answer">اسلام میں انسانوں کے حقوق کی ادائیگی بہت اہم ہے۔ ہمیں والدین، رشتہ داروں، پڑوسیوں، یتیموں اور ضرورت مندوں کے حقوق ادا کرنے چاہییں۔ کسی پر ظلم نہیں کرنا چاہیے اور سب کے ساتھ انصاف کرنا چاہیے۔</div>
-</div>
-
-<div class="card">
-<h2>باب 6: اسلامی رہنمائی اور شخصیات</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: اسلام میں رہنمائی کے بنیادی ذرائع کون سے ہیں؟</b></p>
-<div class="answer">جواب: قرآن مجید اور سنتِ رسول ﷺ بنیادی ذرائع ہیں۔</div>
-<p><b>سوال 2: صحابہ کرامؓ کون تھے؟</b></p>
-<div class="answer">جواب: جن خوش نصیب لوگوں نے ایمان کی حالت میں رسول اللہ ﷺ کی صحبت پائی اور ایمان پر وفات پائی، وہ صحابہ کرامؓ ہیں۔</div>
-<p><b>سوال 3: خلفائے راشدین کتنے ہیں؟</b></p>
-<div class="answer">جواب: خلفائے راشدین چار ہیں۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>خلفائے راشدین کے نام لکھیں۔</b></p>
-<div class="answer">1۔ حضرت ابوبکر صدیقؓ<br>2۔ حضرت عمر فاروقؓ<br>3۔ حضرت عثمان غنیؓ<br>4۔ حضرت علی المرتضیٰؓ</div>
-</div>
-
-<div class="card">
-<h2>باب 7: اسلامی تعلیمات اور جدید زندگی</h2>
-<h3>مختصر سوالات</h3>
-<p><b>سوال 1: اسلام صفائی کے بارے میں کیا تعلیم دیتا ہے؟</b></p>
-<div class="answer">جواب: اسلام جسم، لباس، گھر اور ماحول کی صفائی کی تعلیم دیتا ہے۔</div>
-<p><b>سوال 2: علم حاصل کرنا کیوں ضروری ہے؟</b></p>
-<div class="answer">جواب: علم انسان کو اچھے اور برے میں فرق کرنا سکھاتا ہے اور ترقی کا راستہ دکھاتا ہے۔</div>
-<p><b>سوال 3: اسلام امن کے بارے میں کیا تعلیم دیتا ہے؟</b></p>
-<div class="answer">جواب: اسلام امن، انصاف، محبت اور دوسروں کے حقوق کی حفاظت کی تعلیم دیتا ہے۔</div>
-<h3>تفصیلی سوال</h3>
-<p><b>جدید زندگی میں اسلامی تعلیمات کی اہمیت لکھیں۔</b></p>
-<div class="answer">اسلامی تعلیمات ہر دور کے لیے رہنمائی فراہم کرتی ہیں۔ ہمیں جدید ٹیکنالوجی اور علم سے فائدہ اٹھاتے ہوئے سچائی، انصاف، دیانت داری اور اچھے اخلاق کو اپنانا چاہیے۔</div>
-</div>
-
-</div>
-
-<div class="card">
-<h2>📝 اسلامیات MCQs ٹیسٹ</h2>
-<p>درست جواب منتخب کریں:</p>
-
-<div id="quiz">
-<p>1۔ قرآن مجید کس پر نازل ہوا؟</p>
 <label><input type="radio" name="q1" value="a"> حضرت موسیٰؑ</label><br>
 <label><input type="radio" name="q1" value="b"> حضرت محمد ﷺ</label><br>
 <label><input type="radio" name="q1" value="c"> حضرت عیسیٰؑ</label>
 
-<p>2۔ اسلام کے کتنے ارکان ہیں؟</p>
+<hr>
+
+<div class="question">
+2۔ اسلام کے کتنے ارکان ہیں؟
+</div>
 <label><input type="radio" name="q2" value="a"> تین</label><br>
 <label><input type="radio" name="q2" value="b"> چار</label><br>
 <label><input type="radio" name="q2" value="c"> پانچ</label>
 
-<p>3۔ آخری نبی کون ہیں؟</p>
-<label><input type="radio" name="q3" value="a"> حضرت محمد ﷺ</label><br>
-<label><input type="radio" name="q3" value="b"> حضرت آدمؑ</label><br>
-<label><input type="radio" name="q3" value="c"> حضرت ابراہیمؑ</label>
+<hr>
 
-<p>4۔ دن میں کتنی نمازیں فرض ہیں؟</p>
-<label><input type="radio" name="q4" value="a"> تین</label><br>
-<label><input type="radio" name="q4" value="b"> پانچ</label><br>
-<label><input type="radio" name="q4" value="c"> سات</label>
-
-<p>5۔ قرآن مجید کس زبان میں نازل ہوا؟</p>
-<label><input type="radio" name="q5" value="a"> فارسی</label><br>
-<label><input type="radio" name="q5" value="b"> اردو</label><br>
-<label><input type="radio" name="q5" value="c"> عربی</label>
+<div class="question">
+3۔ قرآن مجید کس زبان میں نازل ہوا؟
 </div>
+<label><input type="radio" name="q3" value="a"> اردو</label><br>
+<label><input type="radio" name="q3" value="b"> فارسی</label><br>
+<label><input type="radio" name="q3" value="c"> عربی</label>
 
-<button onclick="checkQuiz()">نتیجہ دیکھیں</button>
-<h3 id="result"></h3>
+<hr>
+
+<div class="question">
+4۔ آخری نبی کون ہیں؟
+</div>
+<label><input type="radio" name="q4" value="a"> حضرت آدمؑ</label><br>
+<label><input type="radio" name="q4" value="b"> حضرت محمد ﷺ</label><br>
+<label><input type="radio" name="q4" value="c"> حضرت ابراہیمؑ</label>
+
+<hr>
+
+<div class="question">
+5۔ نماز دن میں کتنی مرتبہ فرض ہے؟
+</div>
+<label><input type="radio" name="q5" value="a"> تین</label><br>
+<label><input type="radio" name="q5" value="b"> پانچ</label><br>
+<label><input type="radio" name="q5" value="c"> سات</label>
+
+<hr>
+
+<div class="question">
+6۔ قرآن مجید کی پہلی سورت کون سی ہے؟
+</div>
+<label><input type="radio" name="q6" value="a"> سورۃ الفاتحہ</label><br>
+<label><input type="radio" name="q6" value="b"> سورۃ البقرہ</label><br>
+<label><input type="radio" name="q6" value="c"> سورۃ الناس</label>
+
+<hr>
+
+<div class="question">
+7۔ ہجرت مدینہ کس شہر سے ہوئی؟
+</div>
+<label><input type="radio" name="q7" value="a"> طائف</label><br>
+<label><input type="radio" name="q7" value="b"> مکہ</label><br>
+<label><input type="radio" name="q7" value="c"> شام</label>
+
+<hr>
+
+<div class="question">
+8۔ زکوٰۃ کا بنیادی مقصد کیا ہے؟
+</div>
+<label><input type="radio" name="q8" value="a"> مال جمع کرنا</label><br>
+<label><input type="radio" name="q8" value="b"> مال پاک کرنا اور مستحقین کی مدد</label><br>
+<label><input type="radio" name="q8" value="c"> تجارت بڑھانا</label>
+
+<hr>
+
+<div class="question">
+9۔ قرآن مجید اللہ تعالیٰ کی کون سی کتاب ہے؟
+</div>
+<label><input type="radio" name="q9" value="a"> پہلی</label><br>
+<label><input type="radio" name="q9" value="b"> آخری</label><br>
+<label><input type="radio" name="q9" value="c"> دوسری</label>
+
+<hr>
+
+<div class="question">
+10۔ اسلامی تعلیمات کس چیز کا درس دیتی ہیں؟
+</div>
+<label><input type="radio" name="q10" value="a"> ظلم</label><br>
+<label><input type="radio" name="q10" value="b"> نفرت</label><br>
+<label><input type="radio" name="q10" value="c"> امن اور انصاف</label>
+
+<br>
+<button type="button" onclick="checkQuiz()">نتیجہ دیکھیں</button>
+<button type="reset" onclick="resetQuiz()">دوبارہ ٹیسٹ</button>
+</form>
+
+<div id="result"></div>
 </div>
 
 <div class="card">
-<h2>اہم اطلاع</h2>
-<p>یہ ابتدائی مطالعاتی نوٹس آسان زبان میں تیار کیے گئے ہیں۔ انہیں سرکاری پنجاب بورڈ کی مکمل یا لفظ بہ لفظ کتاب نہ سمجھیں۔ امتحان کی تیاری کے لیے اپنی اصل درسی کتاب اور استاد کے بتائے ہوئے نصاب سے بھی ضرور ملا لیں۔</p>
+<h2>📚 سرکاری کتاب حاصل کریں</h2>
+<p>
+پنجاب کے سرکاری تعلیمی ادارے کی ویب سائٹ پر
+جماعت نہم کی اسلامیات 2025-26 کی کتاب دستیاب ہے۔
+</p>
+<a href="https://pectaa.edu.pk/books-and-publications/"
+target="_blank">سرکاری کتابوں کی ویب سائٹ کھولیں</a>
+<br>
+<button onclick="window.print()">نوٹس پرنٹ کریں</button>
 </div>
 
-<a href="index.html">⬅ واپس ہوم پیج پر جائیں</a>
+<div class="card">
+<h2>اہم تعلیمی وضاحت</h2>
+<p>
+یہ ویب صفحہ طلبہ کے لیے ابتدائی مطالعاتی مواد اور
+مشقوں کا نظام ہے۔ اسے سرکاری کتاب کا مکمل یا لفظ
+بہ لفظ متبادل نہ سمجھیں۔ تمام سوالات، جوابات اور
+قرآنی حوالہ جات کو اصل درسی کتاب سے ملا کر پڑھیں۔
+</p>
+</div>
+
+<a href="index.html">⬅ واپس Abdul AI ہوم پیج</a>
 
 </div>
 
 <footer>
-<p>Abdul AI Education</p>
+<h3 style="color:white">Abdul AI Education</h3>
 <p>Founder & Admin: عبدالستار</p>
-<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+<p>Your Smart Education Platform</p>
+<p>© Abdul AI Education</p>
 </footer>
 
 <script>
+
+const chapterData = {
+
+1:{
+title:"قرآن مجید و حدیث نبوی ﷺ",
+topics:[
+"قرآن مجید کی تدوین اور اس کی حفاظت",
+"حفاظت و تدوین حدیث",
+"احادیث نبوی ﷺ"
+],
+questions:[
+["قرآن مجید کیا ہے؟",
+"قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے جو حضرت محمد ﷺ پر نازل ہوئی۔"],
+["قرآن مجید کی حفاظت کس کے ذمہ ہے؟",
+"اللہ تعالیٰ نے قرآن مجید کی حفاظت کا ذمہ خود لیا ہے۔"],
+["حدیث کسے کہتے ہیں؟",
+"رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔"]
+],
+detail:[
+["قرآن مجید کی اہمیت بیان کریں۔",
+"قرآن مجید انسانیت کے لیے مکمل ہدایت ہے۔ یہ عقائد، عبادات، اخلاق اور زندگی گزارنے کے اصول سکھاتا ہے۔ مسلمانوں کو اس کی تلاوت، سمجھنے اور اس پر عمل کرنے کی کوشش کرنی چاہیے۔"]
+]
+},
+
+2:{
+title:"ایمانیات و عبادات",
+topics:[
+"عقیدہ توحید",
+"عقیدہ رسالت",
+"ملائکہ (فرشتے)",
+"کتب سماویہ",
+"عقیدہ آخرت",
+"نماز، روزہ، زکوٰۃ اور حج"
+],
+questions:[
+["توحید سے کیا مراد ہے؟",
+"اللہ تعالیٰ کو اپنی ذات، صفات اور اختیارات میں یکتا ماننا توحید ہے۔"],
+["رسالت سے کیا مراد ہے؟",
+"اللہ تعالیٰ کا اپنے منتخب بندوں کو انسانوں کی رہنمائی کے لیے نبی اور رسول بنانا رسالت ہے۔"],
+["ملائکہ کون ہیں؟",
+"فرشتے اللہ تعالیٰ کی نورانی مخلوق ہیں جو اس کے احکام کی تعمیل کرتے ہیں۔"],
+["آسمانی کتابیں کسے کہتے ہیں؟",
+"وہ کتابیں جو اللہ تعالیٰ نے اپنے انبیاء پر نازل فرمائیں آسمانی کتابیں کہلاتی ہیں۔"],
+["آخرت سے کیا مراد ہے؟",
+"دنیا کی زندگی کے بعد ہمیشہ رہنے والی زندگی آخرت ہے۔"]
+],
+detail:[
+["عقیدہ توحید کی اہمیت بیان کریں۔",
+"عقیدہ توحید اسلام کی بنیاد ہے۔ یہ انسان کو صرف اللہ تعالیٰ کی عبادت اور اسی پر بھروسہ کرنے کی تعلیم دیتا ہے۔ اس سے انسان میں عاجزی، اخلاص اور اللہ تعالیٰ کی اطاعت پیدا ہوتی ہے۔"]
+]
+},
+
+3:{
+title:"سیرت النبی ﷺ",
+topics:[
+"فتح مکہ",
+"غزوہ حنین",
+"عام الوفود",
+"غزوہ تبوک",
+"حجۃ الوداع",
+"وصال نبوی ﷺ"
+],
+questions:[
+["فتح مکہ کب ہوئی؟",
+"فتح مکہ 8 ہجری میں ہوئی۔"],
+["فتح مکہ کے موقع پر رسول اللہ ﷺ نے کیا تعلیم دی؟",
+"آپ ﷺ نے عفو و درگزر، رحم اور معافی کی بہترین مثال قائم فرمائی۔"],
+["حجۃ الوداع کیا ہے؟",
+"رسول اللہ ﷺ کا آخری حج حجۃ الوداع کہلاتا ہے۔"]
+],
+detail:[
+["فتح مکہ کے اہم نتائج لکھیں۔",
+"فتح مکہ سے اسلام کو بڑی کامیابی حاصل ہوئی۔ خانہ کعبہ بتوں سے پاک ہوا اور لوگوں کو اسلام کی دعوت عام طور پر پہنچی۔ رسول اللہ ﷺ نے دشمنوں کو معاف فرما کر اعلیٰ اخلاق کا مظاہرہ کیا۔"]
+]
+},
+
+4:{
+title:"اخلاق و آداب",
+topics:[
+"شکر و قناعت",
+"امانت و دیانت",
+"حسن اخلاق",
+"سچائی اور وعدہ پورا کرنا"
+],
+questions:[
+["شکر کسے کہتے ہیں؟",
+"اللہ تعالیٰ کی نعمتوں کا اعتراف اور ان پر اس کی حمد بیان کرنا شکر ہے۔"],
+["قناعت کیا ہے؟",
+"اللہ تعالیٰ کی عطا پر راضی رہنا اور لالچ سے بچنا قناعت ہے۔"],
+["امانت داری کیا ہے؟",
+"کسی کی امانت کی حفاظت اور ذمہ داری کو پورا کرنا امانت داری ہے۔"]
+],
+detail:[
+["امانت و دیانت کی اہمیت بیان کریں۔",
+"امانت و دیانت اچھے مسلمان کی اہم صفات ہیں۔ ان سے معاشرے میں اعتماد پیدا ہوتا ہے۔ ہمیں ہر معاملے میں سچائی اور ایمانداری اختیار کرنی چاہیے۔"]
+]
+},
+
+5:{
+title:"حسن معاملات و معاشرت",
+topics:[
+"قسم کے احکام و مسائل",
+"گواہی کے احکام و مسائل",
+"حقوق العباد",
+"حسن معاشرت"
+],
+questions:[
+["حقوق العباد سے کیا مراد ہے؟",
+"بندوں کے ایک دوسرے پر واجب حقوق کو حقوق العباد کہتے ہیں۔"],
+["گواہی میں کس بات کا خیال رکھنا چاہیے؟",
+"گواہی دیتے وقت سچائی اور انصاف کا خیال رکھنا چاہیے۔"],
+["اچھی معاشرت کیا ہے؟",
+"دوسروں کے ساتھ عزت، محبت، انصاف اور نرمی سے پیش آنا اچھی معاشرت ہے۔"]
+],
+detail:[
+["اسلام میں حقوق العباد کی اہمیت لکھیں۔",
+"اسلام انسانوں کے حقوق کی ادائیگی پر زور دیتا ہے۔ والدین، رشتہ داروں، پڑوسیوں، یتیموں اور ضرورت مندوں کے حقوق ادا کرنا چاہیے۔ کسی پر ظلم نہیں کرنا چاہیے۔"]
+]
+},
+
+6:{
+title:"ہدایت کے سرچشمے اور مشاہیر اسلام",
+topics:[
+"قرآن و سنت کی رہنمائی",
+"صحابہ کرامؓ",
+"اسلامی شخصیات",
+"علماء اور صوفیائے کرام"
+],
+questions:[
+["اسلام کے بنیادی سرچشمے کون سے ہیں؟",
+"قرآن مجید اور سنت رسول ﷺ اسلامی رہنمائی کے بنیادی سرچشمے ہیں۔"],
+["صحابی کسے کہتے ہیں؟",
+"جس نے ایمان کی حالت میں رسول اللہ ﷺ کی صحبت پائی اور ایمان پر وفات پائی وہ صحابی ہے۔"],
+["علماء کا معاشرے میں کیا کردار ہے؟",
+"علماء دین کی تعلیم دیتے اور لوگوں کی دینی رہنمائی کرتے ہیں۔"]
+],
+detail:[
+["اسلامی شخصیات کی خدمات کی اہمیت بیان کریں۔",
+"اسلامی شخصیات نے دین کی تعلیم، خدمت خلق اور علم کی اشاعت میں اہم کردار ادا کیا۔ ان کی زندگیوں سے علم، اخلاص، صبر اور خدمت کا سبق ملتا ہے۔"]
+]
+},
+
+7:{
+title:"اسلامی تعلیمات اور عصر حاضر کے تقاضے",
+topics:[
+"خود اعتمادی اور خود انحصاری",
+"جسمانی و ذہنی صحت",
+"اسلامی معاشرت",
+"جدید زندگی میں اسلامی رہنمائی"
+],
+questions:[
+["خود اعتمادی کیا ہے؟",
+"اپنی صلاحیتوں پر اعتماد کرنا خود اعتمادی کہلاتا ہے۔"],
+["اسلام صفائی کے بارے میں کیا تعلیم دیتا ہے؟",
+"اسلام جسم، لباس اور ماحول کی صفائی کی تعلیم دیتا ہے۔"],
+["اسلامی تعلیمات آج بھی کیوں ضروری ہیں؟",
+"اسلامی تعلیمات ہر دور میں انسان کی اخلاقی اور معاشرتی رہنمائی کرتی ہیں۔"]
+],
+detail:[
+["عصر حاضر میں اسلامی تعلیمات کی اہمیت بیان کریں۔",
+"اسلامی تعلیمات موجودہ دور میں بھی انسان کو امن، انصاف، دیانت داری اور اچھے اخلاق کا درس دیتی ہیں۔ ہمیں جدید علم اور ٹیکنالوجی سے فائدہ اٹھاتے ہوئے اسلامی اصولوں پر عمل کرنا چاہیے۔"]
+]
+}
+
+};
+
+function openChapter(n){
+let c=chapterData[n];
+let html="<h2>"+c.title+"</h2>";
+html+="<h3>اہم موضوعات</h3><ul>";
+c.topics.forEach(t=>html+="<li>"+t+"</li>");
+html+="</ul><h3>مختصر سوالات و جوابات</h3>";
+c.questions.forEach(q=>{
+html+="<p><b>"+q[0]+"</b></p>";
+html+='<div class="answer">جواب: '+q[1]+'</div>';
+});
+html+="<h3>تفصیلی سوالات</h3>";
+c.detail.forEach(q=>{
+html+="<p><b>"+q[0]+"</b></p>";
+html+='<div class="answer">'+q[1]+'</div>';
+});
+document.getElementById("chapterDetails").innerHTML=html;
+document.getElementById("chapters").style.display="none";
+document.getElementById("chapterContent").style.display="block";
+window.scrollTo(0,0);
+}
+
+function closeChapter(){
+document.getElementById("chapterContent").style.display="none";
+document.getElementById("chapters").style.display="block";
+}
+
 function searchNotes(){
 let value=document.getElementById("search").value.toLowerCase();
-document.querySelectorAll("#notes .card").forEach(card=>{
+document.querySelectorAll("#chapters .chapter").forEach(card=>{
 card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 });
 }
 
 function checkQuiz(){
-let answers={q1:"b",q2:"c",q3:"a",q4:"b",q5:"c"};
+let answers={
+q1:"b",q2:"c",q3:"c",q4:"b",q5:"b",
+q6:"a",q7:"b",q8:"b",q9:"b",q10:"c"
+};
 let score=0;
 for(let q in answers){
 let selected=document.querySelector('input[name="'+q+'"]:checked');
 if(selected && selected.value===answers[q]) score++;
 }
 document.getElementById("result").innerText=
-"آپ کے نمبر: "+score+" / 5";
+"آپ کے نمبر: "+score+" / 10";
 }
+
+function resetQuiz(){
+document.getElementById("result").innerText="";
+}
+
 </script>
 </body>
      </html>
-  
+            
