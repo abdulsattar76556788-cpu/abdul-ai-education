@@ -1,62 +1,215 @@
 
-<div class="card" id="lesson">
-  <h2>📚 باب اول: قرآن مجید و حدیث نبوی ﷺ</h2>
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul AI - اسلامیات جماعت نہم</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.9}
+header{background:linear-gradient(120deg,#063b35,#087f65);color:white;text-align:center;padding:25px 12px}
+header h1{margin:0;font-size:27px}
+header p{margin:5px}
+.container{max-width:900px;margin:auto;padding:15px}
+.card{background:white;padding:17px;margin:14px 0;border-radius:13px;box-shadow:0 3px 12px #0001}
+h2{color:#087f65}
+h3{color:#164e43}
+input{width:100%;padding:13px;border:1px solid #bbb;border-radius:9px;font-size:16px}
+button{background:#087f65;color:white;border:0;padding:11px 17px;border-radius:8px;margin:5px;cursor:pointer;font-size:15px}
+button:hover{background:#055344}
+.answer{background:#e9f8f1;padding:10px;border-radius:8px;margin:8px 0}
+footer{text-align:center;background:#063b35;color:white;padding:15px;margin-top:25px}
+a{color:#087f65}
+</style>
+</head>
+<body>
 
-  <button onclick="readNotes()">📖 آن لائن پڑھیں</button>
-  <button onclick="downloadNotes()">📄 PDF / نوٹس ڈاؤن لوڈ</button>
-  <button onclick="showQuestions()">📝 سوالات و جوابات</button>
+<header>
+<h1>📚 Abdul AI Education</h1>
+<p>اسلامیات جماعت نہم | Class 9 Islamic Studies</p>
+<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+</header>
 
-  <div id="lessonContent" class="note">
-    <h3>قرآن مجید کا تعارف</h3>
-    قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے۔
-    یہ حضرت محمد ﷺ پر نازل ہوئی۔
-    قرآن مجید تمام انسانوں کے لیے ہدایت ہے۔
+<div class="container">
 
-    <h3>حدیث نبوی ﷺ</h3>
-    رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔
-    حدیث قرآن مجید کی تشریح کرتی ہے۔
-  </div>
+<div class="card">
+<h2>خوش آمدید!</h2>
+<p>اس صفحے پر جماعت نہم کے طلبہ کے لیے اسلامیات کے آسان نوٹس، مختصر سوالات، تفصیلی سوالات اور MCQs فراہم کیے گئے ہیں۔</p>
+<input id="search" placeholder="سبق یا سوال تلاش کریں..." oninput="searchNotes()">
 </div>
 
+<div id="notes">
+
+<div class="card">
+<h2>باب 1: قرآن مجید اور حدیث</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: قرآن مجید کیا ہے؟</b></p>
+<div class="answer">جواب: قرآن مجید اللہ تعالیٰ کی آخری کتاب ہے جو حضرت محمد ﷺ پر نازل ہوئی۔</div>
+<p><b>سوال 2: قرآن مجید کس زبان میں نازل ہوا؟</b></p>
+<div class="answer">جواب: قرآن مجید عربی زبان میں نازل ہوا۔</div>
+<p><b>سوال 3: حدیث کسے کہتے ہیں؟</b></p>
+<div class="answer">جواب: رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>قرآن مجید کی اہمیت بیان کریں۔</b></p>
+<div class="answer">قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے۔ یہ انسانوں کے لیے مکمل ہدایت ہے۔ اس میں عقائد، عبادات، اخلاق اور زندگی گزارنے کے اصول بیان کیے گئے ہیں۔ ہمیں قرآن مجید پڑھنا، سمجھنا اور اس پر عمل کرنا چاہیے۔</div>
+</div>
+
+<div class="card">
+<h2>باب 2: ایمانیات اور عبادات</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: ایمان کسے کہتے ہیں؟</b></p>
+<div class="answer">جواب: اللہ تعالیٰ اور اس کے بتائے ہوئے تمام بنیادی عقائد کو دل سے ماننا ایمان ہے۔</div>
+<p><b>سوال 2: اسلام کے کتنے ارکان ہیں؟</b></p>
+<div class="answer">جواب: اسلام کے پانچ ارکان ہیں۔</div>
+<p><b>سوال 3: نماز دن میں کتنی مرتبہ فرض ہے؟</b></p>
+<div class="answer">جواب: دن اور رات میں پانچ وقت کی نماز فرض ہے۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>اسلام کے پانچ ارکان لکھیں۔</b></p>
+<div class="answer">1۔ کلمہ شہادت<br>2۔ نماز قائم کرنا<br>3۔ زکوٰۃ ادا کرنا<br>4۔ رمضان کے روزے رکھنا<br>5۔ استطاعت رکھنے والے کے لیے حج کرنا۔</div>
+</div>
+
+<div class="card">
+<h2>باب 3: سیرت النبی ﷺ</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: ہمارے آخری نبی کون ہیں؟</b></p>
+<div class="answer">جواب: حضرت محمد ﷺ اللہ تعالیٰ کے آخری نبی ہیں۔</div>
+<p><b>سوال 2: ہجرت کے وقت آپ ﷺ کہاں تشریف لے گئے؟</b></p>
+<div class="answer">جواب: آپ ﷺ مکہ مکرمہ سے مدینہ منورہ تشریف لے گئے۔</div>
+<p><b>سوال 3: آپ ﷺ کا اخلاق کیسا تھا؟</b></p>
+<div class="answer">جواب: آپ ﷺ نہایت سچے، امانت دار، مہربان اور بہترین اخلاق کے مالک تھے۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>رسول اللہ ﷺ کے اخلاق پر نوٹ لکھیں۔</b></p>
+<div class="answer">رسول اللہ ﷺ پوری انسانیت کے لیے بہترین نمونہ ہیں۔ آپ ﷺ ہمیشہ سچ بولتے، وعدہ پورا کرتے، غریبوں کی مدد کرتے اور سب کے ساتھ نرمی سے پیش آتے تھے۔ ہمیں بھی آپ ﷺ کی تعلیمات پر عمل کرنا چاہیے۔</div>
+</div>
+
+<div class="card">
+<h2>باب 4: اخلاق و آداب</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: سچ بولنے کا کیا فائدہ ہے؟</b></p>
+<div class="answer">جواب: سچ بولنے سے اعتماد پیدا ہوتا ہے اور اللہ تعالیٰ کی رضا حاصل ہوتی ہے۔</div>
+<p><b>سوال 2: والدین کے ساتھ کیسا سلوک کرنا چاہیے؟</b></p>
+<div class="answer">جواب: والدین کے ساتھ عزت، محبت اور نرمی سے پیش آنا چاہیے۔</div>
+<p><b>سوال 3: غیبت کیا ہے؟</b></p>
+<div class="answer">جواب: کسی شخص کی غیر موجودگی میں اس کی ایسی برائی بیان کرنا جسے وہ ناپسند کرے، غیبت ہے۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>حسن اخلاق کی اہمیت بیان کریں۔</b></p>
+<div class="answer">حسن اخلاق ایک مسلمان کی اہم صفت ہے۔ اچھے اخلاق سے معاشرے میں محبت، امن اور بھائی چارہ پیدا ہوتا ہے۔ ہمیں سچ بولنا، وعدہ پورا کرنا اور دوسروں کی عزت کرنی چاہیے۔</div>
+</div>
+
+<div class="card">
+<h2>باب 5: معاشرتی اور مالی معاملات</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: امانت داری کیا ہے؟</b></p>
+<div class="answer">جواب: کسی کی دی ہوئی چیز یا ذمہ داری کو حفاظت سے پورا کرنا امانت داری ہے۔</div>
+<p><b>سوال 2: زکوٰۃ کا مقصد کیا ہے؟</b></p>
+<div class="answer">جواب: زکوٰۃ سے مال پاک ہوتا ہے اور ضرورت مندوں کی مدد ہوتی ہے۔</div>
+<p><b>سوال 3: سود کیا ہے؟</b></p>
+<div class="answer">جواب: قرض یا لین دین میں شرعی اصولوں کے خلاف طے شدہ اضافی رقم سود کہلاتی ہے۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>اسلام میں حقوق العباد کی اہمیت لکھیں۔</b></p>
+<div class="answer">اسلام میں انسانوں کے حقوق کی ادائیگی بہت اہم ہے۔ ہمیں والدین، رشتہ داروں، پڑوسیوں، یتیموں اور ضرورت مندوں کے حقوق ادا کرنے چاہییں۔ کسی پر ظلم نہیں کرنا چاہیے اور سب کے ساتھ انصاف کرنا چاہیے۔</div>
+</div>
+
+<div class="card">
+<h2>باب 6: اسلامی رہنمائی اور شخصیات</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: اسلام میں رہنمائی کے بنیادی ذرائع کون سے ہیں؟</b></p>
+<div class="answer">جواب: قرآن مجید اور سنتِ رسول ﷺ بنیادی ذرائع ہیں۔</div>
+<p><b>سوال 2: صحابہ کرامؓ کون تھے؟</b></p>
+<div class="answer">جواب: جن خوش نصیب لوگوں نے ایمان کی حالت میں رسول اللہ ﷺ کی صحبت پائی اور ایمان پر وفات پائی، وہ صحابہ کرامؓ ہیں۔</div>
+<p><b>سوال 3: خلفائے راشدین کتنے ہیں؟</b></p>
+<div class="answer">جواب: خلفائے راشدین چار ہیں۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>خلفائے راشدین کے نام لکھیں۔</b></p>
+<div class="answer">1۔ حضرت ابوبکر صدیقؓ<br>2۔ حضرت عمر فاروقؓ<br>3۔ حضرت عثمان غنیؓ<br>4۔ حضرت علی المرتضیٰؓ</div>
+</div>
+
+<div class="card">
+<h2>باب 7: اسلامی تعلیمات اور جدید زندگی</h2>
+<h3>مختصر سوالات</h3>
+<p><b>سوال 1: اسلام صفائی کے بارے میں کیا تعلیم دیتا ہے؟</b></p>
+<div class="answer">جواب: اسلام جسم، لباس، گھر اور ماحول کی صفائی کی تعلیم دیتا ہے۔</div>
+<p><b>سوال 2: علم حاصل کرنا کیوں ضروری ہے؟</b></p>
+<div class="answer">جواب: علم انسان کو اچھے اور برے میں فرق کرنا سکھاتا ہے اور ترقی کا راستہ دکھاتا ہے۔</div>
+<p><b>سوال 3: اسلام امن کے بارے میں کیا تعلیم دیتا ہے؟</b></p>
+<div class="answer">جواب: اسلام امن، انصاف، محبت اور دوسروں کے حقوق کی حفاظت کی تعلیم دیتا ہے۔</div>
+<h3>تفصیلی سوال</h3>
+<p><b>جدید زندگی میں اسلامی تعلیمات کی اہمیت لکھیں۔</b></p>
+<div class="answer">اسلامی تعلیمات ہر دور کے لیے رہنمائی فراہم کرتی ہیں۔ ہمیں جدید ٹیکنالوجی اور علم سے فائدہ اٹھاتے ہوئے سچائی، انصاف، دیانت داری اور اچھے اخلاق کو اپنانا چاہیے۔</div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>📝 اسلامیات MCQs ٹیسٹ</h2>
+<p>درست جواب منتخب کریں:</p>
+
+<div id="quiz">
+<p>1۔ قرآن مجید کس پر نازل ہوا؟</p>
+<label><input type="radio" name="q1" value="a"> حضرت موسیٰؑ</label><br>
+<label><input type="radio" name="q1" value="b"> حضرت محمد ﷺ</label><br>
+<label><input type="radio" name="q1" value="c"> حضرت عیسیٰؑ</label>
+
+<p>2۔ اسلام کے کتنے ارکان ہیں؟</p>
+<label><input type="radio" name="q2" value="a"> تین</label><br>
+<label><input type="radio" name="q2" value="b"> چار</label><br>
+<label><input type="radio" name="q2" value="c"> پانچ</label>
+
+<p>3۔ آخری نبی کون ہیں؟</p>
+<label><input type="radio" name="q3" value="a"> حضرت محمد ﷺ</label><br>
+<label><input type="radio" name="q3" value="b"> حضرت آدمؑ</label><br>
+<label><input type="radio" name="q3" value="c"> حضرت ابراہیمؑ</label>
+
+<p>4۔ دن میں کتنی نمازیں فرض ہیں؟</p>
+<label><input type="radio" name="q4" value="a"> تین</label><br>
+<label><input type="radio" name="q4" value="b"> پانچ</label><br>
+<label><input type="radio" name="q4" value="c"> سات</label>
+
+<p>5۔ قرآن مجید کس زبان میں نازل ہوا؟</p>
+<label><input type="radio" name="q5" value="a"> فارسی</label><br>
+<label><input type="radio" name="q5" value="b"> اردو</label><br>
+<label><input type="radio" name="q5" value="c"> عربی</label>
+</div>
+
+<button onclick="checkQuiz()">نتیجہ دیکھیں</button>
+<h3 id="result"></h3>
+</div>
+
+<div class="card">
+<h2>اہم اطلاع</h2>
+<p>یہ ابتدائی مطالعاتی نوٹس آسان زبان میں تیار کیے گئے ہیں۔ انہیں سرکاری پنجاب بورڈ کی مکمل یا لفظ بہ لفظ کتاب نہ سمجھیں۔ امتحان کی تیاری کے لیے اپنی اصل درسی کتاب اور استاد کے بتائے ہوئے نصاب سے بھی ضرور ملا لیں۔</p>
+</div>
+
+<a href="index.html">⬅ واپس ہوم پیج پر جائیں</a>
+
+</div>
+
+<footer>
+<p>Abdul AI Education</p>
+<p>Founder & Admin: عبدالستار</p>
+<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+</footer>
+
 <script>
-const lessonText = `
-قرآن مجید کا تعارف
-
-قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے۔
-یہ حضرت محمد ﷺ پر نازل ہوئی۔
-قرآن مجید تمام انسانوں کے لیے ہدایت ہے۔
-
-حدیث نبوی ﷺ
-
-رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔
-حدیث قرآن مجید کی تشریح کرتی ہے۔
-`;
-
-function readNotes(){
- document.getElementById("lessonContent").style.display="block";
+function searchNotes(){
+let value=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll("#notes .card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
 }
 
-function showQuestions(){
- document.getElementById("lessonContent").innerHTML=`
- <h3>مختصر سوالات و جوابات</h3>
- <p><b>سوال 1:</b> قرآن مجید کس پر نازل ہوا؟</p>
- <p>جواب: حضرت محمد ﷺ پر۔</p>
- <p><b>سوال 2:</b> حدیث کسے کہتے ہیں؟</p>
- <p>جواب: رسول اللہ ﷺ کے اقوال، افعال اور تقریرات کو حدیث کہتے ہیں۔</p>
- `;
+function checkQuiz(){
+let answers={q1:"b",q2:"c",q3:"a",q4:"b",q5:"c"};
+let score=0;
+for(let q in answers){
+let selected=document.querySelector('input[name="'+q+'"]:checked');
+if(selected && selected.value===answers[q]) score++;
 }
-
-function downloadNotes(){
- const blob = new Blob(
-  ["\uFEFF"+lessonText],
-  {type:"text/plain;charset=utf-8"}
- );
- const url=URL.createObjectURL(blob);
- const a=document.createElement("a");
- a.href=url;
- a.download="Abdul-AI-Islamiat-Notes.txt";
- a.click();
- URL.revokeObjectURL(url);
+document.getElementById("result").innerText=
+"آپ کے نمبر: "+score+" / 5";
 }
 </script>
-
+</body>
+     </html>
+  
