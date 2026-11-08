@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#091426">
+<title>Abdul AI Education</title>
+<meta name="description" content="Abdul AI Education - Punjab Board Smart Learning Platform">
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#091426;
+ color:white;
+ line-height:1.8;
+}
+header{
+ background:linear-gradient(135deg,#102d54,#091426);
+ padding:25px 15px;
+ text-align:center;
+ border-bottom:2px solid #d6a94d;
+}
+.logo{
+ width:75px;height:75px;
+ border-radius:22px;
+ background:linear-gradient(135deg,#e8c36b,#a87520);
+ color:#10213c;
+ display:grid;
+ place-items:center;
+ font-size:35px;
+ margin:auto;
+}
+h1{color:#f3ce76;margin:8px}
+header p{margin:3px;color:#ddd}
+.admin{
+ color:#f3ce76;
+ font-size:14px;
+}
+nav{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:8px;
+ padding:12px;
+ background:#10213a;
+ position:sticky;
+ top:0;
+ z-index:5;
+}
+button{
+ border:1px solid #d6b15d;
+ border-radius:10px;
+ padding:10px 15px;
+ background:#183456;
+ color:white;
+ cursor:pointer;
+}
+button:hover{background:#a97b29}
+.container{max-width:950px;margin:auto;padding:15px}
+.hero{
+ text-align:center;
+ padding:28px 12px;
+ background:linear-gradient(135deg,#163c68,#10213a);
+ border-radius:18px;
+ margin:15px 0;
+}
+.hero h2{color:#f4d27f}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+ gap:12px;
+}
+.card{
+ background:#122641;
+ border:1px solid #294769;
+ border-radius:15px;
+ padding:17px;
+ text-align:center;
+}
+.card h3{color:#f3ce76;margin:5px}
+.card .emoji{font-size:30px}
+.section{
+ background:#10213a;
+ border-radius:15px;
+ padding:18px;
+ margin:18px 0;
+}
+.section h2{color:#f3ce76}
+input,textarea,select{
+ width:100%;
+ padding:13px;
+ margin:8px 0;
+ border:1px solid #52708e;
+ border-radius:9px;
+ background:#091426;
+ color:white;
+ font-size:16px;
+}
+.result{
+ background:#091426;
+ padding:12px;
+ border-radius:10px;
+ margin-top:10px;
+ min-height:40px;
+ white-space:pre-wrap;
+}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#bbb;
+ border-top:1px solid #294769;
+}
+a{color:#f3ce76}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">📚</div>
+<h1>Abdul AI Education</h1>
+<p>Your Smart Education Platform</p>
+<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
+<div class="admin">عبدالستار | Founder & Admin</div>
+</header>
+
+<nav>
+<button onclick="show('home')">ہوم</button>
+<button onclick="show('subjects')">مضامین</button>
+<button onclick="show('notes')">نوٹس</button>
+<button onclick="show('test')">آن لائن ٹیسٹ</button>
+<button onclick="show('ai')">AI چیٹ</button>
+</nav>
+
+<main class="container">
+
+<div id="home">
+<div class="hero">
+<h2>خوش آمدید!</h2>
+<h3>میں Abdul AI Education ہوں</h3>
+<p>پنجاب بورڈ کے طلبہ کے لیے مفت تعلیمی پلیٹ فارم</p>
+<button onclick="show('subjects')">تعلیم شروع کریں</button>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="emoji">🎓</div>
+<h3>جماعت نہم</h3>
+<p>9th Class</p>
+</div>
+<div class="card">
+<div class="emoji">📖</div>
+<h3>جماعت دہم</h3>
+<p>10th Class</p>
+</div>
+<div class="card">
+<div class="emoji">📝</div>
+<h3>MCQs</h3>
+<p>آن لائن مشق</p>
+</div>
+<div class="card">
+<div class="emoji">🤖</div>
+<h3>Abdul AI</h3>
+<p>تعلیمی مدد</p>
+</div>
+</div>
+</div>
+
+<div id="subjects" class="section" hidden>
+<h2>📚 جماعت نہم و دہم کے مضامین</h2>
+<p>پنجاب بورڈ کے اہم مضامین</p>
+<div class="grid" id="subjectList"></div>
+</div>
+
+<div id="notes" class="section" hidden>
+<h2>📘 تعلیمی نوٹس</h2>
+<p>اپنے مضمون کا نام لکھیں:</p>
+<input id="noteSubject" placeholder="مثلاً اسلامیات، فزکس، انگلش">
+<textarea id="noteText" rows="5" placeholder="اپنے نوٹس یہاں لکھیں..."></textarea>
+<button onclick="saveNote()">نوٹس محفوظ کریں</button>
+<button onclick="downloadNote()">نوٹس ڈاؤن لوڈ کریں</button>
+<div id="noteResult" class="result"></div>
+</div>
+
+<div id="test" class="section" hidden>
+<h2>📝 اسلامیات MCQs ٹیسٹ</h2>
+<p>سوال 1: قرآن مجید کس نبی پر نازل ہوا؟</p>
+<div>
+<label><input type="radio" name="q1" value="a" style="width:auto"> حضرت موسیٰ علیہ السلام</label><br>
+<label><input type="radio" name="q1" value="b" style="width:auto"> حضرت محمد ﷺ</label><br>
+<label><input type="radio" name="q1" value="c" style="width:auto"> حضرت عیسیٰ علیہ السلام</label>
+</div>
+<p>سوال 2: اسلام کے کتنے بنیادی ارکان ہیں؟</p>
+<div>
+<label><input type="radio" name="q2" value="a" style="width:auto"> تین</label><br>
+<label><input type="radio" name="q2" value="b" style="width:auto"> چار</label><br>
+<label><input type="radio" name="q2" value="c" style="width:auto"> پانچ</label>
+</div>
+<button onclick="checkTest()">نتیجہ دیکھیں</button>
+<div id="testResult" class="result"></div>
+</div>
+
+<div id="ai" class="section" hidden>
+<h2>🤖 Abdul AI Assistant</h2>
+<p>اپنا تعلیمی سوال لکھیں:</p>
+<textarea id="question" rows="4" placeholder="اپنا سوال یہاں لکھیں..."></textarea>
+<button onclick="askAI()">سوال بھیجیں</button>
+<div id="answer" class="result">
+السلام علیکم! میں Abdul AI ہوں۔ اپنا سوال لکھیں۔
+</div>
+<p style="font-size:13px;color:#bbb">
+نوٹ: حقیقی AI جوابات کے لیے محفوظ AI API کنکشن ضروری ہے۔
+</p>
+</div>
+
+</main>
+
+<footer>
+<h3>Abdul AI Education</h3>
+<p>Founder & Admin: عبدالستار</p>
+<p>علم حاصل کریں، مستقبل روشن بنائیں ❤️</p>
+<p>© 2026 Abdul AI Education</p>
+</footer>
+
+<script>
+function show(id){
+ document.querySelectorAll('main > div').forEach(x=>x.hidden=true);
+ document.getElementById(id).hidden=false;
+ window.scrollTo(0,0);
+}
+
+const subjects=[
+"اسلامیات لازمی","ترجمۃ القرآن","اردو","انگلش",
+"ریاضی","فزکس","کیمسٹری","بیالوجی",
+"کمپیوٹر سائنس","مطالعہ پاکستان"
+];
+
+document.getElementById('subjectList').innerHTML=
+subjects.map((s,i)=>`
+<div class="card">
+<div class="emoji">📗</div>
+<h3>${s}</h3>
+<p>باب وار تعلیمی مواد</p>
+<button onclick="openSubject('${s}')">کھولیں</button>
+</div>`).join('');
+
+function openSubject(s){
+ alert(s+' کے نوٹس اور اسباق یہاں شامل کیے جائیں گے۔');
+}
+
+function saveNote(){
+ let s=document.getElementById('noteSubject').value;
+ let t=document.getElementById('noteText').value;
+ if(!s||!t){alert('مضمون اور نوٹس لکھیں');return;}
+ localStorage.setItem('abdul_note_'+s,t);
+ document.getElementById('noteResult').innerText='نوٹس محفوظ ہوگئے: '+s;
+}
+
+function downloadNote(){
+ let s=document.getElementById('noteSubject').value;
+ let t=document.getElementById('noteText').value;
+ if(!s||!t){alert('پہلے نوٹس لکھیں');return;}
+ let blob=new Blob([s+'\\n\\n'+t],{type:'text/plain;charset=utf-8'});
+ let a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);
+ a.download=s+'.txt';
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+
+function checkTest(){
+ let a=document.querySelector('input[name="q1"]:checked');
+ let b=document.querySelector('input[name="q2"]:checked');
+ if(!a||!b){alert('تمام سوالات حل کریں');return;}
+ let score=(a.value==='b'?1:0)+(b.value==='c'?1:0);
+ document.getElementById('testResult').innerText=
+ 'آپ کے نمبر: '+score+'/2';
+}
+
+function askAI(){
+ let q=document.getElementById('question').value.trim();
+ if(!q){alert('اپنا سوال لکھیں');return;}
+ document.getElementById('answer').innerText=
+ 'آپ کا سوال موصول ہوگیا: '+q+
+ '\\n\\nحقیقی AI جواب کے لیے محفوظ AI API منسلک کرنا ضروری ہے۔';
+}
+</script>
+
+</body>
+  </html>
+  
