@@ -1,4 +1,4 @@
-# 
+Abdul ai education 
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
@@ -7,26 +7,26 @@
 <title>Abdul AI Education</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f6ff;color:#172554}
-header{background:linear-gradient(135deg,#092f83,#7144d8);color:white;padding:25px 16px}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5ff;color:#172554}
+header{background:linear-gradient(135deg,#092f83,#7144d8);color:white;padding:22px 14px;text-align:center}
 .top{display:flex;justify-content:space-between;align-items:center}
-.admin{background:white;color:#1748a5;padding:8px 13px;border-radius:20px;font-weight:bold}
-header h1{text-align:center;font-size:32px}
-header h2{text-align:center}
-header p{text-align:center}
-nav{background:white;padding:14px;text-align:center;position:sticky;top:0;box-shadow:0 2px 8px #ddd;z-index:2}
-nav a{color:#1748a5;text-decoration:none;margin:8px;font-weight:bold}
-.hero{text-align:center;padding:35px 12px}
-.search{width:90%;max-width:450px;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:16px}
-.container{max-width:1000px;margin:auto;padding:15px}
+.admin{background:white;color:#1748a5;padding:9px 14px;border-radius:20px;font-weight:bold}
+header h1{font-size:32px;margin:18px 0 5px}
+nav{position:sticky;top:0;background:white;padding:14px 5px;text-align:center;box-shadow:0 2px 8px #ddd;z-index:5}
+nav a{color:#1748a5;text-decoration:none;margin:7px;font-weight:bold}
+.hero{text-align:center;padding:30px 12px}
+.search{width:95%;max-width:500px;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:16px}
+.container{max-width:1050px;margin:auto;padding:15px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
-.card{background:white;padding:20px 10px;border-radius:15px;text-align:center;box-shadow:0 3px 12px #dce5f5}
+.card{background:white;padding:18px 10px;border-radius:15px;text-align:center;box-shadow:0 3px 12px #dce5f5}
 .card h3{color:#1748a5}
-button{background:#2458d8;color:white;border:0;border-radius:9px;padding:11px 18px;font-size:15px}
-button:active{background:#6038c9}
-#details{display:none;background:white;margin:20px auto;padding:20px;border-radius:15px;max-width:800px}
+button{background:#2458d8;color:white;border:0;border-radius:9px;padding:11px 18px;font-size:15px;cursor:pointer}
+button:hover{background:#6038c9}
+#details{display:none;background:white;margin:20px auto;padding:20px;border-radius:15px;max-width:850px;box-shadow:0 3px 12px #ddd}
 #details li{padding:8px}
+.subject{background:#f1f5ff;padding:12px;margin:10px 0;border-radius:10px}
 footer{background:#142b55;color:white;text-align:center;padding:25px;margin-top:35px}
+.small{font-size:13px;color:#64748b}
 </style>
 </head>
 <body>
@@ -46,86 +46,179 @@ footer{background:#142b55;color:white;text-align:center;padding:25px;margin-top:
 <nav>
 <a href="#home">ہوم</a>
 <a href="#courses">کلاسز</a>
+<a href="#tests">آن لائن ٹیسٹ</a>
 <a href="#about">ہمارے بارے میں</a>
 </nav>
 
 <section class="hero" id="home">
 <h2>خوش آمدید Abdul AI میں!</h2>
 <p>آپ کی کامیابی کا سفر یہاں سے شروع ہوتا ہے۔</p>
-<input class="search" id="search" placeholder="اپنا مضمون تلاش کریں..." oninput="searchCourses()">
+<input class="search" id="search" placeholder="اپنا مضمون یا کلاس تلاش کریں..." oninput="searchCourses()">
 </section>
 
 <main class="container" id="courses">
-<h2 style="text-align:center">📚 تعلیمی مضامین</h2>
-<div class="grid" id="subjects">
+<h2 style="text-align:center">📚 تعلیمی کلاسز</h2>
+<div class="grid" id="classGrid"></div>
 
-<div class="card"><h3>📘 کلاس 9</h3><p>نہم جماعت کے مضامین اور نوٹس</p><button onclick="showClass(9)">کھولیں</button></div>
-
-<div class="card"><h3>📗 کلاس 10</h3><p>دہم جماعت کے مضامین اور نوٹس</p><button onclick="showClass(10)">کھولیں</button></div>
-
-<div class="card"><h3>📝 آن لائن ٹیسٹ</h3><p>اپنی تیاری چیک کریں</p><button onclick="showTest()">ٹیسٹ دیں</button></div>
-
-<div class="card"><h3>📖 نوٹس</h3><p>اہم سوالات اور جوابات</p><button onclick="showNotes()">کھولیں</button></div>
-
-<div class="card"><h3>🇬🇧 انگلش</h3><p>English Grammar & Lessons</p><button onclick="showSubject('انگلش')">کھولیں</button></div>
-
-<div class="card"><h3>📐 ریاضی</h3><p>Math Exercises & MCQs</p><button onclick="showSubject('ریاضی')">کھولیں</button></div>
-
-<div class="card"><h3>🔬 سائنس</h3><p>سائنس کے اہم اسباق</p><button onclick="showSubject('سائنس')">کھولیں</button></div>
-
-<div class="card"><h3>🤖 AI مددگار</h3><p>تعلیمی سوالات پوچھیں</p><button onclick="showSubject('AI مددگار')">کھولیں</button></div>
-
+<h2 style="text-align:center;margin-top:35px">📖 دیگر سہولیات</h2>
+<div class="grid">
+<div class="card">
+<h3>📝 آن لائن ٹیسٹ</h3>
+<p>اپنی تیاری چیک کریں</p>
+<button onclick="showTest()">ٹیسٹ دیں</button>
+</div>
+<div class="card">
+<h3>📚 اسٹڈی نوٹس</h3>
+<p>اہم سوالات اور جوابات</p>
+<button onclick="showAllNotes()">نوٹس دیکھیں</button>
+</div>
 </div>
 </main>
 
-<section id="details">
-<h2 id="detailTitle"></h2>
+<section class="container" id="details">
+<button onclick="closeDetails()">⬅ واپس</button>
 <div id="detailContent"></div>
-<button onclick="closeDetails()">واپس جائیں</button>
+</section>
+
+<section class="container" id="tests">
+<h2 style="text-align:center">📝 آن لائن ٹیسٹ</h2>
+<div class="card">
+<p>اپنی معلومات جانچنے کے لیے MCQs حل کریں۔</p>
+<button onclick="showTest()">ٹیسٹ شروع کریں</button>
+</div>
 </section>
 
 <section class="container" id="about">
 <div class="card">
-<h2>🌟 ہمارے بارے میں</h2>
-<p>Abdul AI طلبہ کے لیے ایک تعلیمی پلیٹ فارم ہے۔</p>
-<h3>بانی و ایڈمن: عبدالستار</h3>
+<h2>ہمارے بارے میں</h2>
+<h3>عبدالستار</h3>
+<p>بانی و ایڈمن | Founder & Admin</p>
+<p>Abdul AI ایک تعلیمی پلیٹ فارم ہے جس کا مقصد طلبہ کو تعلیم، نوٹس اور ٹیسٹ کی سہولت فراہم کرنا ہے۔</p>
 </div>
 </section>
 
 <footer>
-<h2>🎓 Abdul AI Education</h2>
-<p>عبدالستار — بانی و ایڈمن</p>
-<p>علم سب کے لیے ❤️</p>
-<p>© 2026 Abdul AI</p>
+<h2>🎓 Abdul AI</h2>
+<p>Founder & Admin: عبدالستار</p>
+<p>Your Smart Education Platform</p>
+<p>© 2026 Abdul AI. All Rights Reserved.</p>
 </footer>
 
 <script>
-function show(title,content){
-document.getElementById("detailTitle").innerText=title;
-document.getElementById("detailContent").innerHTML=content;
+const classes = {
+9:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","اسلامیات","ترجمۃ القرآن"],
+10:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","پاکستان اسٹڈیز","ترجمۃ القرآن"],
+11:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","اسلامیات","اکاؤنٹنگ"],
+12:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","پاکستان اسٹڈیز","اکاؤنٹنگ"]
+};
+
+const icons = ["📘","📗","📙","📕"];
+
+function makeClasses(){
+let html="";
+Object.keys(classes).forEach(c=>{
+html+=`
+<div class="card searchable">
+<h3>${icons[c-9]} کلاس ${c}</h3>
+<p>${c==9?"نہم":c==10?"دہم":c==11?"گیارہویں":"بارہویں"} جماعت کے مضامین، نوٹس اور ٹیسٹ</p>
+<button onclick="showClass(${c})">کھولیں</button>
+</div>`;
+});
+document.getElementById("classGrid").innerHTML=html;
+}
+makeClasses();
+
+function showClass(c){
+let html=`<h2>📚 کلاس ${c} کے مضامین</h2>
+<p>اپنا مضمون منتخب کریں:</p>`;
+classes[c].forEach(s=>{
+html+=`<div class="subject">
+<h3>${s}</h3>
+<button onclick="showSubject(${c},'${s}')">مضمون کھولیں</button>
+</div>`;
+});
+openDetails(html);
+}
+
+function showSubject(c,s){
+let html=`
+<h2>📖 کلاس ${c} - ${s}</h2>
+<h3>تعلیمی مواد</h3>
+<div class="subject">
+<h3>📚 نوٹس</h3>
+<p>اس مضمون کے مکمل باب وار نوٹس اور اہم سوالات یہاں شامل کیے جائیں گے۔</p>
+</div>
+<div class="subject">
+<h3>📝 اہم سوالات</h3>
+<p>مختصر سوالات، تفصیلی سوالات اور MCQs کی تیاری کریں۔</p>
+</div>
+<div class="subject">
+<h3>🎯 پریکٹس ٹیسٹ</h3>
+<button onclick="showTest()">ٹیسٹ شروع کریں</button>
+</div>
+<p class="small">نوٹ: باب وار اصل نوٹس اور کتابی مواد مرحلہ وار شامل کیا جائے گا۔</p>`;
+openDetails(html);
+}
+
+function showAllNotes(){
+let html="<h2>📖 اسٹڈی نوٹس</h2>";
+Object.keys(classes).forEach(c=>{
+html+=`<div class="subject"><h3>کلاس ${c}</h3>
+<button onclick="showClass(${c})">مضامین اور نوٹس</button></div>`;
+});
+openDetails(html);
+}
+
+const questions=[
+{q:"پاکستان کا دارالحکومت کیا ہے؟",a:["کراچی","اسلام آباد","لاہور","کوئٹہ"],correct:1},
+{q:"پاکستان کب آزاد ہوا؟",a:["1940","1947","1956","1965"],correct:1},
+{q:"اردو زبان کس سمت لکھی جاتی ہے؟",a:["دائیں سے بائیں","بائیں سے دائیں","اوپر سے نیچے","کوئی نہیں"],correct:0},
+{q:"ایک ہفتے میں کتنے دن ہوتے ہیں؟",a:["5","6","7","8"],correct:2},
+{q:"سورج کس سمت سے نکلتا ہے؟",a:["مغرب","شمال","جنوب","مشرق"],correct:3}
+];
+
+function showTest(){
+let html=`<h2>📝 Abdul AI آن لائن ٹیسٹ</h2>
+<p>تمام سوالات کے جواب منتخب کریں۔</p>
+<form id="quiz">`;
+questions.forEach((q,i)=>{
+html+=`<div class="subject"><h3>${i+1}. ${q.q}</h3>`;
+q.a.forEach((a,j)=>{
+html+=`<p><label><input type="radio" name="q${i}" value="${j}"> ${a}</label></p>`;
+});
+html+="</div>";
+});
+html+=`<button type="button" onclick="checkTest()">نتیجہ دیکھیں</button></form>
+<div id="result"></div>`;
+openDetails(html);
+}
+
+function checkTest(){
+let score=0;
+questions.forEach((q,i)=>{
+let selected=document.querySelector('input[name="q'+i+'"]:checked');
+if(selected && Number(selected.value)===q.correct) score++;
+});
+document.getElementById("result").innerHTML=
+`<div class="subject"><h2>آپ کے نمبر: ${score} / ${questions.length}</h2>
+<p>${score>=3?"بہت خوب! آپ کی تیاری اچھی ہے۔":"مزید محنت کریں، آپ کامیاب ہو سکتے ہیں!"}</p></div>`;
+}
+
+function openDetails(html){
+document.getElementById("detailContent").innerHTML=html;
 document.getElementById("details").style.display="block";
 document.getElementById("details").scrollIntoView({behavior:"smooth"});
 }
-function showClass(n){
-let subjects=["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","اسلامیات","ترجمۃ القرآن"];
-show("کلاس "+n, "<h3>📚 مضامین</h3><ul>"+subjects.map(s=>"<li>"+s+"</li>").join("")+"</ul><p>ہر مضمون کے نوٹس اور اسباق جلد شامل کیے جائیں گے۔</p>");
-}
-function showSubject(s){
-show(s,"<p>"+s+" کے اسباق، نوٹس اور سوالات جلد شامل کیے جائیں گے۔</p>");
-}
-function showNotes(){
-show("📖 تعلیمی نوٹس","<p>کلاس 9 اور کلاس 10 کے نوٹس یہاں دستیاب ہوں گے۔</p>");
-}
-function showTest(){
-show("📝 آن لائن ٹیسٹ",'<p>پاکستان کا دارالحکومت کون سا ہے؟</p><button onclick="alert(\'درست جواب!\')">اسلام آباد</button> <button onclick="alert(\'دوبارہ کوشش کریں!\')">لاہور</button>');
-}
+
 function closeDetails(){
 document.getElementById("details").style.display="none";
+document.getElementById("courses").scrollIntoView({behavior:"smooth"});
 }
+
 function searchCourses(){
-let v=document.getElementById("search").value.toLowerCase();
-document.querySelectorAll("#subjects .card").forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
+let q=document.getElementById("search").value.toLowerCase().trim();
+document.querySelectorAll("#classGrid .card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(q)?"block":"none";
 });
 }
 </script>
