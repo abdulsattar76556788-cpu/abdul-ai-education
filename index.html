@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
@@ -44,7 +45,6 @@ footer{text-align:center;padding:25px;color:#68778b}
 
 <nav>
 <button class="active" onclick="show('home',this)">ہوم</button>
-<button onclick="show('syllabus',this)">سمارٹ سلیبس</button>
 <button onclick="show('subjects',this)">مضامین</button>
 <button onclick="show('notes',this)">باب وار نوٹس</button>
 <button onclick="show('essay',this)">مضامین Essays</button>
@@ -61,7 +61,6 @@ footer{text-align:center;padding:25px;color:#68778b}
 <h2>خوش آمدید! میں Abdul AI ہوں۔</h2>
 <p>طلبہ کے لیے مفت تعلیمی مواد، نوٹس، مضامین، MCQs اور آن لائن ٹیسٹ۔</p>
 <button onclick="show('subjects')">تعلیم شروع کریں</button>
-<button onclick="show('syllabus')">10th سمارٹ سلیبس دیکھیں</button>
 </div>
 <h2>اپنی جماعت منتخب کریں</h2>
 <div class="grid">
@@ -79,8 +78,201 @@ footer{text-align:center;padding:25px;color:#68778b}
 </div>
 </section>
 
-<section id="syllabus" class="page">
-<h2>📚 سمارٹ سلیبس / ALP - PECTAA</h2>
+<section id="subjects" class="page">
+<h2>📚 تمام مضامین</h2>
+<select id="class" onchange="renderSubjects()">
+<option value="9">جماعت نہم</option>
+<option value="10">جماعت دہم</option>
+<option value="11">جماعت گیارہویں</option>
+<option value="12">جماعت بارہویں</option>
+</select>
+<div id="subjectList" class="grid"></div>
+</section>
+
+<section id="notes" class="page">
+<h2>📖 باب وار نوٹس</h2>
+<select id="noteClass" onchange="renderNotes()">
+<option value="9">جماعت نہم</option>
+<option value="10">جماعت دہم</option>
+<option value="11">جماعت گیارہویں</option>
+<option value="12">جماعت بارہویں</option>
+</select>
+<select id="noteSubject" onchange="renderNotes()">
+<option>اسلامیات لازمی</option>
+<option>اردو</option>
+<option>English</option>
+<option>Physics</option>
+<option>Biology</option>
+<option>Chemistry</option>
+<option>ریاضی</option>
+<option>ترجمۃ القرآن</option>
+</select>
+<div id="notesContent" class="panel"></div>
+</section>
+
+<section id="essay" class="page">
+<h2>📝 مضامین Essays</h2>
+<div class="grid" id="essayList"></div>
+<div id="essayText" class="panel"></div>
+</section>
+
+<section id="mcq" class="page">
+<h2>✅ MCQs پریکٹس</h2>
+<p>جماعت نہم اسلامیات کے نمونہ سوالات</p>
+<div id="mcqList"></div>
+</section>
+
+<section id="test" class="page">
+<h2>🧪 آن لائن ٹیسٹ</h2>
+<p>اپنا جواب منتخب کریں اور آخر میں نتیجہ دیکھیں۔</p>
+<div id="testList"></div>
+<button onclick="result()">نتیجہ دیکھیں</button>
+<h3 id="score"></h3>
+</section>
+
+<section id="about" class="page">
 <div class="panel">
-<h3>جماعت دہم - 2026-27 | 10th Class Smart Syllabus</h3>
-<p><b>اہم اعلان:</b> 2026 کے امتحان میں 10th کا کوئی سمارٹ سلیبس نہیں تھا، پورا سلیبس تھا۔ 2027 کے امتحان کے لیے PECTAA نے 7 نومبر 2026 کو نیا سمارٹ
+<h2>Abdul AI Education</h2>
+<h3>عبدالستار</h3>
+<p>بانی و ایڈمن | Founder & Admin</p>
+<p>ہمارا مقصد طلبہ کو آسان اور معیاری تعلیمی مواد فراہم کرنا ہے۔</p>
+<p>Punjab Board | Class 9, 10, 11, 12</p>
+</div>
+</section>
+
+<div class="small">نوٹ: تمام جماعتوں کے مکمل سرکاری باب وار مواد کو الگ الگ تصدیق کرکے شامل کرنا ہوگا۔ یہ نمونہ مواد مکمل بورڈ نصاب نہیں ہے۔</div>
+</main>
+
+<footer>
+© 2026 Abdul AI Education<br>
+بانی و ایڈمن: عبدالستار
+</footer>
+
+<script>
+const subjects={
+9:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات لازمی","ترجمۃ القرآن"],
+10:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات لازمی","ترجمۃ القرآن"],
+11:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات","ترجمۃ القرآن"],
+12:["اردو","English","ریاضی","Physics","Chemistry","Biology","اسلامیات","ترجمۃ القرآن"]
+};
+
+function show(id,btn){
+document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+if(btn)btn.classList.add('active');
+if(id==='subjects')renderSubjects();
+if(id==='notes')renderNotes();
+window.scrollTo(0,0);
+}
+
+function selectClass(n){
+document.getElementById('class').value=n;
+show('subjects');
+}
+
+function renderSubjects(){
+let n=document.getElementById('class').value;
+document.getElementById('subjectList').innerHTML=subjects[n].map(s=>
+`<div class="card"><h3>${s}</h3><button onclick="openNotes('${s}',${n})">نوٹس کھولیں</button></div>`
+).join('');
+}
+
+function openNotes(s,n){
+document.getElementById('noteSubject').value=s;
+document.getElementById('noteClass').value=n;
+show('notes');
+}
+
+const notes={
+"اسلامیات لازمی":[
+["توحید","اللہ تعالیٰ ایک ہے۔ وہی تمام کائنات کا خالق، مالک اور حاکم ہے۔"],
+["رسالت","رسالت سے مراد اللہ تعالیٰ کا اپنے منتخب بندوں کو لوگوں کی رہنمائی کے لیے رسول بنا کر بھیجنا ہے۔"],
+["نماز","نماز اسلام کا اہم رکن ہے۔ یہ مسلمان کو اللہ تعالیٰ کی یاد اور اطاعت کا پابند بناتی ہے۔"],
+["روزہ","روزہ رمضان المبارک میں فرض ہے۔ یہ صبر، تقویٰ اور نظم و ضبط پیدا کرتا ہے۔"]
+],
+"اردو":[
+["سبق کا مرکزی خیال","سبق کو غور سے پڑھیں، اہم نکات لکھیں اور مشکل الفاظ کے معنی یاد کریں۔"]
+],
+"English":[
+["Reading Skills","Read the lesson carefully. Learn difficult words, meanings and the main idea."]
+],
+"Physics":[
+["Measurement","Measurement is the comparison of an unknown quantity with a standard unit."]
+],
+"Biology":[
+["Introduction to Biology","Biology is the scientific study of living organisms."]
+],
+"Chemistry":[
+["Introduction to Chemistry","Chemistry is the study of matter, its properties and changes."]
+],
+"ریاضی":[
+["الجبرہ","الجبرہ ریاضی کی وہ شاخ ہے جس میں اعداد، علامات اور حروف استعمال ہوتے ہیں۔"]
+],
+"ترجمۃ القرآن":[
+["قرآنی مطالعہ","قرآنی آیات کا ترجمہ مستند درسی کتاب سے پڑھیں اور اہم الفاظ کے معانی یاد کریں۔"]
+]
+};
+
+function renderNotes(){
+let s=document.getElementById('noteSubject').value;
+let n=document.getElementById('noteClass').value;
+let data=notes[s]||[];
+document.getElementById('notesContent').innerHTML=
+`<h3>${s} — جماعت ${n}</h3>`+
+(data.length?data.map(x=>`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join(''):'<p>اس مضمون کے نوٹس ابھی شامل نہیں کیے گئے۔</p>');
+}
+
+const essays=[
+["میرا وطن پاکستان","پاکستان ہمارا پیارا وطن ہے۔ یہ 14 اگست 1947ء کو آزاد ہوا۔ ہمیں اپنے وطن سے محبت کرنی چاہیے اور اس کی ترقی کے لیے محنت کرنی چاہیے۔"],
+["علم کی اہمیت","علم انسان کو شعور اور اچھے برے کی پہچان دیتا ہے۔ تعلیم کے ذریعے قومیں ترقی کرتی ہیں۔"],
+["My School","My school is a place where I learn new things. I respect my teachers and work hard to achieve my goals."],
+["Importance of Education","Education gives us knowledge, confidence and good manners. It helps us become useful members of society."]
+];
+
+function renderEssays(){
+document.getElementById('essayList').innerHTML=essays.map((e,i)=>
+`<div class="card"><h3>${e[0]}</h3><button onclick="showEssay(${i})">پڑھیں</button></div>`
+).join('');
+}
+function showEssay(i){
+document.getElementById('essayText').innerHTML=
+`<h3>${essays[i][0]}</h3><p>${essays[i][1]}</p>`;
+}
+
+const questions=[
+["قرآن مجید کس پر نازل ہوا؟",["حضرت موسیٰؑ","حضرت عیسیٰؑ","حضرت محمد ﷺ","حضرت ابراہیمؑ"],2],
+["اسلام کے ارکان کتنے ہیں؟",["تین","چار","پانچ","چھ"],2],
+["نماز دن میں کتنی بار فرض ہے؟",["تین","چار","پانچ","چھ"],2],
+["روزہ کس مہینے میں فرض ہے؟",["محرم","رجب","رمضان","شوال"],2],
+["زکوٰۃ کا مقصد کیا ہے؟",["مال کی پاکیزگی","سفر","کھیل","تجارت"],0]
+];
+let selected={};
+
+function renderQuiz(){
+selected={};
+let html='';
+questions.forEach((q,i)=>{
+html+=`<div class="card"><b>${i+1}. ${q[0]}</b>`;
+q[1].forEach((a,j)=>{
+html+=`<button class="option" style="width:100%;margin:5px 0" onclick="answer(${i},${j})">${a}</button>`;
+});
+html+='</div>';
+});
+document.getElementById('mcqList').innerHTML=html;
+document.getElementById('testList').innerHTML=html;
+}
+function answer(i,j){selected[i]=j;}
+function result(){
+let correct=questions.filter((q,i)=>selected[i]===q[2]).length;
+document.getElementById('score').innerText=
+'آپ کا نتیجہ: '+correct+' / '+questions.length+' درست';
+}
+renderSubjects();
+renderNotes();
+renderEssays();
+renderQuiz();
+</script>
+</body>
+  </html>
+  
