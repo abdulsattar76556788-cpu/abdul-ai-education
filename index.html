@@ -1,142 +1,51 @@
 Abdul ai education
 
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#091426">
-<title>Abdul AI | Smart Education Platform</title>
-<meta name="description" content="Abdul AI - Free Education, Punjab Board Notes, MCQs and Online Tests.">
-
+<title>Abdul AI Education</title>
 <style>
 *{box-sizing:border-box}
-:root{
---bg:#091426;
---panel:#12233b;
---card:#182c47;
---gold:#e9bd68;
---green:#54d6b1;
---text:#f5f7fb;
---muted:#a9b9cc;
-}
-body{
-margin:0;background:var(--bg);color:var(--text);
-font-family:Arial,sans-serif;
-}
-header{
-background:#101f35;border-bottom:1px solid #30425d;
-padding:15px 18px;display:flex;
-align-items:center;justify-content:space-between;
-position:sticky;top:0;z-index:10;
-}
-.logo{font-size:23px;font-weight:bold;color:var(--gold)}
-.logo span{color:white}
-.menu{
-background:#203653;color:white;border:1px solid #405775;
-border-radius:10px;padding:10px 14px;
-}
-#drawer{
-display:none;background:#12233b;padding:12px;
-position:sticky;top:65px;z-index:9;
-}
-#drawer a{
-display:block;color:white;text-decoration:none;
-padding:13px;border-bottom:1px solid #30425d;
-}
-main{max-width:1050px;margin:auto;padding:16px}
-.hero{
-background:linear-gradient(135deg,#193e5d,#14233b,#303c57);
-border:1px solid #3b5270;border-radius:22px;
-padding:30px 15px;text-align:center;margin:12px 0 25px;
-}
-.robot{font-size:48px}
-.hero h1{color:var(--gold);font-size:34px;margin:10px}
-.hero p{color:#d4dfed;line-height:1.8}
-.tag{
-display:inline-block;background:#214a46;
-color:#a1f1d8;padding:8px 15px;
-border-radius:20px;font-size:12px;
-}
-.search{
-width:100%;max-width:550px;padding:14px;
-border:1px solid #536782;border-radius:12px;
-background:#0d1b2e;color:white;font-size:15px;
-}
-.section-title{color:var(--gold);font-size:22px;margin:28px 0 15px}
-.grid{
-display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-gap:13px;
-}
-.card{
-background:var(--panel);border:1px solid #30445f;
-border-radius:17px;padding:18px 12px;text-align:center;
-}
-.card:hover{border-color:var(--gold)}
-.card h3{color:var(--gold);margin:10px 0}
-.card p{color:var(--muted);font-size:13px;line-height:1.7}
-.ico{font-size:32px}
-.btn{
-display:inline-block;background:var(--gold);color:#142139;
-border:0;border-radius:10px;padding:11px 16px;
-font-weight:bold;text-decoration:none;cursor:pointer;
-margin:5px;font-size:14px;
-}
-.btn2{
-background:#24405f;color:white;border:1px solid #536b88;
-border-radius:10px;padding:10px 14px;cursor:pointer;
-}
-#details{
-display:none;background:var(--panel);
-border:1px solid #30445f;border-radius:17px;
-padding:18px;margin:22px 0;
-}
-.subject{
-background:#1c314e;border-radius:12px;
-padding:14px;margin:12px 0;
-}
-.subject h3{color:var(--gold)}
-.subject p{line-height:1.8;color:#d5e0ec}
-select{
-background:#0d1b2e;color:white;border:1px solid #536782;
-padding:12px;border-radius:10px;width:100%;margin:8px 0;
-}
-#chat{
-height:270px;overflow:auto;padding:8px;
-background:#0d1b2e;border-radius:12px;
-}
-.msg{padding:12px;margin:10px 0;border-radius:12px;line-height:1.8}
-.user{background:#245b75;margin-right:20px}
-.ai{background:#253851;margin-left:20px}
-.chat-form{display:flex;gap:8px;margin-top:10px}
-.chat-form input{
-flex:1;min-width:0;background:#0d1b2e;color:white;
-border:1px solid #536782;padding:13px;border-radius:10px;
-}
-footer{
-background:#101f35;text-align:center;padding:27px 12px;
-margin-top:35px;color:var(--muted);line-height:2;
-}
-footer strong{color:var(--gold)}
-small{color:var(--muted)}
-@media(min-width:650px){
-.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
+body{margin:0;background:#091426;color:#fff;font-family:Arial,sans-serif}
+header{background:#12233b;padding:15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0}
+.logo{font-size:23px;color:#e9bd68;font-weight:bold}
+button{border:0;border-radius:9px;padding:11px 15px;cursor:pointer;font-weight:bold}
+.menu{background:#304b6a;color:white}
+.btn{background:#e9bd68;color:#102039;margin:5px}
+main{max-width:1000px;margin:auto;padding:15px}
+.hero{background:linear-gradient(135deg,#193e5d,#303c57);padding:25px 12px;text-align:center;border-radius:20px;margin:15px 0}
+.hero h1{color:#e9bd68}
+input,select{padding:13px;border-radius:10px;border:1px solid #536782;background:#0d1b2e;color:white;width:100%;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card,.subject{background:#12233b;border:1px solid #30445f;border-radius:15px;padding:15px;margin:10px 0}
+.card{text-align:center}
+h2,h3{color:#e9bd68}
+.section-title{margin-top:30px}
+#details{display:none}
+#drawer{display:none;background:#12233b;padding:10px}
+#drawer a{display:block;color:white;text-decoration:none;padding:12px;border-bottom:1px solid #30445f}
+#chat{height:220px;overflow:auto;background:#0d1b2e;padding:10px;border-radius:10px}
+.msg{padding:10px;margin:8px 0;background:#253851;border-radius:10px}
+.user{background:#245b75}
+footer{text-align:center;padding:25px;background:#101f35;color:#a9b9cc;margin-top:30px}
+small{color:#a9b9cc}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">🎓 Abdul <span>AI</span></div>
+<div class="logo">🎓 Abdul AI</div>
 <button class="menu" onclick="toggleMenu()">☰ مینو</button>
 </header>
 
 <nav id="drawer">
-<a href="#home" onclick="toggleMenu()">🏠 ہوم پیج</a>
+<a href="#home" onclick="toggleMenu()">🏠 ہوم</a>
 <a href="#education" onclick="toggleMenu()">📚 تعلیمی مرکز</a>
-<a href="#tests" onclick="toggleMenu()">📝 آن لائن ٹیسٹ</a>
+<a href="#tests" onclick="toggleMenu()">📝 ٹیسٹ</a>
 <a href="#assistant" onclick="toggleMenu()">🤖 AI اسسٹنٹ</a>
 <a href="#about" onclick="toggleMenu()">👨‍💻 ہمارے بارے میں</a>
 </nav>
@@ -144,82 +53,74 @@ small{color:var(--muted)}
 <main>
 
 <section class="hero" id="home">
-<div class="robot">🤖</div>
-<div class="tag">100% FREE EDUCATION</div>
+<div style="font-size:48px">🤖</div>
 <h1>عبدالستار</h1>
 <p>بانی و ایڈمن | Founder & Admin</p>
-<h2 style="color:#fff">Abdul AI</h2>
-<h3 style="color:#e9bd68">Your Smart Education Platform</h3>
+<h2 style="color:white">Abdul AI Education</h2>
+<h3>Your Smart Education Platform</h3>
 <p>علم حاصل کریں، مستقبل روشن بنائیں</p>
-<input class="search" id="search"
-placeholder="🔍 کلاس یا مضمون تلاش کریں..."
-oninput="searchCourses()">
+<input id="search" placeholder="🔍 کلاس یا مضمون تلاش کریں" oninput="searchCourses()">
+<p>100% مفت تعلیمی پلیٹ فارم</p>
 </section>
 
 <section id="education">
-<h2 class="section-title">📚 تعلیمی مرکز | Education Center</h2>
+<h2 class="section-title">📚 تعلیمی مرکز</h2>
 <div class="grid" id="classGrid"></div>
 </section>
 
-<section id="details">
-<button class="btn2" onclick="closeDetails()">⬅ واپس</button>
+<section id="details" class="card">
+<button class="btn" onclick="closeDetails()">⬅ واپس</button>
 <div id="detailContent"></div>
 </section>
 
 <section id="tests">
 <h2 class="section-title">📝 آن لائن ٹیسٹ</h2>
 <div class="card">
-<div class="ico">🎯</div>
 <h3>اپنی تیاری چیک کریں</h3>
-<p>MCQs حل کریں اور اپنا نتیجہ دیکھیں۔</p>
+<p>MCQs حل کریں اور نمبر حاصل کریں۔</p>
 <button class="btn" onclick="showTest()">ٹیسٹ شروع کریں</button>
 </div>
 </section>
 
 <section id="assistant">
 <h2 class="section-title">🤖 Abdul AI Assistant</h2>
-<div class="card" style="text-align:right">
-<p>السلام علیکم! آپ مجھ سے اردو، انگلش یا سرائیکی میں بات کر سکتے ہیں۔</p>
+<div class="card">
 <div id="chat">
-<div class="msg ai">خوش آمدید! میں Abdul AI ہوں۔ اپنا سوال لکھیں۔</div>
+<div class="msg">السلام علیکم! میں Abdul AI ہوں۔ اپنا سوال لکھیں۔</div>
 </div>
-<form class="chat-form" id="chatForm">
-<input id="message" placeholder="اپنا سوال لکھیں..." autocomplete="off">
-<button class="btn" type="submit">بھیجیں</button>
+<form id="chatForm">
+<input id="message" placeholder="اپنا سوال لکھیں..." required>
+<button class="btn">بھیجیں</button>
 </form>
-<small>AI سروس ابھی منسلک نہیں ہے۔</small>
+<small>یہ ڈیمو اسسٹنٹ ہے۔ حقیقی AI کے لیے محفوظ API کنکشن درکار ہے۔</small>
 </div>
 </section>
 
 <section id="about">
 <h2 class="section-title">👨‍💻 ہمارے بارے میں</h2>
 <div class="card">
-<div class="ico">🌟</div>
 <h3>عبدالستار</h3>
-<p>Founder & Admin | بانی و ایڈمن</p>
-<p>Abdul AI کا مقصد ہر طالب علم تک مفت معیاری تعلیم پہنچانا ہے۔</p>
+<p>Founder & Admin</p>
+<p>ہمارا مقصد ہر طالب علم تک مفت اور آسان تعلیم پہنچانا ہے۔</p>
 </div>
 </section>
 
 </main>
 
 <footer>
-<strong>🎓 Abdul AI</strong>
-<br>Your Smart Education Platform
-<br>علم حاصل کریں، مستقبل روشن بنائیں
-<br>Founder & Admin: عبدالستار
-<br>© 2026 Abdul AI
+<strong>🎓 Abdul AI Education</strong>
+<p>Your Smart Education Platform</p>
+<p>Founder & Admin: عبدالستار</p>
+<p>© 2026 Abdul AI</p>
 </footer>
 
 <script>
 const classes={
-9:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","اسلامیات","ترجمۃ القرآن"],
+9:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","اسلامیات لازمی","ترجمۃ القرآن"],
 10:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","پاکستان اسٹڈیز","ترجمۃ القرآن"],
 11:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","اسلامیات","اکاؤنٹنگ"],
 12:["اردو","انگلش","ریاضی","فزکس","کیمسٹری","بائیولوجی","کمپیوٹر","پاکستان اسٹڈیز","اکاؤنٹنگ"]
 };
-
-const icons=["📘","📗","📙","📕"];
 
 function toggleMenu(){
 let d=document.getElementById("drawer");
@@ -228,12 +129,11 @@ d.style.display=d.style.display==="block"?"none":"block";
 
 function makeClasses(){
 let html="";
-Object.keys(classes).forEach(c=>{
-html+=`
-<div class="card searchable">
-<div class="ico">${icons[c-9]}</div>
+Object.keys(classes).forEach((c,i)=>{
+html+=`<div class="card">
+<h2>${["📘","📗","📙","📕"][i]}</h2>
 <h3>کلاس ${c}</h3>
-<p>${c==9?"جماعت نہم":c==10?"جماعت دہم":c==11?"گیارہویں":"بارہویں"} کے مضامین اور نوٹس</p>
+<p>پنجاب بورڈ کے مضامین</p>
 <button class="btn" onclick="showClass(${c})">کلاس کھولیں</button>
 </div>`;
 });
@@ -242,8 +142,7 @@ document.getElementById("classGrid").innerHTML=html;
 makeClasses();
 
 function showClass(c){
-let html=`<h2 class="section-title">📚 کلاس ${c} کے مضامین</h2>
-<p>اپنا مضمون منتخب کریں:</p>
+let html=`<h2>کلاس ${c} کے مضامین</h2>
 <select id="medium">
 <option>اردو میڈیم</option>
 <option>English Medium</option>
@@ -251,72 +150,71 @@ let html=`<h2 class="section-title">📚 کلاس ${c} کے مضامین</h2>
 classes[c].forEach(s=>{
 html+=`<div class="subject">
 <h3>📖 ${s}</h3>
-<p>باب وار نوٹس، سوالات، MCQs اور مشقیں</p>
-<button class="btn" onclick="showSubject(${c},'${s}')">مضمون کھولیں</button>
+<p>باب وار نوٹس، سوالات، MCQs</p>
+<button class="btn" onclick="showSubject(${c},${JSON.stringify(s)})">مضمون کھولیں</button>
 </div>`;
 });
 openDetails(html);
 }
 
 function showSubject(c,s){
-let medium=document.getElementById("medium")?.value||"اردو میڈیم";
-let html=`
-<h2 class="section-title">📖 کلاس ${c} - ${s}</h2>
-<p>میڈیم: ${medium}</p>
+let html=`<h2>کلاس ${c} - ${s}</h2>
 <div class="subject">
 <h3>📚 باب وار نوٹس</h3>
-<p>ہر باب کے آسان نوٹس اور مکمل تشریح یہاں شامل کی جائے گی۔</p>
-<button class="btn2" onclick="alert('نوٹس جلد شامل کیے جائیں گے')">آن لائن پڑھیں</button>
-<button class="btn2" onclick="alert('PDF ابھی اپلوڈ نہیں ہوئی')">PDF ڈاؤن لوڈ</button>
+<p>یہاں پنجاب بورڈ کی اصل کتاب کے مطابق باب وار نوٹس شامل کیے جائیں گے۔</p>
 </div>
 <div class="subject">
 <h3>📝 سوالات و جوابات</h3>
-<p>مختصر سوالات، تفصیلی سوالات اور اہم امتحانی سوالات۔</p>
+<p>مختصر اور تفصیلی سوالات یہاں شامل کیے جائیں گے۔</p>
 </div>
 <div class="subject">
 <h3>🎯 MCQs</h3>
-<p>باب وار کثیر الانتخابی سوالات۔</p>
+<p>باب وار MCQs یہاں شامل کیے جائیں گے۔</p>
 </div>
 <div class="subject">
-<h3>🧪 پریکٹس ٹیسٹ</h3>
-<button class="btn" onclick="showTest()">ٹیسٹ شروع کریں</button>
+<h3>📥 PDF نوٹس</h3>
+<p>PDF فائل اپ لوڈ ہونے کے بعد یہاں ڈاؤن لوڈ کا لنک ظاہر ہوگا۔</p>
+</div>
+<div class="subject">
+<button class="btn" onclick="showTest()">پریکٹس ٹیسٹ</button>
 </div>`;
+if(c===9 && s==="اسلامیات لازمی"){
+html+=`<div class="subject">
+<h3>🕌 اسلامیات لازمی — جماعت نہم</h3>
+<p>تازہ پنجاب بورڈ کی درسی کتاب کے مطابق ابواب، آیات، احادیث، مختصر سوالات، تفصیلی سوالات اور MCQs شامل کرنے کی جگہ۔</p>
+</div>`;
+}
 openDetails(html);
 }
 
 const questions=[
-{q:"پاکستان کا دارالحکومت کیا ہے؟",a:["کراچی","اسلام آباد","لاہور","کوئٹہ"],correct:1},
-{q:"پاکستان کب آزاد ہوا؟",a:["1940","1947","1956","1965"],correct:1},
-{q:"اردو کس سمت لکھی جاتی ہے؟",a:["دائیں سے بائیں","بائیں سے دائیں","اوپر سے نیچے"],correct:0},
-{q:"ایک ہفتے میں کتنے دن ہوتے ہیں؟",a:["5","6","7","8"],correct:2},
-{q:"سورج کس سمت سے نکلتا ہے؟",a:["مغرب","شمال","جنوب","مشرق"],correct:3}
+{q:"پاکستان کا دارالحکومت کیا ہے؟",a:["کراچی","اسلام آباد","لاہور"],correct:1},
+{q:"پاکستان کب آزاد ہوا؟",a:["1940","1947","1956"],correct:1},
+{q:"اردو کس سمت لکھی جاتی ہے؟",a:["دائیں سے بائیں","بائیں سے دائیں"],correct:0},
+{q:"ایک ہفتے میں کتنے دن ہیں؟",a:["5","6","7"],correct:2},
+{q:"سورج کس سمت سے نکلتا ہے؟",a:["مغرب","مشرق","شمال"],correct:1}
 ];
 
 function showTest(){
-let html=`<h2 class="section-title">📝 Abdul AI ٹیسٹ</h2>
-<p>تمام سوالات کے درست جواب منتخب کریں۔</p>
-<form id="quiz">`;
+let html="<h2>📝 نمونہ ٹیسٹ</h2>";
 questions.forEach((q,i)=>{
 html+=`<div class="subject"><h3>${i+1}. ${q.q}</h3>`;
 q.a.forEach((a,j)=>{
-html+=`<p><label><input type="radio" name="q${i}" value="${j}"> ${a}</label></p>`;
+html+=`<p><label><input type="radio" name="q${i}" value="${j}" style="width:auto">${a}</label></p>`;
 });
 html+="</div>";
 });
-html+=`<button type="button" class="btn" onclick="checkTest()">نتیجہ دیکھیں</button></form>
-<div id="result"></div>`;
+html+='<button class="btn" onclick="checkTest()">نتیجہ دیکھیں</button><div id="result"></div>';
 openDetails(html);
 }
 
 function checkTest(){
 let score=0;
 questions.forEach((q,i)=>{
-let selected=document.querySelector('input[name="q'+i+'"]:checked');
-if(selected&&Number(selected.value)===q.correct)score++;
+let a=document.querySelector('input[name="q'+i+'"]:checked');
+if(a&&Number(a.value)===q.correct)score++;
 });
-document.getElementById("result").innerHTML=
-`<div class="subject"><h2>آپ کے نمبر: ${score}/5</h2>
-<p>${score>=3?"بہت خوب! شاباش۔":"مزید محنت کریں، آپ کامیاب ہوں گے۔"}</p></div>`;
+document.getElementById("result").innerHTML=`<h2>آپ کے نمبر ${score}/5</h2>`;
 }
 
 function openDetails(html){
@@ -324,39 +222,32 @@ document.getElementById("detailContent").innerHTML=html;
 document.getElementById("details").style.display="block";
 document.getElementById("details").scrollIntoView({behavior:"smooth"});
 }
-
 function closeDetails(){
 document.getElementById("details").style.display="none";
 document.getElementById("education").scrollIntoView({behavior:"smooth"});
 }
-
 function searchCourses(){
-let q=document.getElementById("search").value.toLowerCase().trim();
-document.querySelectorAll("#classGrid .card").forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(q)?"block":"none";
+let q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll("#classGrid .card").forEach(x=>{
+x.style.display=x.innerText.toLowerCase().includes(q)?"block":"none";
 });
 }
-
 document.getElementById("chatForm").addEventListener("submit",function(e){
 e.preventDefault();
-let input=document.getElementById("message");
-let text=input.value.trim();
-if(!text)return;
-addMessage(text,"user");
-addMessage("آپ کا پیغام موصول ہوگیا۔ حقیقی AI سروس ابھی منسلک نہیں ہے۔","ai");
-input.value="";
-});
-
-function addMessage(text,type){
-let div=document.createElement("div");
-div.className="msg "+type;
-div.textContent=text;
+let m=document.getElementById("message");
 let chat=document.getElementById("chat");
-chat.appendChild(div);
+let d=document.createElement("div");
+d.className="msg user";
+d.textContent=m.value;
+chat.appendChild(d);
+let reply=document.createElement("div");
+reply.className="msg";
+reply.textContent="آپ کا سوال موصول ہوگیا۔ حقیقی AI جواب کے لیے AI API منسلک کرنا ضروری ہے۔";
+chat.appendChild(reply);
+m.value="";
 chat.scrollTop=chat.scrollHeight;
-}
+});
 </script>
-
 </body>
   </html>
   
