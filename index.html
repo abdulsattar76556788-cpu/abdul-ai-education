@@ -4,292 +4,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#091426">
+<meta name="theme-color" content="#071629">
 <title>Abdul AI Education</title>
-<meta name="description" content="Abdul AI Education - Punjab Board Smart Learning Platform">
-
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#091426;
- color:white;
- line-height:1.8;
-}
-header{
- background:linear-gradient(135deg,#102d54,#091426);
- padding:25px 15px;
- text-align:center;
- border-bottom:2px solid #d6a94d;
-}
-.logo{
- width:75px;height:75px;
- border-radius:22px;
- background:linear-gradient(135deg,#e8c36b,#a87520);
- color:#10213c;
- display:grid;
- place-items:center;
- font-size:35px;
- margin:auto;
-}
-h1{color:#f3ce76;margin:8px}
-header p{margin:3px;color:#ddd}
-.admin{
- color:#f3ce76;
- font-size:14px;
-}
-nav{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:8px;
- padding:12px;
- background:#10213a;
- position:sticky;
- top:0;
- z-index:5;
-}
-button{
- border:1px solid #d6b15d;
- border-radius:10px;
- padding:10px 15px;
- background:#183456;
- color:white;
- cursor:pointer;
-}
-button:hover{background:#a97b29}
-.container{max-width:950px;margin:auto;padding:15px}
-.hero{
- text-align:center;
- padding:28px 12px;
- background:linear-gradient(135deg,#163c68,#10213a);
- border-radius:18px;
- margin:15px 0;
-}
-.hero h2{color:#f4d27f}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
- gap:12px;
-}
-.card{
- background:#122641;
- border:1px solid #294769;
- border-radius:15px;
- padding:17px;
- text-align:center;
-}
-.card h3{color:#f3ce76;margin:5px}
-.card .emoji{font-size:30px}
-.section{
- background:#10213a;
- border-radius:15px;
- padding:18px;
- margin:18px 0;
-}
-.section h2{color:#f3ce76}
-input,textarea,select{
- width:100%;
- padding:13px;
- margin:8px 0;
- border:1px solid #52708e;
- border-radius:9px;
- background:#091426;
- color:white;
- font-size:16px;
-}
-.result{
- background:#091426;
- padding:12px;
- border-radius:10px;
- margin-top:10px;
- min-height:40px;
- white-space:pre-wrap;
-}
-footer{
- text-align:center;
- padding:25px;
- color:#bbb;
- border-top:1px solid #294769;
-}
-a{color:#f3ce76}
+body{margin:0;background:#f1f5f9;color:#17243b;font-family:Arial,sans-serif;line-height:1.8}
+header{background:linear-gradient(135deg,#071629,#123c66);color:white;padding:25px 15px;text-align:center}
+header h1{margin:0;font-size:29px}
+header p{margin:5px}
+nav{display:flex;overflow-x:auto;gap:8px;padding:12px;background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0001}
+nav button{white-space:nowrap;border:0;border-radius:9px;padding:10px 15px;background:#e8eef7;color:#123c66;font-weight:bold}
+nav button:hover{background:#123c66;color:white}
+.container{max-width:1050px;margin:auto;padding:15px}
+.hero{background:linear-gradient(120deg,#0d3155,#087c78);color:white;border-radius:18px;padding:25px;margin:15px 0}
+.hero h2{font-size:25px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px}
+.card{background:white;padding:17px;border-radius:14px;box-shadow:0 3px 12px #0000000b;border:1px solid #e6ebf2}
+.card h3{margin:5px 0;color:#123c66}
+.icon{font-size:30px}
+section{margin:25px 0;scroll-margin-top:75px}
+h2.heading{font-size:22px;border-right:5px solid #0c9386;padding-right:12px}
+button,.action{cursor:pointer}
+.action{background:#087f72;color:white;border:0;padding:10px 15px;border-radius:9px;margin:4px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccd5e2;border-radius:9px;margin:7px 0;font-size:15px}
+textarea{min-height:90px}
+.item{background:#f5f8fc;padding:12px;margin:9px 0;border-radius:9px}
+.answer{display:block;width:100%;padding:10px;margin:7px 0;border:1px solid #dce4ef;border-radius:8px;background:white;text-align:right}
+.answer:hover{background:#e6f5f1}
+footer{background:#071629;color:white;text-align:center;padding:22px;margin-top:35px}
+.small{font-size:13px;color:#68778a}
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">📚</div>
-<h1>Abdul AI Education</h1>
-<p>Your Smart Education Platform</p>
-<p>علم حاصل کریں، مستقبل روشن بنائیں</p>
-<div class="admin">عبدالستار | Founder & Admin</div>
+<h1>📚 Abdul AI Education</h1>
+<p>مفت تعلیم | علم | تحقیق | کامیابی</p>
+<p>Free Smart Education Platform</p>
 </header>
 
 <nav>
-<button onclick="show('home')">ہوم</button>
-<button onclick="show('subjects')">مضامین</button>
-<button onclick="show('notes')">نوٹس</button>
-<button onclick="show('test')">آن لائن ٹیسٹ</button>
-<button onclick="show('ai')">AI چیٹ</button>
+<button onclick="go('home')">ہوم</button>
+<button onclick="go('books')">PDF Books</button>
+<button onclick="go('quiz')">Daily Quiz</button>
+<button onclick="go('ai')">AI Teacher</button>
+<button onclick="go('history')">اسلامی تاریخ</button>
+<button onclick="go('papers')">Past Papers</button>
 </nav>
 
-<main class="container">
+<div class="container">
 
-<div id="home">
-<div class="hero">
-<h2>خوش آمدید!</h2>
-<h3>میں Abdul AI Education ہوں</h3>
-<p>پنجاب بورڈ کے طلبہ کے لیے مفت تعلیمی پلیٹ فارم</p>
-<button onclick="show('subjects')">تعلیم شروع کریں</button>
+<div class="hero" id="home">
+<h2>خوش آمدید! 👋</h2>
+<p>Abdul AI Education میں آپ کا استقبال ہے۔</p>
+<p>کلاس 9، 10، 11 اور 12 کے لیے مفت تعلیمی سہولتیں۔</p>
+<input id="search" placeholder="اپنا مطلوبہ مضمون یا موضوع تلاش کریں..." oninput="searchContent()">
 </div>
 
+<section>
+<h2 class="heading">تعلیمی سہولتیں</h2>
 <div class="grid">
+<div class="card"><div class="icon">📚</div><h3>PDF Books</h3><p>کتابوں کی لائبریری</p><button class="action" onclick="go('books')">کھولیں</button></div>
+<div class="card"><div class="icon">📝</div><h3>Daily Quiz</h3><p>روزانہ MCQs</p><button class="action" onclick="go('quiz')">ٹیسٹ دیں</button></div>
+<div class="card"><div class="icon">🤖</div><h3>AI Teacher</h3><p>سوالات پوچھیں</p><button class="action" onclick="go('ai')">پوچھیں</button></div>
+<div class="card"><div class="icon">🕌</div><h3>Islamic History</h3><p>اسلامی تاریخ پڑھیں</p><button class="action" onclick="go('history')">مطالعہ</button></div>
+<div class="card"><div class="icon">📄</div><h3>Past Papers</h3><p>پرانے امتحانی پرچے</p><button class="action" onclick="go('papers')">دیکھیں</button></div>
+</div>
+</section>
+
+<section id="books">
+<h2 class="heading">📚 PDF Books Library</h2>
+<p>اپنی کتابیں یہاں شامل کریں۔ دستیاب PDF فائلیں کھولی اور ڈاؤن لوڈ کی جا سکتی ہیں۔</p>
+<div class="grid" id="bookList">
+<div class="card"><h3>اسلامیات لازمی</h3><p>کلاس 9 تا 10</p><a href="books/islamiyat.pdf" target="_blank">PDF کھولیں</a></div>
+<div class="card"><h3>English Grammar</h3><p>گرامر اور مشقیں</p><a href="books/english.pdf" target="_blank">PDF کھولیں</a></div>
+<div class="card"><h3>Physics</h3><p>فزکس کی کتاب</p><a href="books/physics.pdf" target="_blank">PDF کھولیں</a></div>
+</div>
+<p class="small">نوٹ: یہ نمونہ فائل لنکس ہیں۔ اپنی اصل PDF فائلیں اسی نام سے books فولڈر میں اپ لوڈ کریں۔</p>
+</section>
+
+<section id="quiz">
+<h2 class="heading">📝 Daily Quiz – روزانہ ٹیسٹ</h2>
 <div class="card">
-<div class="emoji">🎓</div>
-<h3>جماعت نہم</h3>
-<p>9th Class</p>
+<p id="question">سوال لوڈ ہو رہا ہے...</p>
+<div id="options"></div>
+<p id="result"></p>
+<p id="score"></p>
+<button class="action" onclick="nextQuestion()">اگلا سوال</button>
+<button class="action" onclick="restartQuiz()">دوبارہ شروع کریں</button>
 </div>
+</section>
+
+<section id="ai">
+<h2 class="heading">🤖 Abdul AI Teacher</h2>
 <div class="card">
-<div class="emoji">📖</div>
-<h3>جماعت دہم</h3>
-<p>10th Class</p>
+<p>السلام علیکم! اپنا تعلیمی سوال لکھیں۔</p>
+<textarea id="aiQuestion" placeholder="مثلاً: ایمان کے بنیادی ارکان کتنے ہیں؟"></textarea>
+<button class="action" onclick="askAI()">سوال بھیجیں</button>
+<div class="item" id="aiAnswer">آپ کا جواب یہاں ظاہر ہوگا۔</div>
+<p class="small">حقیقی AI جوابات کے لیے محفوظ سرور اور AI API کنکشن ضروری ہے۔</p>
 </div>
+</section>
+
+<section id="history">
+<h2 class="heading">🕌 اسلامی تاریخ</h2>
+<div class="grid">
+<div class="card"><h3>سیرت النبی ﷺ</h3><p>رسول اللہ ﷺ کی حیات مبارکہ، اخلاق، تعلیمات اور اہم واقعات۔</p></div>
+<div class="card"><h3>خلفائے راشدینؓ</h3><p>حضرت ابوبکرؓ، عمرؓ، عثمانؓ اور علیؓ کی زندگی اور خدمات۔</p></div>
+<div class="card"><h3>صحابہ کرامؓ</h3><p>صحابہ کرامؓ کی قربانیاں، کردار اور اسلامی خدمات۔</p></div>
+<div class="card"><h3>اسلامی تہذیب</h3><p>اسلامی علوم، تعلیم، فنون اور تاریخی ترقی۔</p></div>
+<div class="card"><h3>انبیاء کرام علیہم السلام</h3><p>انبیاء کرام کے واقعات اور قرآن مجید میں بیان کردہ تعلیمات۔</p></div>
+<div class="card"><h3>اسلامی تاریخ کے ادوار</h3><p>عہد نبوی، خلافت راشدہ اور بعد کے تاریخی ادوار کا تعارف۔</p></div>
+</div>
+</section>
+
+<section id="papers">
+<h2 class="heading">📄 Past Papers</h2>
 <div class="card">
-<div class="emoji">📝</div>
-<h3>MCQs</h3>
-<p>آن لائن مشق</p>
+<label>کلاس منتخب کریں</label>
+<select id="classSelect">
+<option>Class 9</option><option>Class 10</option>
+<option>Class 11</option><option>Class 12</option>
+</select>
+<label>مضمون منتخب کریں</label>
+<select id="subjectSelect">
+<option>اسلامیات</option><option>اردو</option>
+<option>English</option><option>Physics</option>
+<option>Biology</option><option>Chemistry</option>
+<option>Mathematics</option><option>Computer Science</option>
+</select>
+<button class="action" onclick="findPaper()">پرچہ تلاش کریں</button>
+<div id="paperResult" class="item">اپنی کلاس اور مضمون منتخب کریں۔</div>
+<p class="small">اصل پرچوں کے لیے متعلقہ PDF فائلیں یا مستند بورڈ لنکس شامل کرنا ضروری ہے۔</p>
 </div>
+</section>
+
+<section>
+<h2 class="heading">📢 اہم پیغام</h2>
 <div class="card">
-<div class="emoji">🤖</div>
-<h3>Abdul AI</h3>
-<p>تعلیمی مدد</p>
+<p>تعلیم حاصل کرنا ہر طالب علم کے لیے کامیابی کا راستہ ہے۔</p>
+<p>Abdul AI Education کا مقصد مفت اور آسان تعلیمی مواد فراہم کرنا ہے۔</p>
 </div>
-</div>
-</div>
+</section>
 
-<div id="subjects" class="section" hidden>
-<h2>📚 جماعت نہم و دہم کے مضامین</h2>
-<p>پنجاب بورڈ کے اہم مضامین</p>
-<div class="grid" id="subjectList"></div>
 </div>
-
-<div id="notes" class="section" hidden>
-<h2>📘 تعلیمی نوٹس</h2>
-<p>اپنے مضمون کا نام لکھیں:</p>
-<input id="noteSubject" placeholder="مثلاً اسلامیات، فزکس، انگلش">
-<textarea id="noteText" rows="5" placeholder="اپنے نوٹس یہاں لکھیں..."></textarea>
-<button onclick="saveNote()">نوٹس محفوظ کریں</button>
-<button onclick="downloadNote()">نوٹس ڈاؤن لوڈ کریں</button>
-<div id="noteResult" class="result"></div>
-</div>
-
-<div id="test" class="section" hidden>
-<h2>📝 اسلامیات MCQs ٹیسٹ</h2>
-<p>سوال 1: قرآن مجید کس نبی پر نازل ہوا؟</p>
-<div>
-<label><input type="radio" name="q1" value="a" style="width:auto"> حضرت موسیٰ علیہ السلام</label><br>
-<label><input type="radio" name="q1" value="b" style="width:auto"> حضرت محمد ﷺ</label><br>
-<label><input type="radio" name="q1" value="c" style="width:auto"> حضرت عیسیٰ علیہ السلام</label>
-</div>
-<p>سوال 2: اسلام کے کتنے بنیادی ارکان ہیں؟</p>
-<div>
-<label><input type="radio" name="q2" value="a" style="width:auto"> تین</label><br>
-<label><input type="radio" name="q2" value="b" style="width:auto"> چار</label><br>
-<label><input type="radio" name="q2" value="c" style="width:auto"> پانچ</label>
-</div>
-<button onclick="checkTest()">نتیجہ دیکھیں</button>
-<div id="testResult" class="result"></div>
-</div>
-
-<div id="ai" class="section" hidden>
-<h2>🤖 Abdul AI Assistant</h2>
-<p>اپنا تعلیمی سوال لکھیں:</p>
-<textarea id="question" rows="4" placeholder="اپنا سوال یہاں لکھیں..."></textarea>
-<button onclick="askAI()">سوال بھیجیں</button>
-<div id="answer" class="result">
-السلام علیکم! میں Abdul AI ہوں۔ اپنا سوال لکھیں۔
-</div>
-<p style="font-size:13px;color:#bbb">
-نوٹ: حقیقی AI جوابات کے لیے محفوظ AI API کنکشن ضروری ہے۔
-</p>
-</div>
-
-</main>
 
 <footer>
 <h3>Abdul AI Education</h3>
-<p>Founder & Admin: عبدالستار</p>
-<p>علم حاصل کریں، مستقبل روشن بنائیں ❤️</p>
+<p>علم حاصل کریں، آگے بڑھیں۔</p>
 <p>© 2026 Abdul AI Education</p>
 </footer>
 
 <script>
-function show(id){
- document.querySelectorAll('main > div').forEach(x=>x.hidden=true);
- document.getElementById(id).hidden=false;
- window.scrollTo(0,0);
+function go(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-const subjects=[
-"اسلامیات لازمی","ترجمۃ القرآن","اردو","انگلش",
-"ریاضی","فزکس","کیمسٹری","بیالوجی",
-"کمپیوٹر سائنس","مطالعہ پاکستان"
+const questions=[
+{q:"اسلام کے بنیادی ارکان کتنے ہیں؟",o:["تین","چار","پانچ","چھ"],a:2},
+{q:"قرآن مجید کس زبان میں نازل ہوا؟",o:["فارسی","عربی","اردو","انگریزی"],a:1},
+{q:"ہمارے آخری نبی کون ہیں؟",o:["حضرت موسیٰؑ","حضرت عیسیٰؑ","حضرت محمد ﷺ","حضرت ابراہیمؑ"],a:2},
+{q:"نماز دن میں کتنی مرتبہ فرض ہے؟",o:["تین","چار","پانچ","چھ"],a:2},
+{q:"قرآن مجید میں کتنی سورتیں ہیں؟",o:["110","112","114","116"],a:2},
+{q:"پاکستان کب آزاد ہوا؟",o:["1940","1947","1950","1956"],a:1}
 ];
 
-document.getElementById('subjectList').innerHTML=
-subjects.map((s,i)=>`
-<div class="card">
-<div class="emoji">📗</div>
-<h3>${s}</h3>
-<p>باب وار تعلیمی مواد</p>
-<button onclick="openSubject('${s}')">کھولیں</button>
-</div>`).join('');
+let qi=0,marks=0,answered=false;
 
-function openSubject(s){
- alert(s+' کے نوٹس اور اسباق یہاں شامل کیے جائیں گے۔');
+function loadQuestion(){
+answered=false;
+let q=questions[qi];
+document.getElementById("question").innerText=(qi+1)+". "+q.q;
+document.getElementById("result").innerText="";
+document.getElementById("options").innerHTML="";
+q.o.forEach((option,i)=>{
+let b=document.createElement("button");
+b.className="answer";
+b.innerText=option;
+b.onclick=()=>checkAnswer(i);
+document.getElementById("options").appendChild(b);
+});
+document.getElementById("score").innerText="اسکور: "+marks;
 }
-
-function saveNote(){
- let s=document.getElementById('noteSubject').value;
- let t=document.getElementById('noteText').value;
- if(!s||!t){alert('مضمون اور نوٹس لکھیں');return;}
- localStorage.setItem('abdul_note_'+s,t);
- document.getElementById('noteResult').innerText='نوٹس محفوظ ہوگئے: '+s;
+function checkAnswer(i){
+if(answered)return;
+answered=true;
+let correct=questions[qi].a;
+document.getElementById("result").innerText=i===correct?"✅ درست جواب!":"❌ غلط جواب۔ درست جواب: "+questions[qi].o[correct];
+if(i===correct)marks++;
+document.getElementById("score").innerText="اسکور: "+marks;
 }
-
-function downloadNote(){
- let s=document.getElementById('noteSubject').value;
- let t=document.getElementById('noteText').value;
- if(!s||!t){alert('پہلے نوٹس لکھیں');return;}
- let blob=new Blob([s+'\\n\\n'+t],{type:'text/plain;charset=utf-8'});
- let a=document.createElement('a');
- a.href=URL.createObjectURL(blob);
- a.download=s+'.txt';
- a.click();
- URL.revokeObjectURL(a.href);
+function nextQuestion(){
+if(!answered){alert("پہلے جواب منتخب کریں");return}
+qi++;
+if(qi>=questions.length){
+document.getElementById("question").innerText="ٹیسٹ مکمل ہوگیا!";
+document.getElementById("options").innerHTML="";
+document.getElementById("result").innerText="آپ کے نمبر: "+marks+" / "+questions.length;
+return;
 }
-
-function checkTest(){
- let a=document.querySelector('input[name="q1"]:checked');
- let b=document.querySelector('input[name="q2"]:checked');
- if(!a||!b){alert('تمام سوالات حل کریں');return;}
- let score=(a.value==='b'?1:0)+(b.value==='c'?1:0);
- document.getElementById('testResult').innerText=
- 'آپ کے نمبر: '+score+'/2';
+loadQuestion();
 }
+function restartQuiz(){qi=0;marks=0;loadQuestion()}
+loadQuestion();
 
 function askAI(){
- let q=document.getElementById('question').value.trim();
- if(!q){alert('اپنا سوال لکھیں');return;}
- document.getElementById('answer').innerText=
- 'آپ کا سوال موصول ہوگیا: '+q+
- '\\n\\nحقیقی AI جواب کے لیے محفوظ AI API منسلک کرنا ضروری ہے۔';
+let q=document.getElementById("aiQuestion").value.trim();
+if(!q){alert("براہ کرم سوال لکھیں");return}
+document.getElementById("aiAnswer").innerText="آپ کا سوال موصول ہوگیا: "+q+" ۔ حقیقی AI جواب کے لیے سرور سے محفوظ AI API کنکشن درکار ہے۔";
+}
+
+function findPaper(){
+let c=document.getElementById("classSelect").value;
+let s=document.getElementById("subjectSelect").value;
+document.getElementById("paperResult").innerText=c+" – "+s+" کا پرچہ ابھی اپ لوڈ نہیں کیا گیا۔ اصل PDF شامل کرنے کے بعد یہاں دستیاب ہوگا۔";
+}
+
+function searchContent(){
+let q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(q)?"":"none";
+});
 }
 </script>
-
 </body>
-</html>
- ai fucher
+ </html>
  
