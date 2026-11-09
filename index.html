@@ -1,278 +1,454 @@
-
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#103d32">
-<title>Abdul AI | Islamic Education</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071326">
+<title>Abdul AI Education</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;background:#f3f7f4;color:#172c25;
- font-family:Arial,sans-serif;line-height:1.9
-}
-header{
- background:linear-gradient(135deg,#103d32,#187052);
- color:white;text-align:center;padding:30px 15px;
- border-radius:0 0 25px 25px
-}
-header h1{font-size:29px;margin:5px}
-header p{margin:5px;color:#d9eee3}
-.container{max-width:950px;margin:auto;padding:15px}
-.controls{
- display:flex;flex-wrap:wrap;gap:9px;
- justify-content:center;margin:20px 0
-}
-button{
- border:0;border-radius:10px;padding:11px 17px;
- background:#e1eee7;color:#164b38;
- font-size:15px;font-weight:bold;cursor:pointer
-}
-button.active,button:hover{
- background:#146447;color:white
-}
-.search{
- width:100%;padding:14px;border:1px solid #ccdcd1;
- border-radius:12px;font-size:16px;margin:10px 0
-}
-.card{
- background:white;border:1px solid #e1eae4;
- border-radius:15px;padding:17px;margin:13px 0;
- box-shadow:0 3px 12px #173b2410
-}
-.card h3{color:#146447;margin-top:0}
-.card p{margin:7px 0}
-.section-title{text-align:center;color:#14533d}
-.tag{
- display:inline-block;background:#e7f3eb;
- color:#14533d;padding:3px 10px;border-radius:20px;
- font-size:12px
-}
-.answer{
- background:#f0f7f2;padding:12px;
- border-right:4px solid #18805a;border-radius:8px;
- margin:10px 0
-}
-footer{
- background:#103d32;color:white;text-align:center;
- padding:20px;margin-top:30px
-}
-.hidden{display:none}
-[dir="ltr"] .answer{border-right:0;border-left:4px solid #18805a}
+body{margin:0;background:#071326;color:#fff;font-family:Arial,sans-serif;line-height:1.9}
+header{padding:22px;background:linear-gradient(120deg,#102d50,#071326);text-align:center;border-bottom:2px solid #e7bb52}
+header h1{color:#f4c75c;margin:0;font-size:30px}
+header p{color:#b8c9dc}
+.hero{padding:35px 15px;text-align:center}
+.hero h2{font-size:30px;color:#f4c75c}
+.container{max-width:1100px;margin:auto;padding:15px}
+.stats,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.card{background:#122641;padding:17px;border:1px solid #29415f;border-radius:16px;margin-bottom:12px}
+.card h3{color:#f4c75c;margin-top:0}
+.stat{text-align:center}
+.stat strong{font-size:27px;color:#f4c75c}
+nav{display:flex;gap:8px;overflow:auto;padding:12px 0}
+button,select,input{font:inherit}
+button{background:#e8bb52;color:#101e32;border:0;padding:11px 17px;border-radius:10px;font-weight:bold;cursor:pointer}
+nav button{white-space:nowrap}
+input,select{width:100%;padding:12px;border-radius:10px;background:#091a30;color:white;border:1px solid #405673;margin:6px 0}
+.section{display:none}
+.section.active{display:block}
+.subject{background:#192f4a;padding:15px;border-radius:12px;margin:8px 0}
+.option{display:block;width:100%;margin:7px 0;background:#233d5b;color:white;text-align:right}
+.option:hover{background:#365b7d}
+.answer{display:none;color:#65e5a3;margin-top:10px}
+footer{text-align:center;padding:25px;color:#9db0c7}
+@media(max-width:600px){.hero h2{font-size:23px}header h1{font-size:23px}}
 </style>
 </head>
 <body>
 
 <header>
-<h1>☪ Abdul AI Islamic Education</h1>
-<p id="subtitle">اسلامیات لازمی | پنجاب بورڈ</p>
-<p>Classes 9 • 10 • 11 • 12</p>
+<h1>🎓 Abdul AI Education</h1>
+<p>Punjab Board | Smart Education Platform</p>
+<p>Founder & Admin: Abdul Sattar</p>
+</header>
+
+<div class="hero">
+<h2>تعلیم کا جدید ڈیجیٹل پلیٹ فارم</h2>
+<p>کلاس 9، 10، 11 اور 12 کے لیے مکمل تعلیمی نظام</p>
+<button onclick="openTab('subjects')">تعلیم شروع کریں</button>
+</div>
+
+<div class="container">
+<div class="stats">
+<div class="card stat"><strong>500</strong><br>MCQs ہدف</div>
+<div class="card stat"><strong>5000</strong><br>سوالات ہدف</div>
+<div class="card stat"><strong>4</strong><br>کلاسز</div>
+<div class="card stat"><strong>3</strong><br>تعلیمی گروپس</div>
+</div>
+
+<nav>
+<button onclick="openTab('home')">ہوم</button>
+<button onclick="openTab('subjects')">مضامین</button>
+<button onclick="openTab('mcqs')">MCQs ٹیسٹ</button>
+<button onclick="openTab('questions')">سوالات</button>
+<button onclick="openTab('about')">ہمارے بارے میں</button>
+</nav>
+
+<section id="home" class="section active">
+<div class="card">
+<h2>خوش آمدید!</h2>
+<p>Abdul AI Education میں آپ کا استقبال ہے۔</p>
+<p>اپنی کلاس اور گروپ منتخب کریں اور پڑھائی شروع کریں۔</p>
+</div>
+</section>
+
+<section id="subjects" class="section">
+<h2>📚 مضامین</h2>
+<select id="class">
+<option>9th Class</option>
+<option>10th Class</option>
+<option>11th Class</option>
+<option>12th Class</option>
+</select>
+<select id="group" onchange="showSubjects()">
+<option value="Science">Science</option>
+<option value="Arts">Arts</option>
+<option value="Computer">Computer Science</option>
+</select>
+<input id="search" placeholder="مضمون تلاش کریں" oninput="showSubjects()">
+<div id="subjectList"></div>
+</section>
+
+<section id="mcqs" class="section">
+<h2>☑️ MCQs Online Test</h2>
+<div class="card">
+<p id="question"></p>
+<div id="options"></div>
+<p id="result"></p>
+<button onclick="nextQuestion()">اگلا سوال</button>
+</div>
+</section>
+
+<section id="questions" class="section">
+<h2>✍️ مختصر سوالات</h2>
+<input id="qsearch" placeholder="سوال تلاش کریں" oninput="showQuestions()">
+<div id="questionList"></div>
+</section>
+
+<section id="about" class="section">
+<div class="card">
+<h2>Abdul AI Education</h2>
+<p>Founder & Admin: Abdul Sattar</p>
+<p>Board: Punjab Board</p>
+<p>Classes: 9th, 10th, 11th, 12th</p>
+<p>Groups: Science, Arts, Computer Science</p>
+<p>Platform: Free Educational Learning</p>
+</div>
+</section>
+</div>
+
+<footer>
+© 2026 Abdul AI Education<br>
+Founder & Admin: Abdul Sattar
+</footer>
+
+<script>
+function openTab(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+const subjects={
+Science:["Physics","Chemistry","Biology","Mathematics","English","Urdu","اسلامیات","پاکستان اسٹڈیز","ترجمۃ القرآن"],
+Arts:["General Science","General Mathematics","Education","Civics","History","Geography","English","Urdu","اسلامیات"],
+Computer:["Computer Science","Physics","Mathematics","Statistics","English","Urdu","اسلامیات","پاکستان اسٹڈیز"]
+};
+
+function showSubjects(){
+let g=document.getElementById('group').value;
+let t=document.getElementById('search').value.toLowerCase();
+document.getElementById('subjectList').innerHTML=subjects[g]
+.filter(x=>x.toLowerCase().includes(t))
+.map(x=>`<div class="subject"><h3>${x}</h3><button onclick="alert('اس مضمون کا مواد جلد شامل ہوگا')">مضمون کھولیں</button></div>`).join('');
+}
+
+const mcqs=[
+{q:"اسلام کے بنیادی ارکان کتنے ہیں؟",o:["3","4","5","6"],a:2},
+{q:"قرآن مجید کس پر نازل ہوا؟",o:["حضرت موسیٰؑ","حضرت عیسیٰؑ","حضرت محمد ﷺ","حضرت ابراہیمؑ"],a:2},
+{q:"پاکستان کب آزاد ہوا؟",o:["1940","1947","1956","1965"],a:1},
+{q:"پانی کا فارمولا کیا ہے؟",o:["CO2","H2O","O2","NaCl"],a:1},
+{q:"2+3 کا جواب کیا ہے؟",o:["4","5","6","7"],a:1}
+];
+
+let index=0,score=0,answered=false;
+
+function loadQuestion(){
+answered=false;
+let q=mcqs[index%mcqs.length];
+document.getElementById('question').innerText=(index+1)+". "+q.q;
+document.getElementById('result').innerText="";
+document.getElementById('options').innerHTML=q.o.map((x,i)=>
+`<button class="option" onclick="checkAnswer(${i})">${x}</button>`
+).join('');
+}
+
+function checkAnswer(n){
+if(answered)return;
+answered=true;
+let q=mcqs[index%mcqs.length];
+if(n===q.a){score++;document.getElementById('result').innerText="درست جواب! ✓"}
+else{document.getElementById('result').innerText="غلط جواب۔ درست جواب: "+q.o[q.a]}
+}
+
+function nextQuestion(){
+index++;
+loadQuestion();
+}
+
+const questions=[
+["رسالت کا مفہوم بیان کریں؟","اللہ کا پیغام بندوں تک پہنچانے کے لیے رسول بھیجنے کو رسالت کہتے ہیں۔"],
+["وحی کسے کہتے ہیں؟","اللہ تعالیٰ کی طرف سے نبی کو پیغام پہنچانے کے خاص طریقے کو وحی کہتے ہیں۔"],
+["حقوق العباد سے کیا مراد ہے؟","انسانوں کے ایک دوسرے پر حقوق کو حقوق العباد کہتے ہیں۔"],
+["زکوٰۃ کے دو فوائد لکھیں؟","غربت میں کمی اور معاشرتی ہمدردی کا فروغ۔"],
+["پاکستان کب قائم ہوا؟","14 اگست 1947ء کو پاکستان قائم ہوا۔"]
+];
+
+function showQuestions(){
+let t=document.getElementById('qsearch').value.toLowerCase();
+document.getElementById('questionList').innerHTML=questions
+.filter(x=>x[0].toLowerCase().includes(t))
+.map(x=>`<div class="card"><h3>${x[0]}</h3><button onclick="this.nextElementSibling.style.display='block'">جواب دیکھیں</button><p class="answer">${x[1]}</p></div>`).join('');
+}
+
+showSubjects();
+showQuestions();
+loadQuestion();
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071326">
+<title>Abdul AI Education PRO 2.0</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#071326;color:#edf4ff;font-family:Arial,sans-serif;line-height:1.9}
+header{padding:20px;background:linear-gradient(120deg,#163b65,#09172a);border-bottom:2px solid #e9bd54}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:53px;height:53px;background:linear-gradient(135deg,#ffe08b,#d99b28);border-radius:16px;display:grid;place-items:center;color:#101e32;font-size:28px;font-weight:bold}
+h1{font-size:23px;margin:0;color:#ffd66e}
+header p{margin:0;color:#b8c9df;font-size:13px}
+.container{max-width:1200px;margin:auto;padding:16px}
+.hero{background:linear-gradient(120deg,#183c63,#10213a);padding:27px;border:1px solid #355373;border-radius:22px;margin:15px 0}
+.hero h2{font-size:29px;color:#ffd66e;margin:0}
+.hero p{color:#c3d0e0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.card{background:#11243e;border:1px solid #29425f;border-radius:17px;padding:17px;margin-bottom:12px}
+.stat{text-align:center}
+.stat b{display:block;font-size:27px;color:#ffd66e}
+.stat span{color:#aebfd5;font-size:13px}
+nav{display:flex;gap:8px;overflow:auto;padding:15px 0}
+button{cursor:pointer;border:0;border-radius:10px;padding:10px 16px;background:#e9bd54;color:#101e32;font-weight:bold}
+nav button{white-space:nowrap}
+nav button.active{background:#54d8c9}
+input,select,textarea{width:100%;padding:12px;margin:6px 0;background:#081a30;border:1px solid #36506c;border-radius:10px;color:white}
+.section{display:none}
+.section.active{display:block}
+.subject{padding:15px;background:#1a304b;border:1px solid #314b68;border-radius:13px;margin:9px 0}
+.subject h3{margin:0;color:#ffd66e}
+.option{display:block;width:100%;text-align:right;background:#203b5a;color:white;margin:8px 0}
+.answer{display:none;color:#63e7a7;padding:10px}
+.small{color:#aebfd5;font-size:13px}
+footer{text-align:center;padding:25px;color:#aebfd5}
+@media(max-width:550px){.hero h2{font-size:22px}header h1{font-size:19px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="brand">
+<div class="logo">A</div>
+<div>
+<h1>Abdul AI Education PRO</h1>
+<p>Punjab Board | Version 2.0</p>
+</div>
+</div>
+<p style="margin-top:10px">Founder & Admin: Abdul Sattar</p>
 </header>
 
 <div class="container">
 
-<h2 class="section-title" id="welcome">
-اسلامیات کے تعلیمی پورٹل میں خوش آمدید
-</h2>
-
-<div class="controls">
-<button class="active" onclick="setClass(9,this)">کلاس 9</button>
-<button onclick="setClass(10,this)">کلاس 10</button>
-<button onclick="setClass(11,this)">کلاس 11</button>
-<button onclick="setClass(12,this)">کلاس 12</button>
+<div class="hero">
+<h2>السلام علیکم! Abdul AI میں خوش آمدید</h2>
+<p>آپ کی کامیابی ہمارا مقصد ہے۔ کلاس 9 سے 12 تک مکمل تعلیمی سہولت۔</p>
+<button onclick="tab('subjects')">📚 پڑھائی شروع کریں</button>
 </div>
 
-<div class="controls">
-<button onclick="setLang('ur')">اردو</button>
-<button onclick="setLang('en')">English</button>
+<div class="grid">
+<div class="card stat"><b>500</b><span>MCQs کا ہدف</span></div>
+<div class="card stat"><b>5,000</b><span>سوالات کا ہدف</span></div>
+<div class="card stat"><b>4</b><span>کلاسز</span></div>
+<div class="card stat"><b>3</b><span>گروپس</span></div>
 </div>
 
-<input class="search" id="search"
-placeholder="سبق یا موضوع تلاش کریں..."
-oninput="render()">
+<nav>
+<button class="active" onclick="tab('home',this)">🏠 Home</button>
+<button onclick="tab('subjects',this)">📚 Subjects</button>
+<button onclick="tab('mcqs',this)">☑️ MCQs</button>
+<button onclick="tab('questions',this)">✍️ Questions</button>
+<button onclick="tab('islamiyat',this)">🕌 اسلاميات</button>
+<button onclick="tab('ai',this)">🤖 Abdul AI</button>
+<button onclick="tab('about',this)">About</button>
+</nav>
 
-<h2 id="classTitle" class="section-title">کلاس نہم اسلامیات</h2>
-
-<div class="controls">
-<button onclick="showAll()">تمام اسباق</button>
-<button onclick="showType('notes')">نوٹس</button>
-<button onclick="showType('questions')">سوالات</button>
-<button onclick="showType('mcq')">MCQs</button>
+<section id="home" class="section active">
+<div class="card">
+<h2>تعلیمی ڈیش بورڈ</h2>
+<p>اپنی کلاس، گروپ اور مضمون منتخب کریں۔</p>
+<select id="homeClass">
+<option>9th Class</option><option>10th Class</option>
+<option>11th Class</option><option>12th Class</option>
+</select>
+<select id="homeGroup">
+<option>Science</option><option>Arts</option><option>Computer Science</option>
+</select>
+<button onclick="tab('subjects')">مضامین دیکھیں</button>
 </div>
+<div class="grid">
+<div class="card"><h3>📖 Notes</h3><p>تعلیمی نوٹس</p></div>
+<div class="card"><h3>📝 Tests</h3><p>آن لائن امتحان</p></div>
+<div class="card"><h3>🤖 AI Tutor</h3><p>تعلیمی معاون</p></div>
+</div>
+</section>
 
-<div id="lessons"></div>
+<section id="subjects" class="section">
+<h2>📚 تمام مضامین</h2>
+<select id="classSelect">
+<option>9th Class</option><option>10th Class</option>
+<option>11th Class</option><option>12th Class</option>
+</select>
+<select id="groupSelect" onchange="renderSubjects()">
+<option value="Science">Science</option>
+<option value="Arts">Arts</option>
+<option value="Computer Science">Computer Science</option>
+</select>
+<input id="subjectSearch" placeholder="مضمون تلاش کریں..." oninput="renderSubjects()">
+<div id="subjectsList"></div>
+</section>
+
+<section id="mcqs" class="section">
+<h2>☑️ Online MCQs Test</h2>
+<div class="card">
+<p class="small">نمونہ پریکٹس سوالات</p>
+<h3 id="mcqQuestion"></h3>
+<div id="mcqOptions"></div>
+<p id="mcqResult"></p>
+<button onclick="nextMCQ()">اگلا سوال</button>
+<button onclick="showResult()">نتیجہ</button>
+</div>
+</section>
+
+<section id="questions" class="section">
+<h2>✍️ سوالات اور جوابات</h2>
+<input id="questionSearch" placeholder="سوال تلاش کریں..." oninput="renderQuestions()">
+<div id="questionsList"></div>
+</section>
+
+<section id="islamiyat" class="section">
+<h2>🕌 اسلامیات</h2>
+<div id="islamiyatList"></div>
+</section>
+
+<section id="ai" class="section">
+<h2>🤖 Abdul AI Assistant</h2>
+<div class="card">
+<p>السلام علیکم! میں Abdul AI ہوں۔ اپنا تعلیمی سوال لکھیں۔</p>
+<div id="chat"></div>
+<textarea id="aiInput" rows="3" placeholder="اپنا سوال لکھیں..."></textarea>
+<button onclick="askAI()">سوال بھیجیں</button>
+<p class="small">یہ آف لائن ڈیمو ہے۔ حقیقی AI جواب کے لیے محفوظ Backend اور AI API منسلک کرنا ضروری ہے۔</p>
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="card">
+<h2>Abdul AI Education PRO 2.0</h2>
+<p>Board: Punjab Board</p>
+<p>Classes: 9, 10, 11, 12</p>
+<p>Groups: Science, Arts, Computer Science</p>
+<p>MCQs Target: 500</p>
+<p>Questions Target: 5,000</p>
+<h3>Founder & Admin: Abdul Sattar</h3>
+</div>
+</section>
 
 </div>
 
 <footer>
-<h3>Abdul AI Education</h3>
-<p>علم حاصل کرنا ہر مسلمان کے لیے اہم ہے۔</p>
-<p>Islamic Education | Punjab Board</p>
+© 2026 Abdul AI Education PRO<br>
+Founder & Admin: Abdul Sattar
 </footer>
 
 <script>
-let currentClass=9;
-let language='ur';
-let filter='all';
-
-const data=[
-{
-title:'قرآن مجید کا تعارف',
-en:'Introduction to the Holy Quran',
-notes:'قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے جو حضرت محمد ﷺ پر نازل ہوئی۔ یہ تمام انسانیت کے لیے ہدایت کا سرچشمہ ہے۔',
-enNotes:'The Holy Quran is the final revealed book of Allah, sent to Prophet Muhammad (PBUH). It is a source of guidance for all humanity.',
-questions:'قرآن مجید کس پر نازل ہوا؟ قرآن مجید کی تعلیمات کیا ہیں؟',
-enQuestions:'Upon whom was the Holy Quran revealed? What are its teachings?',
-mcq:'قرآن مجید کس نبی پر نازل ہوا؟',
-enMcq:'To which Prophet was the Holy Quran revealed?',
-options:['حضرت موسیٰؑ','حضرت عیسیٰؑ','حضرت محمد ﷺ','حضرت ابراہیمؑ'],
-enOptions:['Musa (AS)','Isa (AS)','Muhammad (PBUH)','Ibrahim (AS)'],
-correct:2
-},
-{
-title:'حدیث و سنت',
-en:'Hadith and Sunnah',
-notes:'حدیث سے مراد رسول اللہ ﷺ کے اقوال، افعال اور تقریرات ہیں۔ سنت آپ ﷺ کے طریقے کو کہتے ہیں۔',
-enNotes:'Hadith refers to the sayings, actions and approvals of Prophet Muhammad (PBUH). Sunnah means his way of life.',
-questions:'حدیث کی تعریف لکھیں۔ سنت سے کیا مراد ہے؟',
-enQuestions:'Define Hadith. What is meant by Sunnah?',
-mcq:'حدیث میں کیا شامل ہے؟',
-enMcq:'What does Hadith include?',
-options:['اقوال و افعال','صرف تاریخ','صرف شاعری','صرف کہانیاں'],
-enOptions:['Sayings and actions','History only','Poetry only','Stories only'],
-correct:0
-},
-{
-title:'ایمان اور عقائد',
-en:'Faith and Beliefs',
-notes:'اسلام میں ایمان کے بنیادی ارکان اللہ، فرشتوں، آسمانی کتابوں، رسولوں، آخرت اور تقدیر پر ایمان ہیں۔',
-enNotes:'The articles of faith include belief in Allah, angels, revealed books, messengers, the Last Day and divine decree.',
-questions:'ایمان کے بنیادی ارکان بیان کریں۔ توحید سے کیا مراد ہے؟',
-enQuestions:'Describe the articles of faith. What is Tawheed?',
-mcq:'ایمان کے ارکان میں کون سا شامل ہے؟',
-enMcq:'Which is an article of faith?',
-options:['فرشتوں پر ایمان','دولت جمع کرنا','کھیلنا','سفر کرنا'],
-enOptions:['Belief in angels','Collecting wealth','Playing','Travelling'],
-correct:0
-},
-{
-title:'عبادات',
-en:'Worship in Islam',
-notes:'اسلام میں نماز، روزہ، زکوٰۃ اور حج اہم عبادات ہیں۔ عبادات انسان میں تقویٰ، نظم و ضبط اور اللہ کی اطاعت پیدا کرتی ہیں۔',
-enNotes:'Prayer, fasting, Zakat and Hajj are important acts of worship in Islam. They develop piety, discipline and obedience to Allah.',
-questions:'اسلام کے بنیادی ارکان لکھیں۔ نماز کی اہمیت بیان کریں۔',
-enQuestions:'Name the pillars of Islam. Explain the importance of Salah.',
-mcq:'رمضان کے روزے کس مہینے میں رکھے جاتے ہیں؟',
-enMcq:'In which month do Muslims fast?',
-options:['محرم','رمضان','شوال','رجب'],
-enOptions:['Muharram','Ramadan','Shawwal','Rajab'],
-correct:1
-},
-{
-title:'سیرت النبی ﷺ',
-en:'Life of Prophet Muhammad (PBUH)',
-notes:'حضرت محمد ﷺ کی مبارک زندگی تمام مسلمانوں کے لیے بہترین نمونہ ہے۔ آپ ﷺ نے عدل، رحم، امانت اور سچائی کی تعلیم دی۔',
-enNotes:'The blessed life of Prophet Muhammad (PBUH) is the best example for Muslims. He taught justice, mercy, honesty and truthfulness.',
-questions:'سیرت النبی ﷺ سے ہمیں کیا سبق ملتا ہے؟ آپ ﷺ کے اخلاق بیان کریں۔',
-enQuestions:'What lessons do we learn from the Seerah? Describe his character.',
-mcq:'نبی کریم ﷺ کس شہر میں پیدا ہوئے؟',
-enMcq:'In which city was Prophet Muhammad (PBUH) born?',
-options:['مدینہ','مکہ','طائف','یروشلم'],
-enOptions:['Madinah','Makkah','Taif','Jerusalem'],
-correct:1
-},
-{
-title:'اسلامی اخلاق و آداب',
-en:'Islamic Ethics and Manners',
-notes:'اسلام سچائی، صبر، شکر، احترام والدین، حسن سلوک اور امانت داری کی تعلیم دیتا ہے۔',
-enNotes:'Islam teaches truthfulness, patience, gratitude, respect for parents, kindness and trustworthiness.',
-questions:'والدین کے حقوق بیان کریں۔ سچائی کی اہمیت کیا ہے؟',
-enQuestions:'Describe the rights of parents. Why is truthfulness important?',
-mcq:'اسلام کس چیز کی تعلیم دیتا ہے؟',
-enMcq:'What does Islam teach?',
-options:['جھوٹ','بددیانتی','سچائی','ظلم'],
-enOptions:['Lying','Dishonesty','Truthfulness','Injustice'],
-correct:2
+function tab(id,btn){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+if(btn)btn.classList.add('active');
 }
+
+const data={
+"Science":["Physics","Chemistry","Biology","Mathematics","English","Urdu","اسلامیات","پاکستان اسٹڈیز","ترجمۃ القرآن"],
+"Arts":["General Science","General Mathematics","Education","Civics","History","Geography","English","Urdu","اسلامیات"],
+"Computer Science":["Computer Science","Physics","Mathematics","Statistics","English","Urdu","اسلامیات","پاکستان اسٹڈیز"]
+};
+
+function renderSubjects(){
+let g=document.getElementById('groupSelect').value;
+let s=document.getElementById('subjectSearch').value.toLowerCase();
+document.getElementById('subjectsList').innerHTML=data[g]
+.filter(x=>x.toLowerCase().includes(s))
+.map(x=>`<div class="subject"><h3>${x}</h3><p>نوٹس، MCQs اور مختصر سوالات</p></div>`).join('');
+}
+
+const mcqs=[
+{q:"اسلام کے بنیادی ارکان کتنے ہیں؟",o:["3","4","5","6"],a:2},
+{q:"قرآن مجید کس پر نازل ہوا؟",o:["حضرت موسیٰؑ","حضرت عیسیٰؑ","حضرت محمد ﷺ","حضرت ابراہیمؑ"],a:2},
+{q:"پاکستان کب آزاد ہوا؟",o:["1940","1947","1956","1965"],a:1},
+{q:"پانی کا فارمولا کیا ہے؟",o:["CO2","H2O","O2","NaCl"],a:1},
+{q:"2 + 3 × 4 کیا ہے؟",o:["20","14","24","10"],a:1}
 ];
 
-function setClass(n,btn){
- currentClass=n;
- document.querySelectorAll('.controls button').forEach(b=>{
- if(b.textContent.includes('کلاس')) b.classList.remove('active');
- });
- btn.classList.add('active');
- render();
+let current=0,score=0,done=false;
+
+function loadMCQ(){
+done=false;
+let q=mcqs[current%mcqs.length];
+document.getElementById('mcqQuestion').innerText=(current+1)+". "+q.q;
+document.getElementById('mcqResult').innerText="";
+document.getElementById('mcqOptions').innerHTML=q.o.map((x,i)=>
+`<button class="option" onclick="checkMCQ(${i})">${x}</button>`).join('');
 }
 
-function setLang(l){
- language=l;
- document.documentElement.lang=l;
- document.documentElement.dir=l==='ur'?'rtl':'ltr';
- document.getElementById('subtitle').textContent=
- l==='ur'?'اسلامیات لازمی | پنجاب بورڈ':'Compulsory Islamiyat | Punjab Board';
- document.getElementById('welcome').textContent=
- l==='ur'?'اسلامیات کے تعلیمی پورٹل میں خوش آمدید':'Welcome to Islamic Education Portal';
- document.getElementById('search').placeholder=
- l==='ur'?'سبق یا موضوع تلاش کریں...':'Search lessons or topics...';
- render();
+function checkMCQ(n){
+if(done)return;
+done=true;
+let q=mcqs[current%mcqs.length];
+if(n===q.a){
+score++;
+document.getElementById('mcqResult').innerText="درست جواب ✓";
+}else{
+document.getElementById('mcqResult').innerText="درست جواب: "+q.o[q.a];
+}
 }
 
-function showAll(){filter='all';render()}
-function showType(t){filter=t;render()}
+function nextMCQ(){current++;loadMCQ();}
+function showResult(){alert("درست جوابات: "+score+" / "+(current+1));}
 
-function render(){
- const ur=language==='ur';
- const q=document.getElementById('search').value.toLowerCase();
- document.getElementById('classTitle').textContent=
- ur?'کلاس '+(currentClass===9?'نہم':currentClass===10?'دہم':currentClass===11?'گیارہویں':'بارہویں')+' اسلامیات':
- 'Class '+currentClass+' Islamiyat';
+const qdata=[
+["رسالت کا مفہوم بیان کریں؟","اللہ تعالیٰ کا پیغام لوگوں تک پہنچانے کے لیے رسول بھیجنے کو رسالت کہتے ہیں۔"],
+["وحی کسے کہتے ہیں؟","اللہ تعالیٰ کی طرف سے اپنے نبی کو پیغام پہنچانے کے خاص طریقے کو وحی کہتے ہیں۔"],
+["حقوق العباد کیا ہیں؟","انسانوں کے ایک دوسرے پر حقوق کو حقوق العباد کہتے ہیں۔"],
+["زکوٰۃ کے دو فوائد لکھیں۔","غربت میں کمی اور معاشرے میں ہمدردی کا فروغ۔"],
+["پاکستان کب قائم ہوا؟","14 اگست 1947ء کو پاکستان قائم ہوا۔"]
+];
 
- let html='';
- data.forEach((item,i)=>{
- const title=ur?item.title:item.en;
- if(!title.toLowerCase().includes(q) &&
- !(ur?item.notes:item.enNotes).toLowerCase().includes(q)) return;
-
- html+=`<div class="card">
- <span class="tag">${ur?'سبق':'Lesson'} ${i+1}</span>
- <h3>${title}</h3>`;
-
- if(filter==='all'||filter==='notes'){
- html+=`<h4>${ur?'سبق کے نوٹس':'Lesson Notes'}</h4>
- <p>${ur?item.notes:item.enNotes}</p>`;
- }
- if(filter==='all'||filter==='questions'){
- html+=`<div class="answer"><b>${ur?'اہم سوالات':'Important Questions'}</b>
- <p>${ur?item.questions:item.enQuestions}</p></div>`;
- }
- if(filter==='all'||filter==='mcq'){
- html+=`<div class="answer"><b>${ur?item.mcq:item.enMcq}</b>
- <p>${(ur?item.options:item.enOptions).map((o,j)=>
- `<label style="display:block"><input type="radio" name="mcq${i}" value="${j}"> ${o}</label>`).join('')}</p>
- <button onclick="check(${i})">${ur?'جواب چیک کریں':'Check Answer'}</button>
- <p id="result${i}"></p></div>`;
- }
- html+='</div>';
- });
- document.getElementById('lessons').innerHTML=html||
- '<p>کوئی نتیجہ نہیں ملا۔ / No results found.</p>';
+function renderQuestions(){
+let s=document.getElementById('questionSearch').value.toLowerCase();
+document.getElementById('questionsList').innerHTML=qdata.filter(x=>x[0].toLowerCase().includes(s))
+.map(x=>`<div class="card"><h3>${x[0]}</h3><button onclick="this.nextElementSibling.style.display='block'">جواب دیکھیں</button><p class="answer">${x[1]}</p></div>`).join('');
 }
 
-function check(i){
- const selected=document.querySelector('input[name="mcq'+i+'"]:checked');
- const result=document.getElementById('result'+i);
- if(!selected){
- result.textContent=language==='ur'?'پہلے جواب منتخب کریں۔':'Select an answer first.';
- return;
- }
- result.textContent=Number(selected.value)===data[i].correct?
- (language==='ur'?'درست جواب! ماشاءاللہ':'Correct! Well done.'):
- (language==='ur'?'جواب درست نہیں، دوبارہ کوشش کریں۔':'Incorrect. Try again.');
+document.getElementById('islamiyatList').innerHTML=qdata.slice(0,4).map(x=>
+`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');
+
+function askAI(){
+let v=document.getElementById('aiInput').value.trim();
+if(!v)return;
+let chat=document.getElementById('chat');
+chat.innerHTML+=`<div class="card"><b>آپ:</b> ${escapeHTML(v)}</div><div class="card"><b>Abdul AI:</b> آپ کا سوال موصول ہوگیا۔ حقیقی AI جواب کے لیے API Backend سے کنکشن درکار ہے۔</div>`;
+document.getElementById('aiInput').value="";
 }
 
-render();
+function escapeHTML(s){
+return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+renderSubjects();
+renderQuestions();
+loadMCQ();
 </script>
 </body>
-</html>
+                   </html>
