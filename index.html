@@ -3,405 +3,386 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071d19">
-<title>مکتبہ عبد الستار | Abdul AI Islamic Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b18">
+<meta name="description" content="Abdul AI Education - مکمل اسلامیات، قرآن، حدیث، سیرت، نوٹس، MCQs اور آن لائن ٹیسٹ">
+<title>Abdul AI Education | Islamic Studies</title>
 <style>
 :root{
---bg:#071d19;--panel:#102c25;--panel2:#173b30;
---gold:#e5c276;--text:#f6f3e9;--muted:#b7c9bd;
---line:#315446;--green:#3ca77d;
+ --bg:#071b18;--panel:#102923;--panel2:#15372e;
+ --gold:#e8c77b;--white:#f8f7f0;--muted:#bdcfc5;
+ --green:#2e8062;--line:#315247;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);
-font-family:Arial,sans-serif;line-height:2}
-button,input,select{font:inherit}
-header{position:sticky;top:0;z-index:20;background:#071d19ed;
-backdrop-filter:blur(15px);border-bottom:1px solid var(--line);
-padding:12px 4%;display:flex;justify-content:space-between;
-align-items:center;gap:12px;flex-wrap:wrap}
-.logo{color:var(--gold);font-weight:bold;font-size:21px}
-.logo small{display:block;font-size:10px;color:var(--muted)}
-nav{display:flex;gap:6px;overflow-x:auto}
-nav button{white-space:nowrap;background:transparent;color:white;
-border:1px solid var(--line);padding:6px 11px;border-radius:9px}
-nav button:hover{background:var(--gold);color:#071d19}
-.hero{text-align:center;padding:60px 15px;
-background:radial-gradient(ellipse at top,#94733145,transparent 65%),
-linear-gradient(140deg,#143b2d,#071d19)}
-.hero .arabic{font-size:36px;color:var(--gold)}
-.hero h1{font-size:clamp(28px,5vw,48px);margin:10px}
-.hero p{color:var(--muted)}
-.container{max-width:1200px;margin:auto;padding:20px 4%}
-.search{display:flex;max-width:650px;margin:25px auto;gap:7px}
-input,select{background:#0d2a21;color:white;
-border:1px solid var(--line);border-radius:9px;padding:12px;width:100%}
-button{cursor:pointer}
-.btn{background:var(--gold);color:#17251b;border:0;
-border-radius:9px;padding:10px 17px;font-weight:bold}
-.btn2{background:var(--panel2);color:white;
-border:1px solid var(--line);border-radius:8px;padding:8px 13px}
-.stats,.grid{display:grid;gap:13px}
-.stats{grid-template-columns:repeat(4,1fr);margin:25px 0}
-.stat,.card,.content{background:var(--panel);
-border:1px solid var(--line);border-radius:14px;padding:17px}
-.stat{text-align:center}
-.stat strong{display:block;color:var(--gold);font-size:23px}
-.grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.card{cursor:pointer;transition:.2s}
-.card:hover{transform:translateY(-3px);border-color:var(--gold)}
-.card .ico{font-size:30px}
-.card h3{color:var(--gold);margin:3px 0}
-.card p{font-size:13px;color:var(--muted)}
-.section{margin:35px 0;scroll-margin-top:100px}
-.section h2{color:var(--gold)}
-.hidden{display:none!important}
-#reader{min-height:250px}
-.lesson{padding:17px;margin:12px 0;background:var(--panel2);
-border-radius:12px;border-right:3px solid var(--gold)}
-.lesson h3{color:var(--gold)}
-.arabic{font-family:"Times New Roman",serif;
-font-size:26px;text-align:center;line-height:2.2;color:#f4d992}
-.translation{color:#dce8dc;text-align:center}
-.small{color:var(--muted);font-size:12px}
-.list{padding-right:22px}
-.list li{padding:5px 0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-#results{margin-top:15px}
-footer{text-align:center;border-top:1px solid var(--line);
-padding:30px;color:var(--muted)}
-@media(max-width:600px){
-.stats{grid-template-columns:repeat(2,1fr)}
-.hero{padding:35px 12px}
-header{justify-content:center}
-nav{width:100%}
-.search{flex-wrap:wrap}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#f3f6f3;color:#172b25;
+ font-family:Arial,"Noto Nastaliq Urdu",sans-serif;line-height:1.9
 }
-@media print{
-header,nav,.search,.btn,.btn2,footer{display:none!important}
-body{background:white;color:black}
-.card,.content,.lesson{background:white;color:black;border:1px solid #aaa}
+header{
+ background:linear-gradient(120deg,#061713,#123d30 65%,#1c5741);
+ color:white;padding:24px 5%;position:relative;overflow:hidden
+}
+header:after{
+ content:"";position:absolute;width:240px;height:240px;
+ border:1px solid #ffffff20;border-radius:50%;
+ left:-60px;top:-110px
+}
+.top{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{font-size:25px;font-weight:bold;color:var(--gold)}
+.brand small{display:block;font-size:12px;color:#dce9df;font-weight:normal}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+nav a{
+ color:#fff;text-decoration:none;padding:7px 12px;
+ border:1px solid #ffffff35;border-radius:20px;font-size:13px
+}
+nav a:hover{background:var(--gold);color:#10251d}
+.hero{padding:35px 0 22px;max-width:850px}
+.hero h1{font-size:clamp(28px,5vw,48px);margin:0;color:var(--gold)}
+.hero p{color:#e0e9e2;font-size:16px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+ border:0;padding:11px 18px;border-radius:9px;
+ background:var(--gold);color:#18271e;font-weight:bold;
+ cursor:pointer;text-decoration:none;display:inline-block
+}
+.btn.secondary{background:transparent;color:white;border:1px solid #ffffff70}
+.container{width:min(1180px,92%);margin:auto}
+.stats{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+ margin:22px auto
+}
+.stat{
+ background:white;padding:16px;border-radius:13px;text-align:center;
+ box-shadow:0 4px 18px #142b1b0c
+}
+.stat strong{display:block;color:#176346;font-size:23px}
+.section{padding:30px 0}
+.section-title{margin-bottom:18px}
+.section-title h2{margin:0;color:#123d30;font-size:27px}
+.section-title p{margin:3px 0;color:#687b70}
+.searchbar{
+ display:flex;gap:8px;margin:15px 0;flex-wrap:wrap
+}
+input,select{
+ padding:12px;border:1px solid #d5dfd8;border-radius:9px;
+ font-size:15px;background:white;min-width:0
+}
+.searchbar input{flex:1;min-width:190px}
+.grid{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:15px
+}
+.card{
+ background:white;border:1px solid #e1e9e2;border-radius:15px;
+ padding:18px;box-shadow:0 5px 18px #102b1b0a;
+ transition:.2s
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 9px 25px #102b1b16}
+.card .emoji{font-size:29px}
+.card h3{margin:5px 0;color:#14543d}
+.card p{margin:5px 0;color:#586b60}
+.card button{margin-top:10px}
+.content-panel{
+ background:white;border-radius:16px;padding:22px;
+ border:1px solid #e0e8e1;margin-top:14px
+}
+.content-panel h3{color:#14543d}
+.topic{
+ border-right:4px solid #d6ad58;padding:9px 14px;
+ background:#f6f8f4;margin:12px 0;border-radius:7px
+}
+.topic h4{margin:0;color:#174c37}
+.topic p{margin:5px 0}
+.arabic{
+ direction:rtl;text-align:right;font-size:25px;
+ line-height:2.1;color:#174b35;padding:12px;
+ background:#f5f8f2;border-radius:10px
+}
+.muted{color:#6a7c71;font-size:13px}
+.links a{color:#176346;margin-left:12px}
+.quiz-question{padding:14px;border-bottom:1px solid #e2e9e3}
+.quiz-question label{display:block;padding:5px;cursor:pointer}
+footer{
+ background:#071b18;color:#e5eee8;padding:30px 5%;margin-top:35px
+}
+footer a{color:var(--gold)}
+.hidden{display:none}
+@media(max-width:800px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+ .grid{grid-template-columns:1fr}
+ header{padding:20px 4%}
+ .hero{padding-top:25px}
+ .card{padding:15px}
+ .section-title h2{font-size:23px}
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">☪ مکتبہ عبد الستار
-<small>ABDUL AI ISLAMIC KNOWLEDGE CENTER</small></div>
-<nav>
-<button onclick="home()">ہوم</button>
-<button onclick="showSection('quran')">قرآن</button>
-<button onclick="showSection('hadith')">حدیث</button>
-<button onclick="showSection('tafsir')">تفسیر</button>
-<button onclick="showSection('seerah')">سیرت</button>
-<button onclick="showSection('topics')">اسلامی علوم</button>
-</nav>
+ <div class="top">
+  <div class="brand">✦ ABDUL AI EDUCATION
+   <small>Islamic Studies • Quran • Hadith • Learning</small>
+  </div>
+  <div>📚 مفت تعلیم، سب کے لیے</div>
+ </div>
+ <nav>
+  <a href="#home">ہوم</a>
+  <a href="#subjects">اسلامی مضامین</a>
+  <a href="#quran">قرآن مجید</a>
+  <a href="#hadith">احادیث</a>
+  <a href="#seerah">سیرت</a>
+  <a href="#quiz">آن لائن ٹیسٹ</a>
+  <a href="#sources">مستند ذرائع</a>
+ </nav>
+ <div class="hero" id="home">
+  <h1>اسلامی علم، آسان انداز میں</h1>
+  <p>قرآن مجید، احادیث نبوی ﷺ، عقائد، عبادات، سیرت النبی ﷺ، اسلامی تاریخ اور اخلاقی تعلیمات کا جامع تعلیمی مرکز۔</p>
+  <div class="hero-buttons">
+   <a class="btn" href="#subjects">تعلیم شروع کریں</a>
+   <a class="btn secondary" href="#quiz">اپنا ٹیسٹ دیں</a>
+  </div>
+ </div>
 </header>
 
-<section class="hero" id="home">
-<div class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-<h1>اسلامی علم کا روشن سفر</h1>
-<h2 style="color:var(--gold)">مکتبہ عبد الستار</h2>
-<p>قرآن و سنت، سیرت النبی ﷺ، اسلامی تاریخ، عقائد اور عبادات کا جامع تعلیمی مرکز</p>
-<div class="search">
-<input id="search" placeholder="قرآن، حدیث، موضوع یا سبق تلاش کریں..." oninput="searchLibrary()">
-<button class="btn" onclick="searchLibrary()">تلاش کریں</button>
-</div>
-<button class="btn" onclick="showSection('quran')">مطالعہ شروع کریں</button>
-</section>
-
 <main class="container">
+ <div class="stats">
+  <div class="stat"><strong>📖</strong>قرآن و تفسیر</div>
+  <div class="stat"><strong>🌙</strong>حدیث و سنت</div>
+  <div class="stat"><strong>🕌</strong>اسلامی تعلیمات</div>
+  <div class="stat"><strong>✍️</strong>ٹیسٹ و نوٹس</div>
+ </div>
 
-<div class="stats">
-<div class="stat"><strong>114</strong>قرآنی سورتیں</div>
-<div class="stat"><strong>4</strong>بنیادی لائبریریاں</div>
-<div class="stat"><strong>20+</strong>اسلامی موضوعات</div>
-<div class="stat"><strong>FREE</strong>مفت مطالعہ</div>
-</div>
+ <section class="section" id="subjects">
+  <div class="section-title">
+   <h2>اسلامیات کے تمام اہم مضامین</h2>
+   <p>ہر موضوع کو الگ سیکشن میں پڑھیں۔</p>
+  </div>
+  <div class="searchbar">
+   <input id="search" placeholder="اپنا مطلوبہ موضوع تلاش کریں..." oninput="searchTopics()">
+  </div>
+  <div class="grid" id="subjectGrid"></div>
+ </section>
 
-<section class="section">
-<h2>✦ اسلامی علوم کے خصوصی شعبے</h2>
-<div class="grid" id="departments"></div>
-</section>
+ <section class="section" id="quran">
+  <div class="section-title">
+   <h2>📖 قرآن مجید اور علوم القرآن</h2>
+   <p>قرآن کی تعلیم، فہم، ترجمہ اور بنیادی علوم۔</p>
+  </div>
+  <div class="content-panel">
+   <h3>قرآن مجید کا تعارف</h3>
+   <p>قرآن مجید اللہ تعالیٰ کی آخری کتاب ہے جو حضرت محمد ﷺ پر حضرت جبرائیل علیہ السلام کے ذریعے نازل ہوئی۔ یہ انسانوں کے لیے ہدایت، رحمت، نصیحت اور زندگی گزارنے کا مکمل اصول فراہم کرتا ہے۔</p>
+   <div class="topic"><h4>قرآن مجید کے بنیادی موضوعات</h4>
+    <p>توحید، رسالت، آخرت، عبادات، اخلاق، عدل، معاشرت، انفاق، صبر، شکر اور انسانی حقوق۔</p>
+   </div>
+   <div class="topic"><h4>نزولِ قرآن</h4>
+    <p>قرآن مجید کا نزول تقریباً 23 سال کے عرصے میں مکمل ہوا۔ اس میں مکی اور مدنی سورتیں شامل ہیں۔ مکی سورتوں میں عموماً عقیدہ، توحید اور آخرت پر زور ملتا ہے، جبکہ مدنی سورتوں میں عبادات، معاشرت اور اجتماعی زندگی کے احکام بھی تفصیل سے بیان ہوئے ہیں۔</p>
+   </div>
+   <div class="topic"><h4>قرآن مجید کے علوم</h4>
+    <p>وحی، شانِ نزول، مکی و مدنی سورتیں، محکم و متشابہ، ناسخ و منسوخ، تجوید، قراءت اور تفسیر علوم القرآن کے اہم شعبے ہیں۔</p>
+   </div>
+   <h3>منتخب سورتوں کے تعلیمی موضوعات</h3>
+   <div class="topic"><h4>سورۃ الفاتحہ</h4><p>اللہ کی حمد، اس کی رحمت، روزِ جزا، عبادت اور ہدایت کی دعا۔</p></div>
+   <div class="topic"><h4>سورۃ الاخلاص</h4><p>اللہ تعالیٰ کی وحدانیت اور بے مثالی کا بیان۔</p></div>
+   <div class="topic"><h4>سورۃ العصر</h4><p>وقت کی قدر، ایمان، نیک عمل، حق اور صبر کی نصیحت۔</p></div>
+   <div class="topic"><h4>سورۃ الحجرات</h4><p>ادبِ رسول ﷺ، خبر کی تحقیق، بھائی چارہ، غیبت سے بچاؤ اور انسانی مساوات۔</p></div>
+   <div class="topic"><h4>سورۃ الرحمن</h4><p>اللہ کی نعمتوں، قدرت اور انسان و جنات کو جواب دہی کی یاد دہانی۔</p></div>
+   <div class="topic"><h4>سورۃ لقمان</h4><p>حکمت، والدین کے حقوق، نماز، نیکی کی دعوت، عاجزی اور اچھے اخلاق۔</p></div>
+   <div class="topic"><h4>سورۃ البقرہ</h4><p>ایمان، عبادات، روزہ، انفاق، خاندانی احکام، بنی اسرائیل کے واقعات اور ہدایت کے اصول۔</p></div>
+   <p class="links">
+    <a href="https://quran.com/" target="_blank">قرآن عربی، ترجمہ اور تلاوت پڑھیں ↗</a>
+    <a href="https://quran.com/tafsirs" target="_blank">تفاسیر دیکھیں ↗</a>
+   </p>
+  </div>
+ </section>
 
-<section class="section" id="quran">
-<h2>📖 قرآن مجید</h2>
-<p>قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے، جو حضرت محمد ﷺ پر نازل ہوئی۔</p>
-<div class="content">
-<h3>قرآن مجید کا تعارف</h3>
-<p>قرآن مجید انسانیت کے لیے ہدایت، رحمت اور نصیحت کی کتاب ہے۔ اس میں توحید، رسالت، آخرت، عبادات، معاملات، اخلاق، عدل اور انسانی حقوق کی تعلیمات موجود ہیں۔</p>
-<ul class="list">
-<li>قرآن مجید میں 114 سورتیں ہیں۔</li>
-<li>قرآن مجید عربی زبان میں نازل ہوا۔</li>
-<li>اس کی پہلی سورت سورۃ الفاتحہ ہے۔</li>
-<li>اس کی آخری سورت سورۃ الناس ہے۔</li>
-<li>قرآن مجید کی حفاظت اللہ تعالیٰ نے اپنے ذمہ لی ہے۔</li>
-</ul>
-</div>
-<h3>114 سورتوں کی فہرست</h3>
-<input id="surahSearch" placeholder="سورت تلاش کریں..." oninput="renderSurahs()">
-<div class="grid" id="surahs"></div>
-<div class="content" id="surahDetail" style="margin-top:15px">
-سورت منتخب کریں۔
-</div>
-<p><a style="color:var(--gold)" href="https://quran.com/surahs" target="_blank">قرآن مجید کا مکمل مستند مطالعہ اور تلاوت ↗</a></p>
-</section>
+ <section class="section" id="hadith">
+  <div class="section-title"><h2>🌙 احادیث مبارکہ اور علوم الحدیث</h2>
+   <p>حدیث کا مفہوم، اہم موضوعات اور مستند مجموعے۔</p></div>
+  <div class="content-panel">
+   <h3>حدیث کا تعارف</h3>
+   <p>حدیث سے مراد رسول اللہ ﷺ کے اقوال، افعال، تقریرات اور اوصاف کی روایات ہیں۔ سنت نبوی ﷺ قرآن مجید کی تعلیمات کو سمجھنے اور عملی زندگی میں نافذ کرنے میں رہنمائی فراہم کرتی ہے۔</p>
+   <div class="topic"><h4>حدیث کی بنیادی اقسام</h4>
+    <p><b>صحیح:</b> ایسی روایت جو صحت کی مقررہ شرائط پر پوری اترے۔</p>
+    <p><b>حسن:</b> قابلِ قبول روایت جس کے راویوں کا ضبط صحیح کے درجے سے کم ہو۔</p>
+    <p><b>ضعیف:</b> وہ روایت جس میں صحت کی شرائط پوری نہ ہوں۔</p>
+    <p><b>موضوع:</b> من گھڑت روایت، جسے رسول اللہ ﷺ کی طرف منسوب کرنا جائز نہیں۔</p>
+   </div>
+   <h3>حدیث کے اہم موضوعات</h3>
+   <div class="topic"><h4>نیت اور اخلاص</h4><p>اسلام میں اعمال کی قدر و قیمت نیت سے وابستہ ہے۔ مسلمان کو ہر نیک کام اللہ کی رضا کے لیے کرنا چاہیے۔</p></div>
+   <div class="topic"><h4>علم کی فضیلت</h4><p>دینی اور مفید علم انسان کو صحیح راستہ دکھاتا ہے۔ علم کے ساتھ عمل اور اخلاق بھی ضروری ہیں۔</p></div>
+   <div class="topic"><h4>صفائی اور طہارت</h4><p>اسلام جسم، لباس، جگہ اور دل کی پاکیزگی کی تعلیم دیتا ہے۔ نماز کے لیے وضو اور پاکیزگی ضروری ہیں۔</p></div>
+   <div class="topic"><h4>حقوق العباد</h4><p>والدین، پڑوسی، رشتہ دار، یتیم، مسکین اور معاشرے کے دوسرے افراد کے حقوق ادا کرنا اسلامی تعلیمات کا اہم حصہ ہے۔</p></div>
+   <div class="topic"><h4>رحم اور حسنِ اخلاق</h4><p>نرمی، سچائی، امانت، وعدے کی پابندی اور دوسروں کے ساتھ اچھا برتاؤ مسلمان کی نمایاں صفات ہیں۔</p></div>
+   <h3>مشہور حدیث کی کتابیں</h3>
+   <ul>
+    <li>صحیح بخاری — امام محمد بن اسماعیل بخاریؒ</li>
+    <li>صحیح مسلم — امام مسلم بن حجاجؒ</li>
+    <li>جامع ترمذی — امام ترمذیؒ</li>
+    <li>سنن ابی داؤد — امام ابو داؤدؒ</li>
+    <li>سنن نسائی — امام نسائیؒ</li>
+    <li>سنن ابن ماجہ — امام ابن ماجہؒ</li>
+   </ul>
+   <p class="links">
+    <a href="https://sunnah.com/bukhari" target="_blank">صحیح بخاری ↗</a>
+    <a href="https://sunnah.com/muslim" target="_blank">صحیح مسلم ↗</a>
+    <a href="https://sunnah.com/" target="_blank">حدیث کی لائبریری ↗</a>
+   </p>
+   <p class="muted">نوٹ: حدیث کے الفاظ، ترجمے اور نمبر مختلف طباعتوں میں مختلف ہو سکتے ہیں۔ حوالہ اصل کتاب سے ضرور ملائیں۔</p>
+  </div>
+ </section>
 
-<section class="section" id="hadith">
-<h2>🌙 احادیث مبارکہ</h2>
-<div class="content">
-<h3>حدیث کا تعارف</h3>
-<p>حدیث سے مراد رسول اللہ ﷺ کے اقوال، افعال اور تقریرات ہیں۔ قرآن مجید کے بعد سنت نبوی اسلامی تعلیمات کا بنیادی ماخذ ہے۔</p>
-</div>
-<div class="grid" id="hadithGrid"></div>
-<div class="content" id="hadithDetail" style="margin-top:15px">
-حدیث کا موضوع منتخب کریں۔
-</div>
-<p><a href="https://sunnah.com/" target="_blank" style="color:var(--gold)">حدیث کی اصل کتابوں کا مطالعہ ↗</a></p>
-</section>
+ <section class="section" id="tafseer">
+  <div class="section-title"><h2>📚 تفسیر القرآن</h2>
+   <p>قرآنی آیات کے مفہوم کو سمجھنے کے لیے بنیادی رہنمائی۔</p></div>
+  <div class="content-panel">
+   <h3>تفسیر کا مفہوم</h3>
+   <p>تفسیر قرآن مجید کی آیات کے معنی، مفہوم، پس منظر اور ہدایات کو سمجھنے کے علم کو کہتے ہیں۔ تفسیر میں قرآن کی دوسری آیات، صحیح احادیث، عربی زبان اور معتبر علمی روایات سے مدد لی جاتی ہے۔</p>
+   <div class="topic"><h4>تفسیر کے بنیادی اصول</h4><p>قرآن کی تفسیر قرآن سے، پھر صحیح سنت سے، صحابہ کرامؓ کے فہم اور معتبر علمی اصولوں کی روشنی میں کی جاتی ہے۔</p></div>
+   <div class="topic"><h4>تفسیر پڑھنے کا طریقہ</h4><p>آیت کا عربی متن پڑھیں، مستند ترجمہ سمجھیں، شانِ نزول معلوم کریں، متعلقہ آیات و احادیث دیکھیں اور معتبر مفسرین کی تشریح سے رہنمائی لیں۔</p></div>
+   <div class="topic"><h4>تفسیر اور ترجمے میں فرق</h4><p>ترجمہ آیت کے مفہوم کو دوسری زبان میں منتقل کرتا ہے، جبکہ تفسیر اس مفہوم کی مزید وضاحت اور اس کے سیاق و سباق کو بیان کرتی ہے۔</p></div>
+   <a class="btn" href="https://quran.com/tafsirs" target="_blank">معتبر تفاسیر پڑھیں</a>
+  </div>
+ </section>
 
-<section class="section" id="tafsir">
-<h2>📚 تفسیر القرآن</h2>
-<div class="content">
-<h3>تفسیر کا مفہوم</h3>
-<p>تفسیر قرآن مجید کی آیات کے معانی، مفاہیم، پس منظر اور تعلیمات کو سمجھنے کا علم ہے۔ تفسیر کرتے وقت عربی زبان، شان نزول، احادیث اور معتبر مفسرین کی آراء کو سامنے رکھا جاتا ہے۔</p>
-</div>
-<div class="grid" id="tafsirGrid"></div>
-<div class="content" id="tafsirDetail" style="margin-top:15px">
-تفسیر کا موضوع منتخب کریں۔
-</div>
-</section>
+ <section class="section" id="seerah">
+  <div class="section-title"><h2>🕌 سیرت النبی ﷺ</h2>
+   <p>رسول اللہ ﷺ کی مبارک زندگی سے رہنمائی۔</p></div>
+  <div class="content-panel">
+   <div class="topic"><h4>ولادت مبارکہ</h4><p>رسول اللہ حضرت محمد ﷺ مکہ مکرمہ میں عام الفیل کے سال پیدا ہوئے۔ آپ ﷺ کے والد کا نام حضرت عبداللہ اور والدہ کا نام حضرت آمنہ تھا۔</p></div>
+   <div class="topic"><h4>بچپن اور جوانی</h4><p>آپ ﷺ نے بچپن میں مختلف آزمائشوں کا سامنا کیا۔ جوانی میں بھی صداقت، امانت اور پاکیزہ کردار کے باعث اہل مکہ میں عزت پائی۔</p></div>
+   <div class="topic"><h4>بعثت اور پہلی وحی</h4><p>چالیس سال کی عمر میں غارِ حرا میں حضرت جبرائیل علیہ السلام کے ذریعے پہلی وحی نازل ہوئی۔ دعوتِ اسلام کا آغاز ہوا۔</p></div>
+   <div class="topic"><h4>مکی دور</h4><p>مکہ میں توحید کی دعوت، صبر، استقامت اور ظلم کے مقابلے میں ثابت قدمی سیرت کے اہم پہلو ہیں۔</p></div>
+   <div class="topic"><h4>ہجرت مدینہ</h4><p>مسلمانوں نے اللہ کے حکم سے مدینہ منورہ ہجرت کی۔ وہاں اسلامی معاشرے کی بنیاد رکھی گئی اور مواخات قائم ہوئی۔</p></div>
+   <div class="topic"><h4>میثاقِ مدینہ</h4><p>مدینہ میں مختلف گروہوں کے درمیان شہری امن، ذمہ داریوں اور باہمی حقوق کے اصول طے کیے گئے۔</p></div>
+   <div class="topic"><h4>فتح مکہ</h4><p>فتح مکہ کے موقع پر رسول اللہ ﷺ نے عام معافی اور درگزر کا عظیم نمونہ پیش کیا۔</p></div>
+   <div class="topic"><h4>حجۃ الوداع</h4><p>آخری حج کے خطبے میں انسانی جان و مال کی حرمت، عورتوں کے حقوق، مساوات اور قرآن و سنت سے وابستگی کی تعلیم دی گئی۔</p></div>
+   <div class="topic"><h4>وصال مبارک</h4><p>رسول اللہ ﷺ کا وصال 11 ہجری میں مدینہ منورہ میں ہوا۔ آپ ﷺ کی تعلیمات قیامت تک انسانیت کے لیے رہنمائی ہیں۔</p></div>
+  </div>
+ </section>
 
-<section class="section" id="seerah">
-<h2>🕌 سیرت النبی ﷺ</h2>
-<div class="content">
-<h3>رسول اللہ ﷺ کا تعارف</h3>
-<p>حضرت محمد مصطفیٰ ﷺ اللہ تعالیٰ کے آخری رسول ہیں۔ آپ ﷺ کو تمام جہانوں کے لیے رحمت بنا کر بھیجا گیا۔ آپ ﷺ کی زندگی ہمارے لیے بہترین نمونہ ہے۔</p>
-</div>
-<div class="grid" id="seerahGrid"></div>
-<div class="content" id="seerahDetail" style="margin-top:15px">
-سیرت کا باب منتخب کریں۔
-</div>
-</section>
+ <section class="section" id="aqeedah">
+  <div class="section-title"><h2>☝️ عقائدِ اسلام</h2></div>
+  <div class="content-panel">
+   <div class="topic"><h4>توحید</h4><p>اللہ تعالیٰ ایک ہے، وہی خالق، مالک اور عبادت کے لائق ہے۔ اس کا کوئی شریک نہیں۔</p></div>
+   <div class="topic"><h4>رسالت</h4><p>اللہ تعالیٰ نے انسانوں کی ہدایت کے لیے انبیاء و رسل بھیجے۔ حضرت محمد ﷺ اللہ کے آخری نبی اور رسول ہیں۔</p></div>
+   <div class="topic"><h4>فرشتوں پر ایمان</h4><p>فرشتے اللہ کی نورانی مخلوق ہیں جو اللہ کے احکام کی تعمیل کرتے ہیں۔</p></div>
+   <div class="topic"><h4>آسمانی کتابوں پر ایمان</h4><p>اللہ تعالیٰ نے اپنے انبیاء پر ہدایت کے لیے کتابیں اور صحیفے نازل فرمائے۔ قرآن مجید آخری آسمانی کتاب ہے۔</p></div>
+   <div class="topic"><h4>آخرت پر ایمان</h4><p>موت کے بعد دوبارہ زندہ ہونا، حساب و کتاب، جنت اور جہنم پر ایمان اسلامی عقیدے کا حصہ ہے۔</p></div>
+   <div class="topic"><h4>تقدیر پر ایمان</h4><p>مسلمان اللہ کے علم، حکمت اور فیصلے پر ایمان رکھتا ہے اور اپنی ذمہ داری کے مطابق نیک عمل کرتا ہے۔</p></div>
+  </div>
+ </section>
 
-<section class="section" id="topics">
-<h2>📖 اسلامی علوم کی جامع لائبریری</h2>
-<div class="grid" id="topicsGrid"></div>
-<div class="content" id="topicDetail" style="margin-top:15px">
-اسلامی موضوع منتخب کریں۔
-</div>
-</section>
+ <section class="section" id="ibadat">
+  <div class="section-title"><h2>🕋 عبادات و ارکانِ اسلام</h2></div>
+  <div class="content-panel">
+   <div class="topic"><h4>کلمہ اور شہادت</h4><p>اللہ کی وحدانیت اور حضرت محمد ﷺ کی رسالت کی گواہی دینا اسلام کی بنیاد ہے۔</p></div>
+   <div class="topic"><h4>نماز</h4><p>پانچ وقت کی نماز مسلمان پر فرض ہے۔ نماز بندے کو اللہ سے جوڑتی اور برائی سے روکتی ہے۔</p></div>
+   <div class="topic"><h4>روزہ</h4><p>رمضان المبارک کے روزے فرض ہیں۔ روزہ تقویٰ، صبر، ضبطِ نفس اور غریبوں کے احساس کی تربیت دیتا ہے۔</p></div>
+   <div class="topic"><h4>زکوٰۃ</h4><p>مقررہ شرائط کے مطابق صاحبِ نصاب مسلمان پر زکوٰۃ فرض ہوتی ہے۔ یہ مال کو پاک کرتی اور معاشرتی تعاون بڑھاتی ہے۔</p></div>
+   <div class="topic"><h4>حج</h4><p>استطاعت رکھنے والے مسلمان پر زندگی میں ایک مرتبہ حج فرض ہے۔ حج اتحاد، مساوات اور بندگی کا عظیم مظہر ہے۔</p></div>
+   <h3>طہارت کے موضوعات</h3>
+   <p>وضو، غسل، تیمم، پاکی و ناپاکی، نماز کی شرائط، قبلہ، اوقاتِ نماز اور جماعت کے مسائل۔</p>
+   <p class="muted">فقہی مسائل میں مختلف معتبر فقہی مذاہب کے احکام مختلف ہو سکتے ہیں؛ عملی مسئلے میں اپنے مستند عالم سے رہنمائی لیں۔</p>
+  </div>
+ </section>
 
-<section class="section" id="quiz">
-<h2>📝 اسلامی معلومات کا ٹیسٹ</h2>
-<div class="content">
-<p>اپنی معلومات جانچنے کے لیے ٹیسٹ حل کریں۔</p>
-<div id="quizArea"></div>
-<button class="btn" onclick="startQuiz()">ٹیسٹ شروع کریں</button>
-<div id="quizResult"></div>
-</div>
-</section>
+ <section class="section" id="akhlaq">
+  <div class="section-title"><h2>🌿 اسلامی اخلاق و معاشرت</h2></div>
+  <div class="content-panel">
+   <div class="topic"><h4>سچائی</h4><p>سچ بولنا ایمان اور اچھے کردار کی بنیادی صفت ہے۔ جھوٹ اعتماد اور معاشرتی تعلقات کو نقصان پہنچاتا ہے۔</p></div>
+   <div class="topic"><h4>امانت داری</h4><p>کسی کی چیز، راز، ذمہ داری یا حق کی حفاظت کرنا امانت داری ہے۔</p></div>
+   <div class="topic"><h4>والدین کے حقوق</h4><p>والدین کے ساتھ حسنِ سلوک، احترام، خدمت اور جائز باتوں میں اطاعت کرنا لازم ہے۔</p></div>
+   <div class="topic"><h4>اساتذہ کا احترام</h4><p>علم سکھانے والوں کی عزت، توجہ سے سننا، ادب سے سوال کرنا اور علم پر عمل کرنا طالب علم کی ذمہ داری ہے۔</p></div>
+   <div class="topic"><h4>پڑوسیوں کے حقوق</h4><p>پڑوسی کو تکلیف نہ دینا، ضرورت میں مدد کرنا اور اچھا برتاؤ کرنا اسلامی معاشرت کا اہم اصول ہے۔</p></div>
+   <div class="topic"><h4>غیبت اور بہتان</h4><p>کسی کی غیر موجودگی میں اس کی ناپسندیدہ سچی بات کہنا غیبت ہے؛ جھوٹی تہمت لگانا بہتان ہے۔ دونوں سے بچنا ضروری ہے۔</p></div>
+   <div class="topic"><h4>عدل و انصاف</h4><p>ہر شخص کے ساتھ حق اور انصاف سے پیش آنا چاہیے، خواہ معاملہ اپنے خلاف ہی کیوں نہ ہو۔</p></div>
+   <div class="topic"><h4>حقوق العباد</h4><p>لوگوں کی جان، مال، عزت اور حقوق کی حفاظت کرنا ہر مسلمان کی اخلاقی اور دینی ذمہ داری ہے۔</p></div>
+  </div>
+ </section>
 
-<section class="section" id="searchResults">
-<h2>🔍 تلاش کے نتائج</h2>
-<div id="results"></div>
-</section>
+ <section class="section" id="history">
+  <div class="section-title"><h2>🏛️ اسلامی تاریخ</h2></div>
+  <div class="content-panel">
+   <div class="topic"><h4>عہدِ نبوی ﷺ</h4><p>اسلامی معاشرے کی بنیاد، دعوت، ہجرت، مدینہ کی ریاست اور تعلیم و تربیت کا دور۔</p></div>
+   <div class="topic"><h4>خلافتِ راشدہ</h4><p>حضرت ابوبکر صدیقؓ، حضرت عمر فاروقؓ، حضرت عثمان غنیؓ اور حضرت علی المرتضیٰؓ کے ادوار اسلامی تاریخ کے اہم ادوار ہیں۔</p></div>
+   <div class="topic"><h4>اسلامی تہذیب و تمدن</h4><p>مسلمانوں نے علم، طب، ریاضی، فلکیات، فلسفہ، فنِ تعمیر اور ادب کے شعبوں میں اہم خدمات انجام دیں۔</p></div>
+   <div class="topic"><h4>مساجد اور علمی مراکز</h4><p>مساجد عبادت کے ساتھ تعلیم، تربیت، مشاورت اور معاشرتی خدمت کے مراکز بھی رہی ہیں۔</p></div>
+   <div class="topic"><h4>برصغیر میں اسلام</h4><p>برصغیر میں مسلم علماء، صوفیاء، تاجروں اور مختلف تاریخی شخصیات نے دینی و تہذیبی اثرات مرتب کیے۔ ان واقعات کا مطالعہ مستند تاریخی حوالوں سے کرنا چاہیے۔</p></div>
+  </div>
+ </section>
 
-<section class="section">
-<h2>📥 PDF اور نوٹس</h2>
-<div class="content">
-<p>اپنے منتخب کردہ مطالعے کو پرنٹ یا PDF میں محفوظ کریں۔</p>
-<button class="btn" onclick="window.print()">PDF / Print محفوظ کریں</button>
-</div>
-</section>
+ <section class="section" id="dua">
+  <div class="section-title"><h2>🤲 دعائیں اور اذکار</h2></div>
+  <div class="content-panel">
+   <div class="topic">
+    <h4>علم میں اضافے کی دعا</h4>
+    <div class="arabic">رَبِّ زِدْنِي عِلْمًا</div>
+    <p>ترجمہ: اے میرے رب! میرے علم میں اضافہ فرما۔</p>
+    <p class="muted">حوالہ: سورۃ طٰہٰ، آیت 114</p>
+   </div>
+   <div class="topic">
+    <h4>دنیا و آخرت کی بھلائی کی دعا</h4>
+    <div class="arabic">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
+    <p>ترجمہ: اے ہمارے رب! ہمیں دنیا میں بھلائی عطا فرما، آخرت میں بھی بھلائی عطا فرما اور ہمیں آگ کے عذاب سے بچا۔</p>
+    <p class="muted">حوالہ: سورۃ البقرہ، آیت 201</p>
+   </div>
+   <div class="topic">
+    <h4>والدین کے لیے دعا</h4>
+    <div class="arabic">رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا</div>
+    <p>ترجمہ: اے میرے رب! ان دونوں پر رحم فرما جیسے انہوں نے بچپن میں میری پرورش کی۔</p>
+    <p class="muted">حوالہ: سورۃ الاسراء، آیت 24</p>
+   </div>
+  </div>
+ </section>
 
-<section class="section">
-<h2>📚 مستند علمی ذرائع</h2>
-<div class="content">
-<ul>
-<li><a style="color:var(--gold)" href="https://quran.com/" target="_blank">Quran.com — قرآن، ترجمہ اور تفسیر</a></li>
-<li><a style="color:var(--gold)" href="https://sunnah.com/" target="_blank">Sunnah.com — حدیث کی کتب</a></li>
-<li><a style="color:var(--gold)" href="https://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Islamic-Studies.html" target="_blank">پنجاب یونیورسٹی — اسلامیات کا نصاب</a></li>
-<li><a style="color:var(--gold)" href="https://mora.gov.pk/" target="_blank">وزارت مذہبی امور پاکستان</a></li>
-</ul>
-</div>
-</section>
+ <section class="section" id="exam">
+  <div class="section-title"><h2>✍️ امتحانی تیاری اور نوٹس</h2>
+   <p>مختصر سوالات، تفصیلی سوالات اور اہم موضوعات۔</p></div>
+  <div class="content-panel">
+   <h3>اہم مختصر سوالات</h3>
+   <ol>
+    <li>توحید سے کیا مراد ہے؟</li>
+    <li>رسالت کا مفہوم بیان کریں۔</li>
+    <li>قرآن مجید کس پر نازل ہوا؟</li>
+    <li>وحی کسے کہتے ہیں؟</li>
+    <li>حدیث اور سنت میں کیا تعلق ہے؟</li>
+    <li>اسلام کے پانچ ارکان کے نام لکھیں۔</li>
+    <li>زکوٰۃ کے دو معاشرتی فوائد لکھیں۔</li>
+    <li>روزے کے دو اخلاقی فوائد بیان کریں۔</li>
+    <li>حقوق العباد سے کیا مراد ہے؟</li>
+    <li>سیرت النبی ﷺ سے ہمیں کیا سبق ملتا ہے؟</li>
+   </ol>
+   <h3>اہم تفصیلی سوالات</h3>
+   <ol>
+    <li>قرآن مجید کی اہمیت اور انسانی زندگی میں اس کی رہنمائی بیان کریں۔</li>
+    <li>رسول اللہ ﷺ کے اخلاقِ حسنہ پر تفصیلی نوٹ لکھیں۔</li>
+    <li>نماز کے انفرادی اور اجتماعی فوائد بیان کریں۔</li>
+    <li>اسلام میں والدین اور پڑوسیوں کے حقوق بیان کریں۔</li>
+    <li>اسلامی معاشرے میں عدل و انصاف کی اہمیت واضح کریں۔</li>
+    <li>خلافتِ راشدہ کی نمایاں خصوصیات بیان کریں۔</li>
+   </ol>
+   <button class="btn" onclick="window.print()">نوٹس PDF / Print</button>
+   <p class="muted">موبائل میں Print دبائیں، پھر پرنٹر کے انتخاب میں Save as PDF منتخب کریں۔</p>
+  </div>
+ </section>
 
-</main>
+ <section class="section" id="quiz">
+  <div class="section-title"><h2>🧠 اسلامیات آن لائن ٹیسٹ</h2>
+   <p>اپنی معلومات چیک کریں۔</p></div>
+  <div class="content-panel">
+   <form id="quizForm">
+    <div id="questions"></div>
+    <button type="button" class="btn" onclick="checkQuiz()">نتیجہ معلوم کریں</button>
+    <button type="reset" class="btn" style="background:#dfe9e2" onclick="setTimeout(loadQuiz,0)">دوبارہ ٹیسٹ</button>
+   </form>
+   <h3 id="result"></h3>
+  </div>
+ </section>
 
-<footer>
-<strong style="color:var(--gold)">مکتبہ عبد الستار</strong>
-<p>قرآن و سنت کی روشنی میں علم، عمل اور کردار</p>
-ABDUL AI EDUCATION © 2026
-</footer>
-
-<script>
-const departments=[
-["📖","قرآن مجید","قرآنی علوم، سورتیں اور آیات","quran"],
-["🌙","احادیث مبارکہ","حدیث، سنت اور تعلیمات","hadith"],
-["📚","تفسیر قرآن","آیات کی تشریح اور مفہوم","tafsir"],
-["🕌","سیرت النبی ﷺ","حیات طیبہ اور واقعات","seerah"],
-["🤲","اسلامی عقائد","ایمان، توحید اور رسالت","topics"],
-["🕋","عبادات","نماز، روزہ، زکوٰۃ اور حج","topics"],
-["❤️","اسلامی اخلاق","حقوق، صبر اور حسن سلوک","topics"],
-["🏛️","اسلامی تاریخ","اسلامی تہذیب اور شخصیات","topics"],
-["📿","دعائیں و اذکار","روزمرہ مسنون دعائیں","topics"],
-["⚖️","اسلامی معاملات","معاشرت اور لین دین","topics"]
-];
-function makeCards(id,arr){
-document.getElementById(id).innerHTML=arr.map((x,i)=>
-`<div class="card" onclick="${x[3]}">
-<div class="ico">${x[0]}</div><h3>${x[1]}</h3>
-<p>${x[2]}</p><button class="btn2">مطالعہ کریں</button></div>`).join("");
-}
-makeCards("departments",departments.map(x=>[x[0],x[1],x[2],`showSection('${x[3]}')`]));
-
-const surahs=[
-"الفاتحہ","البقرہ","آل عمران","النساء","المائدہ","الانعام",
-"الاعراف","الانفال","التوبہ","یونس","ہود","یوسف",
-"الرعد","ابراہیم","الحجر","النحل","بنی اسرائیل","الکہف",
-"مریم","طٰہٰ","الانبیاء","الحج","المؤمنون","النور",
-"الفرقان","الشعراء","النمل","القصص","العنکبوت","الروم",
-"لقمان","السجدہ","الاحزاب","سبا","فاطر","یٰسین",
-"الصافات","ص","الزمر","غافر","فصلت","الشوریٰ",
-"الزخرف","الدخان","الجاثیہ","الاحقاف","محمد","الفتح",
-"الحجرات","ق","الذاریات","الطور","النجم","القمر",
-"الرحمٰن","الواقعہ","الحدید","المجادلہ","الحشر","الممتحنہ",
-"الصف","الجمعہ","المنافقون","التغابن","الطلاق","التحریم",
-"الملک","القلم","الحاقہ","المعارج","نوح","الجن",
-"المزمل","المدثر","القیامہ","الدھر","المرسلات","النبأ",
-"النازعات","عبس","التکویر","الانفطار","المطففین","الانشقاق",
-"البروج","الطارق","الاعلیٰ","الغاشیہ","الفجر","البلد",
-"الشمس","اللیل","الضحیٰ","الشرح","التین","العلق",
-"القدر","البینہ","الزلزال","العادیات","القارعہ","التکاثر",
-"العصر","الہمزہ","الفیل","قریش","الماعون","الکوثر",
-"الکافرون","النصر","المسد","الاخلاص","الفلق","الناس"
-];
-function renderSurahs(){
-let q=document.getElementById("surahSearch").value.trim();
-document.getElementById("surahs").innerHTML=surahs.map((s,i)=>
-({s,i})).filter(x=>(x.s+x.i).includes(q)).map(x=>
-`<div class="card" onclick="openSurah(${x.i+1})">
-<h3>${x.i+1}. ${x.s}</h3><p>قرآن مجید کی سورت</p>
-</div>`).join("");
-}
-function openSurah(n){
-let name=surahs[n-1];
-document.getElementById("surahDetail").innerHTML=`
-<h3>${name}</h3>
-<p>یہ قرآن مجید کی سورت نمبر ${n} ہے۔ اس سورت کا مکمل عربی متن، ترجمہ، تلاوت اور تفصیلی تفسیر پڑھنے کے لیے مستند قرآن پورٹل استعمال کریں۔</p>
-<a style="color:var(--gold)" target="_blank" href="https://quran.com/${n}">سورت ${name} مکمل پڑھیں ↗</a>`;
-}
-renderSurahs();
-
-const hadiths=[
-["نیت","اعمال کا دارومدار نیتوں پر ہے۔","صحیح بخاری، حدیث 1","ہر نیک عمل میں اخلاص اور درست نیت ضروری ہے۔"],
-["علم","علم حاصل کرنے کی اہمیت","صحیح مسلم، کتاب الذکر والدعاء وغیرہ میں علم کے ابواب","علم انسان کو حق اور باطل میں فرق سمجھنے میں مدد دیتا ہے۔"],
-["صفائی","طہارت اور پاکیزگی کی اہمیت","صحیح مسلم، حدیث 223","مسلمان کو جسم، لباس اور جگہ کی پاکیزگی کا خیال رکھنا چاہیے۔"],
-["رحم","رحم کرنے والوں پر رحمان رحم فرماتا ہے۔","جامع ترمذی، کتاب البر والصلۃ","مخلوق کے ساتھ شفقت اور نرمی اختیار کرنی چاہیے۔"],
-["والدین","والدین کے ساتھ حسن سلوک","صحیح بخاری، کتاب الادب","والدین کی عزت، خدمت اور فرمانبرداری اہم اسلامی تعلیم ہے۔"],
-["پڑوسی","پڑوسی کے حقوق","صحیح بخاری، کتاب الادب","پڑوسی کے ساتھ اچھا سلوک اور اس کے حقوق کی حفاظت کریں۔"],
-["سچائی","سچائی نیکی کی طرف رہنمائی کرتی ہے۔","صحیح بخاری، کتاب الادب؛ صحیح مسلم","سچ بولنا مسلمان کے اعلیٰ اخلاق میں شامل ہے۔"],
-["صبر","صبر اور ثابت قدمی","صحیح بخاری، کتاب المرضیٰ","مشکلات میں صبر، دعا اور اللہ پر بھروسہ رکھیں۔"]
-];
-function renderHadith(){
-document.getElementById("hadithGrid").innerHTML=hadiths.map((h,i)=>
-`<div class="card" onclick="openHadith(${i})"><h3>${h[0]}</h3><p>${h[1]}</p><button class="btn2">تفصیل</button></div>`).join("");
-}
-function openHadith(i){
-let h=hadiths[i];
-document.getElementById("hadithDetail").innerHTML=`
-<h3>${h[0]}</h3><p>${h[1]}</p>
-<p><b>تعلیمی حوالہ:</b> ${h[2]}</p>
-<p><b>سبق:</b> ${h[3]}</p>
-<p class="small">نوٹ: جہاں حدیث کا لفظی متن فراہم نہیں کیا گیا وہاں یہ صرف موضوع یا مفہوم کی وضاحت ہے۔ اصل الفاظ اور مکمل تخریج مستند مجموعے میں دیکھیں۔</p>
-<a style="color:var(--gold)" href="https://sunnah.com/" target="_blank">اصل حدیث تلاش کریں ↗</a>`;
-}
-
-const tafsir=[
-["سورۃ الفاتحہ","سورۃ الفاتحہ اللہ کی حمد، اس کی رحمت، روزِ جزا کی بادشاہی، عبادت اور ہدایت کی دعا پر مشتمل ہے۔","اس سورت سے بندہ اللہ کی حمد اور اسی سے مدد مانگنے کا سبق حاصل کرتا ہے۔"],
-["سورۃ الاخلاص","اس سورت میں اللہ تعالیٰ کی وحدانیت اور بے نیازی بیان ہوئی ہے۔","اللہ ایک ہے، نہ اس کی کوئی اولاد ہے اور نہ وہ کسی کی اولاد ہے۔"],
-["آیت الکرسی","سورۃ البقرہ کی آیت 255 میں اللہ تعالیٰ کی حیات، علم، قدرت اور کامل بادشاہی بیان ہوئی ہے۔","اللہ کی عظمت اور حفاظت پر ایمان مضبوط ہوتا ہے۔"],
-["سورۃ الحجرات","اس سورت میں معاشرتی آداب، تحقیق، اخوت اور غیبت سے بچنے کی تعلیم دی گئی ہے۔","مسلمانوں کو ایک دوسرے کا احترام اور عزت کرنی چاہیے۔"],
-["سورۃ الرحمن","اس سورت میں اللہ کی نعمتوں اور قدرت کی نشانیوں کا ذکر ہے۔","انسان کو اللہ کی نعمتوں کا شکر ادا کرنا چاہیے۔"],
-["سورۃ العصر","اس سورت میں انسان کے خسارے سے بچنے کے چار اصول بیان ہوئے ہیں: ایمان، نیک عمل، حق کی نصیحت اور صبر کی نصیحت۔","وقت کی قدر اور نیک اعمال ضروری ہیں۔"]
-];
-function renderTafsir(){
-document.getElementById("tafsirGrid").innerHTML=tafsir.map((t,i)=>
-`<div class="card" onclick="openTafsir(${i})"><h3>${t[0]}</h3><p>${t[1]}</p><button class="btn2">تشریح پڑھیں</button></div>`).join("");
-}
-function openTafsir(i){
-let t=tafsir[i];
-document.getElementById("tafsirDetail").innerHTML=`
-<h3>${t[0]}</h3><p>${t[1]}</p><h4>مرکزی سبق</h4><p>${t[2]}</p>
-<p class="small">یہ آسان تعلیمی خلاصہ ہے، مکمل تفسیری عبارت نہیں۔ تفصیلی تشریح کے لیے مستند تفاسیر سے رجوع کریں۔</p>
-<a href="https://quran.com/" target="_blank" style="color:var(--gold)">قرآن و تفسیر کا مستند مطالعہ ↗</a>`;
-}
-
-const seerah=[
-["ولادت مبارکہ","رسول اللہ ﷺ کی ولادت مکہ مکرمہ میں عام الفیل کے سال ہوئی۔ آپ ﷺ قریش کے معزز خاندان بنو ہاشم سے تعلق رکھتے تھے۔","آپ ﷺ کے والد حضرت عبداللہ اور والدہ حضرت آمنہ تھیں۔"],
-["بچپن","آپ ﷺ نے بچپن میں یتیمی کا سامنا کیا۔ دادا عبدالمطلب اور بعد میں چچا ابو طالب نے سرپرستی کی۔","یتیمی کے باوجود اللہ تعالیٰ نے آپ ﷺ کی حفاظت اور تربیت فرمائی۔"],
-["جوانی","آپ ﷺ صداقت اور امانت کی وجہ سے صادق اور امین کے لقب سے مشہور ہوئے۔","سچائی اور امانت داری بہترین کردار ہیں۔"],
-["پہلی وحی","غار حرا میں حضرت جبرائیل علیہ السلام کے ذریعے پہلی وحی نازل ہوئی۔ پہلی نازل ہونے والی آیات سورۃ العلق کی ابتدائی آیات ہیں۔","علم اور اللہ کے نام سے پڑھنے کی اہمیت واضح ہوتی ہے۔"],
-["دعوت اسلام","رسول اللہ ﷺ نے سب سے پہلے قریبی لوگوں کو اسلام کی دعوت دی، پھر علانیہ دعوت کا سلسلہ شروع ہوا۔","دعوت میں حکمت، صبر اور استقامت ضروری ہے۔"],
-["ہجرت مدینہ","مسلمانوں نے مکہ سے مدینہ کی طرف ہجرت کی۔ اس سفر میں حضرت ابوبکر صدیق رضی اللہ عنہ آپ ﷺ کے ساتھی تھے۔","دین کی حفاظت اور اللہ پر توکل کا سبق ملتا ہے۔"],
-["مدینہ کی ریاست","مدینہ میں مسجد نبوی کی تعمیر اور مہاجرین و انصار کے درمیان مواخات قائم کی گئی۔","اخوت، تعاون اور اجتماعی نظم اسلامی معاشرے کی بنیاد ہیں۔"],
-["فتح مکہ","آٹھ ہجری میں مکہ مکرمہ فتح ہوا۔ رسول اللہ ﷺ نے عام معافی اور عفو و درگزر کا عظیم نمونہ پیش کیا۔","طاقت کے باوجود معاف کرنا اعلیٰ اخلاق ہے۔"],
-["حجۃ الوداع","رسول اللہ ﷺ نے حجۃ الوداع کے موقع پر اہم انسانی اور معاشرتی حقوق کی تعلیم دی۔","جان، مال، عزت اور حقوق کی حفاظت ضروری ہے۔"],
-["وصال مبارک","رسول اللہ ﷺ کا وصال مدینہ منورہ میں 11 ہجری میں ہوا۔","آپ ﷺ کی تعلیمات قیامت تک انسانیت کے لیے ہدایت ہیں۔"]
-];
-function renderSeerah(){
-document.getElementById("seerahGrid").innerHTML=seerah.map((s,i)=>
-`<div class="card" onclick="openSeerah(${i})"><h3>${i+1}. ${s[0]}</h3><p>${s[1]}</p><button class="btn2">مزید پڑھیں</button></div>`).join("");
-}
-function openSeerah(i){
-let s=seerah[i];
-document.getElementById("seerahDetail").innerHTML=
-`<h3>${s[0]}</h3><p>${s[1]}</p><h4>سبق اور رہنمائی</h4><p>${s[2]}</p>
-<p class="small">یہ ابتدائی تعلیمی خلاصہ ہے۔ تاریخی تفصیلات کے لیے مستند سیرت کی کتابوں سے رجوع کریں۔</p>`;
-}
-
-const topics=[
-["توحید","اللہ تعالیٰ کو ذات، صفات اور عبادت میں یکتا ماننا توحید ہے۔ تمام انبیاء علیہم السلام نے لوگوں کو ایک اللہ کی عبادت کی دعوت دی۔"],
-["رسالت","رسالت اللہ تعالیٰ کا منتخب بندوں کو انسانوں کی ہدایت کے لیے پیغام دے کر بھیجنا ہے۔ حضرت محمد ﷺ آخری نبی ہیں۔"],
-["آخرت","آخرت پر ایمان کا مطلب ہے کہ دنیا کی زندگی کے بعد دوبارہ زندہ کیا جائے گا اور اعمال کا حساب ہوگا۔"],
-["فرشتے","فرشتے اللہ تعالیٰ کی نورانی مخلوق ہیں جو اس کے حکم کی نافرمانی نہیں کرتے۔"],
-["آسمانی کتابیں","اللہ تعالیٰ نے مختلف انبیاء پر ہدایت کے لیے کتابیں اور صحیفے نازل فرمائے۔ قرآن آخری آسمانی کتاب ہے۔"],
-["نماز","نماز اسلام کا بنیادی رکن ہے۔ مسلمان دن رات میں پانچ فرض نمازیں ادا کرتا ہے۔"],
-["روزہ","رمضان کے روزے مسلمانوں پر فرض ہیں۔ روزہ تقویٰ، صبر اور ضبط نفس پیدا کرتا ہے۔"],
-["زکوٰۃ","زکوٰۃ صاحب نصاب مسلمان پر مخصوص شرائط کے ساتھ فرض مالی عبادت ہے۔"],
-["حج","حج صاحب استطاعت مسلمان پر زندگی میں ایک مرتبہ فرض ہے۔"],
-["دعا","دعا بندے کا اللہ تعالیٰ سے تعلق اور اپنی حاجات پیش کرنے کا ذریعہ ہے۔"],
-["صبر","مشکلات اور آزمائشوں میں اللہ کی رضا پر ثابت قدم رہنا صبر ہے۔"],
-["شکر","اللہ کی نعمتوں کو پہچاننا، ان کا اعتراف کرنا اور درست استعمال کرنا شکر ہے۔"],
-["حقوق العباد","دوسرے انسانوں کے حقوق ادا کرنا، ان کی عزت اور مال کی حفاظت کرنا حقوق العباد میں شامل ہے۔"],
-["والدین کے حقوق","والدین کے ساتھ حسن سلوک، خدمت، ادب اور ان کے لیے دعا کرنا اسلامی تعلیمات ہیں۔"],
-["پڑوسی کے حقوق","پڑوسی کو تکلیف نہ دینا، اس کی ضرورت کا خیال رکھنا اور حسن سلوک کرنا چاہیے۔"],
-["سچائی","سچائی اعتماد پیدا کرتی ہے اور انسان کے کردار کو مضبوط کرتی ہے۔"],
-["امانت","امانت کی حفاظت اور حق دار تک پہنچانا مسلمان کی ذمہ داری ہے۔"],
-["غیبت","کسی شخص کی غیر موجودگی میں اس کی ایسی بات کرنا جو اسے ناگوار ہو، غیبت ہے۔"],
-["عدل و انصاف","ہر شخص کو اس کا حق دینا اور کسی کے ساتھ ناانصافی نہ کرنا عدل ہے۔"],
-["اسلامی اخوت","مسلمان ایک دوسرے کے بھائی ہیں اور ان کے درمیان محبت، خیرخواہی اور تعاون ہونا چاہیے۔"],
-["حلال و حرام","اسلام نے پاکیزہ اور جائز چیزوں کو حلال اور ممنوع چیزوں کو حرام قرار دیا ہے۔"],
-["اسلامی تاریخ","اسلامی تاریخ میں انبیاء، صحابہ، خلفائے راشدین اور اسلامی تہذیب کے اہم واقعات کا مطالعہ کیا جاتا ہے۔"],
-["خلفائے راشدین","حضرت ابوبکر، حضرت عمر، حضرت عثمان اور حضرت علی رضی اللہ عنہم خلفائے راشدین ہیں۔"],
-["مسجد کا کردار","مسجد عبادت، تعلیم، اجتماع اور اسلامی معاشرت کا اہم مرکز ہے۔"],
-["حسن اخلاق","نرمی، سچائی، عاجزی، معافی اور دوسروں کے ساتھ اچھا برتاؤ حسن اخلاق ہیں۔"]
-];
-function renderTopics(){
-document.getElementById("topicsGrid").innerHTML=topics.map((t,i)=>
-`<div class="card" onclick="openTopic(${i})"><h3>${t[0]}</h3><p>${t[1]}</p><button class="btn2">تفصیل</button></div>`).join("");
-}
-function openTopic(i){
-let t=topics[i];
-document.getElementById("topicDetail").innerHTML=
-`<h3>${t[0]}</h3><p>${t[1]}</p>
-<p>یہ موضوع اسلامی تعلیمات میں بنیادی اہمیت رکھتا ہے۔ اس کے مطالعے کے ساتھ قرآن مجید، صحیح احادیث اور مستند علماء کی وضاحت سے مزید رہنمائی حاصل کریں۔</p>`;
-}
-
-const questions=[
-["اسلام کے بنیادی ارکان کتنے ہیں؟",["3","4","5","6"],2],
-["قرآن مجید میں سورتوں کی تعداد کتنی ہے؟",["110","112","114","116"],2],
-["قرآن مجید کی پہلی سورت کون سی ہے؟",["البقرہ","الفاتحہ","الاخلاص","الناس"],1],
-["آخری نبی کون ہیں؟"
+ <section class="section" id="sources">
+  <div class="section-title"><h2>🔎 مستند تعلیمی ذرائع</h2>
+   <p>اصل کت
