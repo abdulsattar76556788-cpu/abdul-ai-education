@@ -1,1 +1,187 @@
 
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b18">
+<title>NEXORA AI | Abdul Sattar</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080b18;color:#fff;font-family:Arial,sans-serif;line-height:1.8}
+header{background:#10172b;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid #293858}
+.logo{font-size:25px;font-weight:bold;color:#45d9ff}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:#ddd;text-decoration:none;font-size:14px}
+nav a:hover{color:#45d9ff}
+.hero{text-align:center;padding:75px 20px;background:linear-gradient(135deg,#101a38,#261449)}
+.hero h1{font-size:clamp(35px,7vw,60px);margin:10px;color:#4cdbff}
+.hero p{color:#c3cce1}
+button,.btn{background:linear-gradient(90deg,#27c9ff,#8865ff);border:0;padding:12px 22px;border-radius:10px;color:#07101c;font-weight:bold;cursor:pointer}
+section{padding:35px 5%;max-width:1200px;margin:auto}
+h2{color:#48d8ff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card,.panel{background:#111b30;border:1px solid #293957;padding:20px;border-radius:17px}
+.card{text-align:center}
+.card .icon{font-size:38px}
+.card h3{color:#a99aff}
+input,textarea,select{width:100%;padding:13px;margin:8px 0;background:#080f20;color:white;border:1px solid #354767;border-radius:9px}
+textarea{min-height:100px}
+.output{background:#080f20;padding:15px;border-radius:10px;margin-top:12px;white-space:pre-wrap;min-height:45px}
+footer{text-align:center;padding:35px;background:#10172b;color:#aab5cd}
+.admin{border:1px solid #8165ff;background:#171638;padding:25px;border-radius:18px;text-align:center}
+@media(max-width:650px){header{flex-direction:column;gap:10px}nav{justify-content:center;gap:10px}.hero{padding:45px 15px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">NEXORA AI ✦</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#chat">AI Chat</a>
+<a href="#image">Image AI</a>
+<a href="#video">Video</a>
+<a href="#education">Education</a>
+<a href="#tools">Tools</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<h1>NEXORA AI</h1>
+<h2>YOUR SMART AI WORLD</h2>
+<p>ایک ہی جگہ مصنوعی ذہانت، تعلیم، تخلیقی صلاحیتیں اور اسمارٹ ٹولز۔</p>
+<a href="#services"><button>Explore Platform 🚀</button></a>
+</div>
+
+<section id="services">
+<h2>✦ Our Five Powerful Sections</h2>
+<div class="grid">
+<div class="card"><div class="icon">🤖</div><h3>AI Chatbot</h3><p>اپنے سوالات پوچھیں اور AI سے مدد حاصل کریں۔</p><a href="#chat"><button>Open</button></a></div>
+<div class="card"><div class="icon">🎨</div><h3>AI Image Generator</h3><p>اپنے خیالات کو تصویری پرامپٹس میں بدلیں۔</p><a href="#image"><button>Open</button></a></div>
+<div class="card"><div class="icon">🎬</div><h3>AI Video Tools</h3><p>ویڈیو اسکرپٹ اور تخلیقی آئیڈیاز۔</p><a href="#video"><button>Open</button></a></div>
+<div class="card"><div class="icon">📚</div><h3>Education & MCQs</h3><p>طلبہ کے لیے سوالات اور ٹیسٹ۔</p><a href="#education"><button>Open</button></a></div>
+<div class="card"><div class="icon">🧰</div><h3>Smart Tools</h3><p>روزمرہ کے مفید ڈیجیٹل ٹولز۔</p><a href="#tools"><button>Open</button></a></div>
+</div>
+</section>
+
+<section id="chat">
+<h2>🤖 AI Chatbot</h2>
+<div class="panel">
+<textarea id="chatInput" placeholder="اپنا سوال لکھیں..."></textarea>
+<button onclick="chat()">Send Message</button>
+<div class="output" id="chatOutput">آپ کا جواب یہاں آئے گا۔</div>
+</div>
+</section>
+
+<section id="image">
+<h2>🎨 AI Image Generator</h2>
+<div class="panel">
+<textarea id="imageInput" placeholder="تصویر کا خیال لکھیں..."></textarea>
+<button onclick="imagePrompt()">Generate Prompt</button>
+<div class="output" id="imageOutput"></div>
+</div>
+</section>
+
+<section id="video">
+<h2>🎬 AI Video Tools</h2>
+<div class="panel">
+<input id="videoInput" placeholder="ویڈیو کا موضوع لکھیں">
+<button onclick="videoScript()">Create Video Script</button>
+<div class="output" id="videoOutput"></div>
+</div>
+</section>
+
+<section id="education">
+<h2>📚 Education & MCQs</h2>
+<div class="panel">
+<h3>نمونہ جنرل نالج ٹیسٹ</h3>
+<div id="quiz"></div>
+<button onclick="checkQuiz()">Check Result</button>
+<div class="output" id="quizOutput"></div>
+</div>
+</section>
+
+<section id="tools">
+<h2>🧰 All-in-One Smart Tools</h2>
+<div class="panel">
+<h3>Word Counter</h3>
+<textarea id="wordText" oninput="countWords()" placeholder="اپنا متن لکھیں..."></textarea>
+<div class="output" id="wordOutput">Words: 0 | Characters: 0</div>
+<h3>Text Converter</h3>
+<textarea id="convertText" placeholder="English text..."></textarea>
+<button onclick="convert('upper')">UPPERCASE</button>
+<button onclick="convert('lower')">lowercase</button>
+<div class="output" id="convertOutput"></div>
+</div>
+</section>
+
+<section>
+<div class="admin">
+<h2>👑 Founder & Chief Admin</h2>
+<h1 style="color:#4cdbff">Abdul Sattar</h1>
+<p>NEXORA AI Official Founder</p>
+</div>
+</section>
+
+<footer>
+<h2>NEXORA AI</h2>
+<p>Founder & Chief Admin: Abdul Sattar</p>
+<p>© 2026 NEXORA AI. All Rights Reserved.</p>
+</footer>
+
+<script>
+function chat(){
+let q=document.getElementById("chatInput").value.trim();
+document.getElementById("chatOutput").textContent=q?
+"آپ کا سوال موصول ہوگیا: "+q+"\n\nحقیقی AI جواب کے لیے AI API کنکشن ضروری ہے۔":
+"براہ کرم سوال لکھیں۔";
+}
+function imagePrompt(){
+let q=document.getElementById("imageInput").value.trim();
+document.getElementById("imageOutput").textContent=q?
+"Professional AI Image Prompt:\n"+q+"\nHigh quality, cinematic lighting, realistic details, professional composition.":
+"تصویر کا خیال لکھیں۔";
+}
+function videoScript(){
+let q=document.getElementById("videoInput").value.trim();
+document.getElementById("videoOutput").textContent=q?
+"Video Title: "+q+"\n\n1. Introduction\n2. Main Scene\n3. Important Details\n4. Conclusion\n5. Call to Action":
+"موضوع لکھیں۔";
+}
+const questions=[
+{q:"پاکستان کا دارالحکومت کیا ہے؟",o:["کراچی","اسلام آباد","لاہور"],a:1},
+{q:"قرآن مجید کس نبی پر نازل ہوا؟",o:["حضرت موسیٰؑ","حضرت محمد ﷺ","حضرت عیسیٰؑ"],a:1},
+{q:"پانی کا فارمولا کیا ہے؟",o:["H2O","CO2","O2"],a:0},
+{q:"2+2 کتنے ہوتے ہیں؟",o:["3","4","5"],a:1},
+{q:"پاکستان کب آزاد ہوا؟",o:["1940","1947","1950"],a:1}
+];
+document.getElementById("quiz").innerHTML=questions.map((q,i)=>
+`<div style="padding:12px;border-bottom:1px solid #354767">
+<strong>${i+1}. ${q.q}</strong><br>
+${q.o.map((v,j)=>`<label><input style="width:auto" type="radio" name="q${i}" value="${j}"> ${v}</label><br>`).join("")}
+</div>`).join("");
+function checkQuiz(){
+let score=0;
+questions.forEach((q,i)=>{
+let a=document.querySelector(`input[name="q${i}"]:checked`);
+if(a && Number(a.value)===q.a)score++;
+});
+document.getElementById("quizOutput").textContent=
+"آپ کا نتیجہ: "+score+" / "+questions.length;
+}
+function countWords(){
+let t=document.getElementById("wordText").value;
+let words=t.trim()?t.trim().split(/\s+/).length:0;
+document.getElementById("wordOutput").textContent=
+"Words: "+words+" | Characters: "+t.length;
+}
+function convert(type){
+let t=document.getElementById("convertText").value;
+document.getElementById("convertOutput").textContent=
+type==="upper"?t.toUpperCase():t.toLowerCase();
+}
+</script>
+</body>
+</html>
+
